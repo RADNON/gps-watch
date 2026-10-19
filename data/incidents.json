@@ -2,7 +2,7 @@
  {
   "id": "JAM-20261019-1002",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-19T07:02:54Z",
   "last_seen": "2026-10-19T07:02:54Z",
   "lat": 26.65,
@@ -93,10 +93,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-19T07:51:58Z",
-  "last_seen": "2026-10-19T07:51:58Z",
-  "lat": 25.221,
-  "lon": 53.046,
-  "where": "144 nm E of Bahrain (25.22, 53.05)",
+  "last_seen": "2026-10-19T08:28:46Z",
+  "lat": 25.053,
+  "lon": 53.033,
+  "where": "148 nm SE of Bahrain (25.05, 53.03)",
   "aircraft": {
    "06a2d6": {
     "hex": "06a2d6",
@@ -189,20 +189,192 @@
     "gs": 48.8,
     "nic": 0,
     "nacp": 0
+   },
+   "06a0f7": {
+    "hex": "06a0f7",
+    "flight": "QTR3J",
+    "reg": "A7-ALC",
+    "actype": "A359",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 24.4275,
+    "lon": 52.9921,
+    "alt": 40000,
+    "alt_geom": 36850,
+    "gs": 0.7,
+    "nic": 6,
+    "nacp": 0
+   },
+   "06a2fe": {
+    "hex": "06a2fe",
+    "flight": "QTR983",
+    "reg": "A7-BIA",
+    "actype": "B789",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 24.4276,
+    "lon": 52.9921,
+    "alt": 32600,
+    "alt_geom": 29450,
+    "gs": 454.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a078": {
+    "hex": "06a078",
+    "flight": "QTR36A",
+    "reg": "A7-BAK",
+    "actype": "B77W",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 24.4276,
+    "lon": 52.9922,
+    "alt": 33500,
+    "alt_geom": 30350,
+    "gs": 0.7,
+    "nic": 6,
+    "nacp": 8
+   },
+   "896529": {
+    "hex": "896529",
+    "flight": "EFC38V",
+    "reg": "A6-CTT",
+    "actype": "SR22",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2236,
+    "lon": 53.0377,
+    "alt": 2550,
+    "alt_geom": 5700,
+    "gs": 48.1,
+    "nic": 6,
+    "nacp": 0
+   },
+   "06a36b": {
+    "hex": "06a36b",
+    "flight": "A7GHZ",
+    "reg": "A7-GHZ",
+    "actype": "A139",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2217,
+    "lon": 53.0381,
+    "alt": 1000,
+    "alt_geom": 4150,
+    "gs": 48.5,
+    "nic": 8,
+    "nacp": 0
+   },
+   "8965d2": {
+    "hex": "8965d2",
+    "flight": "FDB1165",
+    "reg": "A6-FKG",
+    "actype": "B38M",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2258,
+    "lon": 53.0393,
+    "alt": 26775,
+    "alt_geom": 23625,
+    "gs": 45.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a1e8": {
+    "hex": "06a1e8",
+    "flight": "QTR75J",
+    "reg": "A7-BFK",
+    "actype": "B77L",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2273,
+    "lon": 53.0417,
+    "alt": 27700,
+    "alt_geom": 24550,
+    "gs": 48.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8965ce": {
+    "hex": "8965ce",
+    "flight": "FDB2GT",
+    "reg": "A6-FKC",
+    "actype": "B38M",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2281,
+    "lon": 53.0461,
+    "alt": 1625,
+    "alt_geom": 4775,
+    "gs": 172.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a377": {
+    "hex": "06a377",
+    "flight": "QTR1007",
+    "reg": "A7-BOF",
+    "actype": "B77W",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2261,
+    "lon": 53.0463,
+    "alt": 12950,
+    "alt_geom": 16100,
+    "gs": 418.0,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-19T07:52:06Z",
-  "aircraft_count": 5
+  "aircraft_count": 14
  },
  {
   "id": "SPF-20261019-1051",
   "type": "spoofing",
   "status": "open",
   "first_seen": "2026-10-19T07:51:58Z",
-  "last_seen": "2026-10-19T07:51:58Z",
-  "lat": 25.221,
-  "lon": 53.047,
-  "where": "144 nm E of Bahrain (25.22, 53.05)",
+  "last_seen": "2026-10-19T08:28:46Z",
+  "lat": 25.127,
+  "lon": 53.035,
+  "where": "146 nm E of Bahrain (25.13, 53.03)",
   "aircraft": {
    "80167d": {
     "hex": "80167d",
@@ -283,15 +455,16 @@
     "actype": "A320",
     "first_seen": "2026-10-19T07:51:58Z",
     "signs": [
-     "9 aircraft reporting the same position"
+     "9 aircraft reporting the same position",
+     "15 aircraft reporting the same position"
     ],
-    "last_seen": "2026-10-19T07:51:58Z",
-    "lat": 25.2216,
-    "lon": 53.0475,
-    "alt": 15100,
-    "alt_geom": 18250,
-    "gs": 48.4,
-    "nic": 6,
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2218,
+    "lon": 53.038,
+    "alt": 34000,
+    "alt_geom": 30850,
+    "gs": 50.3,
+    "nic": 7,
     "nacp": 8
    },
    "06a2e8": {
@@ -337,13 +510,14 @@
     "actype": "B38M",
     "first_seen": "2026-10-19T07:51:58Z",
     "signs": [
-     "9 aircraft reporting the same position"
+     "9 aircraft reporting the same position",
+     "15 aircraft reporting the same position"
     ],
-    "last_seen": "2026-10-19T07:51:58Z",
-    "lat": 25.2218,
-    "lon": 53.0476,
-    "alt": 26925,
-    "alt_geom": 23775,
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2228,
+    "lon": 53.0379,
+    "alt": 34000,
+    "alt_geom": 30850,
     "gs": 49.0,
     "nic": 8,
     "nacp": 9
@@ -365,9 +539,297 @@
     "gs": 48.8,
     "nic": 0,
     "nacp": 0
+   },
+   "06a0f7": {
+    "hex": "06a0f7",
+    "flight": "QTR3J",
+    "reg": "A7-ALC",
+    "actype": "A359",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "3 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 24.4275,
+    "lon": 52.9921,
+    "alt": 40000,
+    "alt_geom": 36850,
+    "gs": 0.7,
+    "nic": 6,
+    "nacp": 0
+   },
+   "06a2fe": {
+    "hex": "06a2fe",
+    "flight": "QTR983",
+    "reg": "A7-BIA",
+    "actype": "B789",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "3 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 24.4276,
+    "lon": 52.9921,
+    "alt": 32600,
+    "alt_geom": 29450,
+    "gs": 454.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a078": {
+    "hex": "06a078",
+    "flight": "QTR36A",
+    "reg": "A7-BAK",
+    "actype": "B77W",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "3 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 24.4276,
+    "lon": 52.9922,
+    "alt": 33500,
+    "alt_geom": 30350,
+    "gs": 0.7,
+    "nic": 6,
+    "nacp": 8
+   },
+   "896121": {
+    "hex": "896121",
+    "flight": "UAE921",
+    "reg": "A6-ECZ",
+    "actype": "B77W",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2222,
+    "lon": 53.0379,
+    "alt": 38000,
+    "alt_geom": 34850,
+    "gs": 48.4,
+    "nic": 8,
+    "nacp": 9
+   },
+   "aad5f0": {
+    "hex": "aad5f0",
+    "flight": "NCR8801",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2231,
+    "lon": 53.0379,
+    "alt": 34500,
+    "alt_geom": 31350,
+    "gs": 49.0,
+    "nic": 8,
+    "nacp": 9
+   },
+   "70612e": {
+    "hex": "70612e",
+    "flight": "JZR122",
+    "reg": "9K-CBF",
+    "actype": "A20N",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2221,
+    "lon": 53.0379,
+    "alt": 37950,
+    "alt_geom": 34800,
+    "gs": 47.0,
+    "nic": 7,
+    "nacp": 8
+   },
+   "06a0c1": {
+    "hex": "06a0c1",
+    "flight": "QTR571",
+    "reg": "A7-BDC",
+    "actype": "B788",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2226,
+    "lon": 53.0379,
+    "alt": 21525,
+    "alt_geom": 19850,
+    "gs": 48.7,
+    "nic": 7,
+    "nacp": 8
+   },
+   "06a1c4": {
+    "hex": "06a1c4",
+    "flight": "QTR1062",
+    "reg": "A7-LAC",
+    "actype": "A320",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2222,
+    "lon": 53.0379,
+    "alt": 21000,
+    "alt_geom": 19750,
+    "gs": 48.7,
+    "nic": 8,
+    "nacp": 9
+   },
+   "0101ba": {
+    "hex": "0101ba",
+    "flight": "MSR902",
+    "reg": "SU-GEJ",
+    "actype": "B738",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2221,
+    "lon": 53.0379,
+    "alt": 35875,
+    "alt_geom": 32725,
+    "gs": 49.1,
+    "nic": 8,
+    "nacp": 9
+   },
+   "06e024": {
+    "hex": "06e024",
+    "flight": "RWD9316",
+    "reg": "9XR-WW",
+    "actype": "B738",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2218,
+    "lon": 53.038,
+    "alt": 15075,
+    "alt_geom": 18225,
+    "gs": 48.4,
+    "nic": 8,
+    "nacp": 9
+   },
+   "800b9e": {
+    "hex": "800b9e",
+    "flight": "AXB546",
+    "reg": "VT-GHF",
+    "actype": "B738",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2218,
+    "lon": 53.038,
+    "alt": 21375,
+    "alt_geom": 19750,
+    "gs": 48.7,
+    "nic": 8,
+    "nacp": 9
+   },
+   "80165e": {
+    "hex": "80165e",
+    "flight": "AXB346",
+    "reg": "VT-BXL",
+    "actype": "B38M",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2219,
+    "lon": 53.038,
+    "alt": 28575,
+    "alt_geom": 25425,
+    "gs": 48.7,
+    "nic": 8,
+    "nacp": 8
+   },
+   "8960ae": {
+    "hex": "8960ae",
+    "flight": "DUB2",
+    "reg": "A6-MMM",
+    "actype": "B744",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2218,
+    "lon": 53.038,
+    "alt": 17650,
+    "alt_geom": 19725,
+    "gs": 48.8,
+    "nic": 8,
+    "nacp": 8
+   },
+   "8965d2": {
+    "hex": "8965d2",
+    "flight": "FDB1165",
+    "reg": "A6-FKG",
+    "actype": "B38M",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2258,
+    "lon": 53.0393,
+    "alt": 26775,
+    "alt_geom": 23625,
+    "gs": 45.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a1e8": {
+    "hex": "06a1e8",
+    "flight": "QTR75J",
+    "reg": "A7-BFK",
+    "actype": "B77L",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2273,
+    "lon": 53.0417,
+    "alt": 27700,
+    "alt_geom": 24550,
+    "gs": 48.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a377": {
+    "hex": "06a377",
+    "flight": "QTR1007",
+    "reg": "A7-BOF",
+    "actype": "B77W",
+    "first_seen": "2026-10-19T08:28:46Z",
+    "signs": [
+     "15 aircraft reporting the same position"
+    ],
+    "last_seen": "2026-10-19T08:28:46Z",
+    "lat": 25.2261,
+    "lon": 53.0463,
+    "alt": 12950,
+    "alt_geom": 16100,
+    "gs": 418.0,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-19T07:52:06Z",
-  "aircraft_count": 9
+  "aircraft_count": 25
  }
 ]
