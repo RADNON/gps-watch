@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Affected Aircraft Map</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  html, body { margin: 0; height: 100%; font-family: "Segoe UI", Arial, sans-serif; background: #0d1116; }
+  #map { position: absolute; inset: 0; }
+  .panel {
+    position: absolute; top: 12px; left: 12px; z-index: 1000; max-width: 340px;
+    background: rgba(15, 20, 27, .9); color: #eef2f6; padding: 12px 14px; border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.35); font-size: 13px; line-height: 1.45;
+  }
+  .panel h1 { font-size: 16px; margin: 0 0 4px; }
+  .tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 700;
+         letter-spacing: .05em; margin-bottom: 6px; }
+  .jamming { background: #c0392b; } .spoofing { background: #8e44ad; }
+  .muted { color: #a9b3bf; }
+  .leaflet-popup-content { font-size: 13px; line-height: 1.45; margin: 10px 12px; }
+  .leaflet-popup-content b { font-size: 14px; }
+  .sign { color: #8a1c12; }
+  @media (max-width: 500px) { .panel { right: 12px; max-width: none; } }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="panel" id="panel">Loading…</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const BH = { timeZone: "Asia/Bahrain", day: "2-digit", month: "short", year: "numeric",
+             hour: "2-digit", minute: "2-digit", hour12: false };
+const fmt = s => new Date(s).toLocaleString("en-GB", BH) + " (Bahrain time)";
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+const map = L.map("map", { zoomControl: false });
+L.control.zoom({ position: "bottomright" }).addTo(map);
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+  maxZoom: 18, attribution: "Imagery © Esri, Maxar, Earthstar Geographics"
+}).addTo(map);
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}", {
+  maxZoom: 18, opacity: .8
+}).addTo(map);
+map.setView([26.07, 50.55], 7);
+
+const id = new URLSearchParams(location.search).get("id");
+const panel = document.getElementById("panel");
+
+fetch("data/incidents.json?ts=" + Date.now()).then(r => r.json()).then(list => {
+  const inc = list.find(i => i.id === id);
+  if (!inc) { panel.innerHTML = "<b>Incident not found.</b><br><span class='muted'>It may still be publishing - try again in a minute.</span>"; return; }
+  const colour = inc.type === "jamming" ? "#e74c3c" : "#b36ad8";
+  document.title = (inc.type === "jamming" ? "GPS jamming " : "GPS spoofing ") + inc.id;
+  panel.innerHTML = `<span class="tag ${inc.type}">${inc.type === "jamming" ? "GPS JAMMING" : "GPS SPOOFING"}</span>
+    <h1>${esc(inc.id)}</h1>
+    <div>First detected: ${esc(fmt(inc.first_seen))}</div>
+    <div>Last seen: ${esc(fmt(inc.last_seen))}</div>
+    <div>${esc(inc.where)}</div>
+    <div><b>${inc.aircraft_count}</b> aircraft affected</div>`;
+  const bounds = [];
+  Object.values(inc.aircraft).forEach(a => {
+    const name = a.flight || a.reg || a.hex.toUpperCase();
+    const alt = a.alt != null ? Number(a.alt).toLocaleString() + " ft" : "-";
+    const m = L.circleMarker([a.lat, a.lon], { radius: 8, color: "#fff", weight: 2, fillColor: colour, fillOpacity: .95 }).addTo(map);
+    m.bindTooltip(esc(name), { permanent: true, direction: "right", offset: [8, 0] });
+    m.bindPopup(`<b>${esc(name)}</b><br>
+      ${[a.reg, a.actype, a.hex.toUpperCase()].filter(Boolean).map(esc).join(" · ")}<br>
+      <b>Date &amp; time:</b> ${esc(fmt(a.first_seen))}${a.last_seen && a.last_seen !== a.first_seen ? "<br><b>Last seen:</b> " + esc(fmt(a.last_seen)) : ""}<br>
+      <b>Altitude:</b> ${alt}${a.alt_geom != null ? " (GPS " + Number(a.alt_geom).toLocaleString() + " ft)" : ""}<br>
+      <b>Position:</b> ${a.lat.toFixed(3)}, ${a.lon.toFixed(3)}<br>
+      <b>GPS quality:</b> NIC ${a.nic ?? "-"} · NACp ${a.nacp ?? "-"}<br>
+      ${a.signs.map(s => `<span class="sign">• ${esc(s)}</span>`).join("<br>")}`);
+    bounds.push([a.lat, a.lon]);
+  });
+  if (bounds.length === 1) map.setView(bounds[0], 9);
+  else if (bounds.length) map.fitBounds(bounds, { padding: [60, 60], maxZoom: 10 });
+}).catch(() => { panel.textContent = "Could not load incident data."; });
+</script>
+</body>
+</html>

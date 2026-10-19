@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPS Interference Watch</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root { --bg:#0e1319; --card:#161d26; --line:#263241; --text:#e8edf2; --muted:#93a1b1;
+          --jam:#e5533f; --spoof:#b36ad8; --ok:#39b47a; --accent:#4aa3df; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI",Arial,sans-serif; font-size:14px; }
+  header { padding:18px 24px 6px; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 18px; }
+  h1 { font-size:20px; margin:0; letter-spacing:.01em; }
+  .muted { color:var(--muted); }
+  main { padding:12px 24px 30px; display:grid; gap:16px; grid-template-columns: 1fr 380px; }
+  @media (max-width: 960px) { main { grid-template-columns: 1fr; padding:12px 16px 24px; } header { padding:16px; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
+  .card h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 10px; font-weight:600; }
+  #map { height: 560px; border-radius:10px; border:1px solid var(--line); }
+  .stats { display:grid; grid-template-columns: repeat(2,1fr); gap:10px; }
+  .stat { background:#0f151c; border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
+  .stat .v { font-size:24px; font-weight:700; } .stat .l { font-size:12px; color:var(--muted); }
+  .pill { display:inline-block; font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; letter-spacing:.04em; }
+  .pill.jamming { background:var(--jam); } .pill.spoofing { background:var(--spoof); }
+  .pill.open { background:#f0b429; color:#1a1a1a; } .pill.closed { background:#3a4757; }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:600; }
+  a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+  .wide { grid-column: 1 / -1; }
+  .legend span { display:inline-flex; align-items:center; gap:6px; margin-right:14px; font-size:12px; color:var(--muted); }
+  .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .tablewrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>GPS Jamming &amp; Spoofing Watch — Bahrain</h1>
+  <span class="muted" id="checked">Loading…</span>
+</header>
+<main>
+  <div>
+    <div id="map"></div>
+    <div class="legend" style="margin-top:8px">
+      <span><i class="dot" style="background:var(--jam)"></i>Degraded GPS now</span>
+      <span><i class="dot" style="background:var(--spoof)"></i>Spoofing signs now</span>
+      <span><i class="dot" style="border:2px solid #f0b429"></i>Open incident</span>
+    </div>
+  </div>
+  <div style="display:grid; gap:16px; align-content:start">
+    <div class="card">
+      <h2>Right now</h2>
+      <div class="stats">
+        <div class="stat"><div class="v" id="s-seen">–</div><div class="l">Aircraft checked</div></div>
+        <div class="stat"><div class="v" id="s-open">–</div><div class="l">Open incidents</div></div>
+        <div class="stat"><div class="v" id="s-deg" style="color:var(--jam)">–</div><div class="l">Degraded GPS</div></div>
+        <div class="stat"><div class="v" id="s-spo" style="color:var(--spoof)">–</div><div class="l">Spoofing signs</div></div>
+      </div>
+      <p class="muted" style="font-size:12px;margin:10px 0 0">Checked every 5 minutes within 250 nm of Bahrain. Single aircraft signs are shown but only corroborated signs become incidents.</p>
+    </div>
+    <div class="card">
+      <h2>Last 30 days</h2>
+      <div class="stats">
+        <div class="stat"><div class="v" id="m-jam" style="color:var(--jam)">–</div><div class="l">Jamming incidents</div></div>
+        <div class="stat"><div class="v" id="m-spo" style="color:var(--spoof)">–</div><div class="l">Spoofing incidents</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Monthly reports</h2>
+      <div id="reports" class="muted">None yet — the first is made on the 1st of next month.</div>
+    </div>
+  </div>
+  <div class="card wide">
+    <h2>Confirmed incidents</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Incident</th><th>Type</th><th>Status</th><th>Started</th><th>Last seen</th><th>Location</th><th>Aircraft</th></tr></thead>
+      <tbody id="rows"><tr><td colspan="7" class="muted">Loading…</td></tr></tbody>
+    </table></div>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const BH = { timeZone:"Asia/Bahrain", day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit", hour12:false };
+const fmt = s => new Date(s).toLocaleString("en-GB", BH);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const map = L.map("map").setView([26.07, 50.55], 6);
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  { maxZoom:18, attribution:"Imagery © Esri, Maxar" }).addTo(map);
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+  { maxZoom:18, opacity:.8 }).addTo(map);
+L.circle([26.07, 50.55], { radius: 250 * 1852, color:"#4aa3df", weight:1, fill:false, dashArray:"6 6" }).addTo(map);
+
+const get = u => fetch(u + "?ts=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+Promise.all([get("data/status.json"), get("data/incidents.json"), get("data/reports.json")]).then(([st, incs, reps]) => {
+  incs = incs || [];
+  if (st) {
+    document.getElementById("checked").textContent = "Last checked " + fmt(st.checked) + " Bahrain time · source " + st.source;
+    document.getElementById("s-seen").textContent = st.aircraft_seen;
+    document.getElementById("s-open").textContent = st.open_incidents.length;
+    document.getElementById("s-deg").textContent = st.degraded_now.length;
+    document.getElementById("s-spo").textContent = st.spoof_signs_now.length;
+    const plot = (list, col, key) => list.forEach(o => L.circleMarker([o.lat, o.lon],
+      { radius:6, color:"#fff", weight:1.5, fillColor:col, fillOpacity:.95 }).addTo(map)
+      .bindPopup(`<b>${esc(o.flight || o.reg || o.hex.toUpperCase())}</b><br>${esc(fmt(o.t))} Bahrain time<br>
+        Alt ${o.alt != null ? Number(o.alt).toLocaleString() + " ft" : "-"} · NIC ${o.nic ?? "-"} · NACp ${o.nacp ?? "-"}<br>${o[key].map(esc).join("<br>")}`));
+    plot(st.degraded_now, "#e5533f", "jam");
+    plot(st.spoof_signs_now, "#b36ad8", "spoof");
+  }
+  incs.filter(i => i.status === "open").forEach(i => L.circleMarker([i.lat, i.lon],
+    { radius:16, color:"#f0b429", weight:3, fill:false }).addTo(map)
+    .bindPopup(`<b>${esc(i.id)}</b><br>${i.type} · ${i.aircraft_count} aircraft<br><a href="map.html?id=${encodeURIComponent(i.id)}">Open incident map</a>`));
+
+  const since = Date.now() - 30 * 864e5;
+  const recent = incs.filter(i => new Date(i.first_seen) >= since);
+  document.getElementById("m-jam").textContent = recent.filter(i => i.type === "jamming").length;
+  document.getElementById("m-spo").textContent = recent.filter(i => i.type === "spoofing").length;
+
+  const sorted = [...incs].sort((a, b) => b.first_seen.localeCompare(a.first_seen)).slice(0, 200);
+  document.getElementById("rows").innerHTML = sorted.length ? sorted.map(i => `<tr>
+    <td><a href="map.html?id=${encodeURIComponent(i.id)}">${esc(i.id)}</a></td>
+    <td><span class="pill ${i.type}">${i.type === "jamming" ? "JAMMING" : "SPOOFING"}</span></td>
+    <td><span class="pill ${i.status}">${i.status.toUpperCase()}</span></td>
+    <td>${esc(fmt(i.first_seen))}</td><td>${esc(fmt(i.last_seen))}</td>
+    <td>${esc(i.where)}</td><td>${i.aircraft_count}</td></tr>`).join("")
+    : `<tr><td colspan="7" class="muted">No confirmed incidents yet.</td></tr>`;
+
+  if (reps && reps.length) document.getElementById("reports").innerHTML =
+    reps.map(r => `<div><a href="reports/${encodeURIComponent(r)}">${esc(new Date(r.slice(0,7) + "-01T00:00:00Z").toLocaleString("en-GB",{month:"long",year:"numeric",timeZone:"UTC"}))}</a></div>`).join("");
+});
+</script>
+</body>
+</html>
