@@ -831,5 +831,97 @@
   },
   "emailed": "2026-10-19T07:52:06Z",
   "aircraft_count": 25
+ },
+ {
+  "id": "JAM-20261019-1650",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-19T13:50:23Z",
+  "last_seen": "2026-10-19T13:50:23Z",
+  "lat": 25.782,
+  "lon": 51.392,
+  "where": "49 nm E of Bahrain (25.78, 51.39)",
+  "aircraft": {
+   "a98abf": {
+    "hex": "a98abf",
+    "flight": "UNIDENT",
+    "reg": "N71384",
+    "actype": "C182",
+    "first_seen": "2026-10-19T13:03:02Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T13:50:23Z",
+    "lat": 25.7923,
+    "lon": 51.0911,
+    "alt": 14000,
+    "alt_geom": 14675,
+    "gs": 100.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8966be": {
+    "hex": "8966be",
+    "flight": "ETD44",
+    "reg": "A6-LRI",
+    "actype": "A21N",
+    "first_seen": "2026-10-19T13:50:23Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-19T13:50:23Z",
+    "lat": 26.2675,
+    "lon": 50.5831,
+    "alt": 35000,
+    "alt_geom": 36700,
+    "gs": 499.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a1e9": {
+    "hex": "06a1e9",
+    "flight": "QTR8975",
+    "reg": "A7-BFL",
+    "actype": "B77L",
+    "first_seen": "2026-10-19T13:50:23Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-19T13:50:23Z",
+    "lat": 25.2434,
+    "lon": 51.8352,
+    "alt": 8025,
+    "alt_geom": 8525,
+    "gs": 264.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8962e5": {
+    "hex": "8962e5",
+    "flight": "ETD36V",
+    "reg": "A6-ETG",
+    "actype": "B77W",
+    "first_seen": "2026-10-19T13:50:23Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T13:50:23Z",
+    "lat": 25.8257,
+    "lon": 52.0583,
+    "alt": 35000,
+    "alt_geom": 36725,
+    "gs": 530.9,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": false,
+  "aircraft_count": 4
  }
 ]
