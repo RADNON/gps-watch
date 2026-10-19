@@ -1,0 +1,91 @@
+[
+ {
+  "id": "JAM-20261019-1002",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-19T07:02:54Z",
+  "last_seen": "2026-10-19T07:02:54Z",
+  "lat": 26.65,
+  "lon": 50.096,
+  "where": "43 nm NW of Bahrain (26.65, 50.10)",
+  "aircraft": {
+   "06a072": {
+    "hex": "06a072",
+    "flight": "QTR24H",
+    "reg": "A7-BAH",
+    "actype": "B77W",
+    "first_seen": "2026-10-19T07:02:54Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-19T07:02:54Z",
+    "lat": 26.5079,
+    "lon": 49.7807,
+    "alt": 30000,
+    "alt_geom": 31525,
+    "gs": 466.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8965fa": {
+    "hex": "8965fa",
+    "flight": "ADY504",
+    "reg": "A6-AUG",
+    "actype": "A320",
+    "first_seen": "2026-10-19T07:02:54Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T07:02:54Z",
+    "lat": 26.8767,
+    "lon": 49.8731,
+    "alt": 38000,
+    "alt_geom": 39800,
+    "gs": 396.9,
+    "nic": 0,
+    "nacp": 9
+   },
+   "06a08e": {
+    "hex": "06a08e",
+    "flight": "QTR80B",
+    "reg": "A7-AHE",
+    "actype": "A320",
+    "first_seen": "2026-10-19T07:02:54Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T07:02:54Z",
+    "lat": 26.3645,
+    "lon": 50.1493,
+    "alt": 28125,
+    "alt_geom": 28650,
+    "gs": 451.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8964a0": {
+    "hex": "8964a0",
+    "flight": "UAE3U",
+    "reg": "A6-EQH",
+    "actype": "B77W",
+    "first_seen": "2026-10-19T07:02:54Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T07:02:54Z",
+    "lat": 26.8526,
+    "lon": 50.5805,
+    "alt": 28000,
+    "alt_geom": 29450,
+    "gs": 484.5,
+    "nic": 0,
+    "nacp": 9
+   }
+  },
+  "emailed": false,
+  "aircraft_count": 4
+ }
+]
