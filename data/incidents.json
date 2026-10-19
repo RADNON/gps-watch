@@ -923,5 +923,114 @@
   },
   "emailed": "skipped (too old)",
   "aircraft_count": 4
+ },
+ {
+  "id": "JAM-20261020-0234",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-19T23:34:27Z",
+  "last_seen": "2026-10-19T23:34:27Z",
+  "lat": 26.617,
+  "lon": 50.962,
+  "where": "40 nm NE of Bahrain (26.62, 50.96)",
+  "aircraft": {
+   "4a2aac": {
+    "hex": "4a2aac",
+    "flight": "FYC743",
+    "reg": "YR-JUL",
+    "actype": "A320",
+    "first_seen": "2026-10-19T23:34:27Z",
+    "signs": [
+     "GPS accuracy low (NACp 6)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T23:34:27Z",
+    "lat": 27.1875,
+    "lon": 50.4535,
+    "alt": 35000,
+    "alt_geom": 36575,
+    "gs": 471.2,
+    "nic": 0,
+    "nacp": 6
+   },
+   "4bb0e6": {
+    "hex": "4bb0e6",
+    "flight": "THY38X",
+    "reg": "TC-LGF",
+    "actype": "A359",
+    "first_seen": "2026-10-19T23:34:27Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-19T23:34:27Z",
+    "lat": 27.1393,
+    "lon": 50.5799,
+    "alt": 40000,
+    "alt_geom": 41650,
+    "gs": 446.2,
+    "nic": 6,
+    "nacp": 8
+   },
+   "896582": {
+    "hex": "896582",
+    "flight": "ABY150",
+    "reg": "A6-ATD",
+    "actype": "A21N",
+    "first_seen": "2026-10-19T23:34:27Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-19T23:34:27Z",
+    "lat": 26.7903,
+    "lon": 51.0987,
+    "alt": 33000,
+    "alt_geom": 34100,
+    "gs": 496.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a099": {
+    "hex": "06a099",
+    "flight": "QTR68X",
+    "reg": "A7-AHR",
+    "actype": "A320",
+    "first_seen": "2026-10-19T23:34:27Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T23:34:27Z",
+    "lat": 26.0753,
+    "lon": 51.2363,
+    "alt": 22550,
+    "alt_geom": 22450,
+    "gs": 406.9,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a094": {
+    "hex": "06a094",
+    "flight": "QTR98C",
+    "reg": "A7-AHJ",
+    "actype": "A320",
+    "first_seen": "2026-10-19T23:34:27Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-19T23:34:27Z",
+    "lat": 25.8928,
+    "lon": 51.4425,
+    "alt": 21675,
+    "alt_geom": 22800,
+    "gs": 404.4,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": false,
+  "aircraft_count": 5
  }
 ]
