@@ -91,7 +91,7 @@
  {
   "id": "JAM-20261019-1051",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-19T07:51:58Z",
   "last_seen": "2026-10-19T08:28:46Z",
   "lat": 25.053,
@@ -369,7 +369,7 @@
  {
   "id": "SPF-20261019-1051",
   "type": "spoofing",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-19T07:51:58Z",
   "last_seen": "2026-10-19T08:28:46Z",
   "lat": 25.127,
