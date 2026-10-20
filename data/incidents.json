@@ -929,10 +929,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-19T23:34:27Z",
-  "last_seen": "2026-10-20T00:45:09Z",
-  "lat": 26.794,
-  "lon": 50.749,
-  "where": "45 nm N of Bahrain (26.79, 50.75)",
+  "last_seen": "2026-10-20T01:58:14Z",
+  "lat": 26.721,
+  "lon": 50.905,
+  "where": "43 nm NE of Bahrain (26.72, 50.91)",
   "aircraft": {
    "4a2aac": {
     "hex": "4a2aac",
@@ -1135,12 +1135,12 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-10-20T00:45:09Z",
-    "lat": 25.7444,
-    "lon": 51.1111,
-    "alt": 10025,
-    "alt_geom": 10500,
-    "gs": 111.4,
+    "last_seen": "2026-10-20T01:58:14Z",
+    "lat": 25.7472,
+    "lon": 51.112,
+    "alt": 10050,
+    "alt_geom": 10550,
+    "gs": 110.2,
     "nic": 0,
     "nacp": 0
    },
@@ -1180,9 +1180,45 @@
     "gs": 296.0,
     "nic": 0,
     "nacp": 0
+   },
+   "06a078": {
+    "hex": "06a078",
+    "flight": "QTR36G",
+    "reg": "A7-BAK",
+    "actype": "B77W",
+    "first_seen": "2026-10-20T01:58:14Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-20T01:58:14Z",
+    "lat": 25.9202,
+    "lon": 51.6847,
+    "alt": 19800,
+    "alt_geom": 20850,
+    "gs": 396.0,
+    "nic": 0,
+    "nacp": 8
+   },
+   "89656c": {
+    "hex": "89656c",
+    "flight": "",
+    "reg": "A6-FMR",
+    "actype": "B38M",
+    "first_seen": "2026-10-20T01:58:14Z",
+    "signs": [
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-20T01:58:14Z",
+    "lat": 26.5705,
+    "lon": 52.1585,
+    "alt": 35000,
+    "alt_geom": 36600,
+    "gs": 499.2,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": false,
-  "aircraft_count": 13
+  "aircraft_count": 15
  }
 ]
