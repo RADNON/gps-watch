@@ -1605,7 +1605,7 @@
  {
   "id": "JAM-20261020-2140",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-20T18:40:13Z",
   "last_seen": "2026-10-20T18:40:13Z",
   "lat": 25.872,
