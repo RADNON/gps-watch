@@ -929,10 +929,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-19T23:34:27Z",
-  "last_seen": "2026-10-19T23:34:27Z",
-  "lat": 26.617,
-  "lon": 50.962,
-  "where": "40 nm NE of Bahrain (26.62, 50.96)",
+  "last_seen": "2026-10-20T00:01:55Z",
+  "lat": 27.07,
+  "lon": 50.578,
+  "where": "60 nm N of Bahrain (27.07, 50.58)",
   "aircraft": {
    "4a2aac": {
     "hex": "4a2aac",
@@ -1028,9 +1028,105 @@
     "gs": 404.4,
     "nic": 0,
     "nacp": 0
+   },
+   "010243": {
+    "hex": "010243",
+    "flight": "MSR916",
+    "reg": "SU-GFS",
+    "actype": "A21N",
+    "first_seen": "2026-10-20T00:01:55Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-20T00:01:55Z",
+    "lat": 28.0879,
+    "lon": 49.6683,
+    "alt": 33000,
+    "alt_geom": 34600,
+    "gs": 494.3,
+    "nic": 0,
+    "nacp": 8
+   },
+   "7448a6": {
+    "hex": "7448a6",
+    "flight": "RJA672",
+    "reg": "JY-REF",
+    "actype": "E295",
+    "first_seen": "2026-10-20T00:01:55Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-20T00:01:55Z",
+    "lat": 27.5437,
+    "lon": 50.1095,
+    "alt": 17675,
+    "alt_geom": 19025,
+    "gs": 412.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8005f0": {
+    "hex": "8005f0",
+    "flight": "AIC122",
+    "reg": "VT-ANG",
+    "actype": "B788",
+    "first_seen": "2026-10-20T00:01:55Z",
+    "signs": [
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-10-20T00:01:55Z",
+    "lat": 27.8651,
+    "lon": 50.176,
+    "alt": 39000,
+    "alt_geom": 40625,
+    "gs": 510.6,
+    "nic": 5,
+    "nacp": 8
+   },
+   "06a097": {
+    "hex": "06a097",
+    "flight": "QTR44P",
+    "reg": "A7-AHP",
+    "actype": "A320",
+    "first_seen": "2026-10-20T00:01:55Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-20T00:01:55Z",
+    "lat": 27.1696,
+    "lon": 50.3695,
+    "alt": 32000,
+    "alt_geom": 33225,
+    "gs": 438.2,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8966a8": {
+    "hex": "8966a8",
+    "flight": "ETD6A8",
+    "reg": "A6-LRC",
+    "actype": "A21N",
+    "first_seen": "2026-10-20T00:01:55Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-20T00:01:55Z",
+    "lat": 26.949,
+    "lon": 50.6411,
+    "alt": 32025,
+    "alt_geom": 33625,
+    "gs": 430.9,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": false,
-  "aircraft_count": 5
+  "aircraft_count": 10
  }
 ]
