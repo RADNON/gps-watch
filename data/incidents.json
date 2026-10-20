@@ -1298,7 +1298,7 @@
  {
   "id": "JAM-20261020-0852",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-20T05:52:37Z",
   "last_seen": "2026-10-20T05:52:37Z",
   "lat": 26.518,
@@ -1362,7 +1362,7 @@
     "nacp": 0
    }
   },
-  "emailed": false,
+  "emailed": "2026-10-20T06:56:29Z",
   "aircraft_count": 3
  }
 ]
