@@ -53,7 +53,7 @@ STACK_MIN_ALT_FT = 10000
 MERGE_NM = 100             # new signs this close to an open incident belong to it
 CLOSE_AFTER_MIN = 60       # incident closes after this long with no new signs
 MEMORY_KEEP_MIN = 90
-ALARM_MAX_AGE_HOURS = 6    # never send an alarm for something older than this
+ALARM_MAX_AGE_HOURS = 6    # older than this is sent as a LATE ALARM
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
@@ -388,23 +388,35 @@ def alarm_html(inc, map_url):
 def send_email(subject, html, recipients):
     user, pw = os.environ.get("SMTP_USER", ""), os.environ.get("SMTP_PASS", "")
     host = os.environ.get("SMTP_HOST") or "smtp.gmail.com"
-    port = int(os.environ.get("SMTP_PORT") or 465)
+    port = int(os.environ.get("SMTP_PORT") or 587)
     if not (user and pw and recipients):
         raise RuntimeError("Email not configured (SMTP_USER / SMTP_PASS / ALARM_TO missing)")
     msg = MIMEMultipart("alternative")
     msg["Subject"], msg["From"], msg["To"] = subject, f"GPS Interference Watch <{user}>", ", ".join(recipients)
     msg.attach(MIMEText("This message is in HTML. Please view it in an HTML-capable mail app.", "plain"))
     msg.attach(MIMEText(html, "html", "utf-8"))
-    ctx = ssl.create_default_context()
-    if port == 465:
-        with smtplib.SMTP_SSL(host, port, context=ctx, timeout=30) as s:
-            s.login(user, pw)
-            s.sendmail(user, recipients, msg.as_string())
-    else:
-        with smtplib.SMTP(host, port, timeout=30) as s:
-            s.starttls(context=ctx)
-            s.login(user, pw)
-            s.sendmail(user, recipients, msg.as_string())
+    body = msg.as_string()
+    # Try port 587 (STARTTLS) first, then 465 (SSL) - Gmail sometimes drops one of them.
+    ports = [port] + [p for p in (587, 465) if p != port]
+    errors = []
+    for p in ports:
+        ctx = ssl.create_default_context()
+        try:
+            if p == 465:
+                with smtplib.SMTP_SSL(host, p, context=ctx, timeout=30) as s:
+                    s.login(user, pw)
+                    s.sendmail(user, recipients, body)
+            else:
+                with smtplib.SMTP(host, p, timeout=30) as s:
+                    s.ehlo()
+                    s.starttls(context=ctx)
+                    s.ehlo()
+                    s.login(user, pw)
+                    s.sendmail(user, recipients, body)
+            return
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"port {p}: {e}")
+    raise RuntimeError("; ".join(errors))
 
 
 def recipients():
@@ -448,28 +460,31 @@ def cmd_send():
     t = now_utc()
     to = recipients()
     changed = False
+    failed = []
     for inc in incidents:
         if inc.get("emailed"):
-            continue
-        if t - parse_iso(inc["first_seen"]) > timedelta(hours=ALARM_MAX_AGE_HOURS):
-            inc["emailed"] = "skipped (too old)"
-            changed = True
             continue
         if not to:
             print("ALARM_TO is empty - alarm emails are switched off.")
             break
+        late = t - parse_iso(inc["first_seen"]) > timedelta(hours=ALARM_MAX_AGE_HOURS)
         map_url = f"{site_url()}map.html?id={inc['id']}"
         kind = "GPS jamming" if inc["type"] == "jamming" else "GPS spoofing"
-        subject = f"ALARM: {kind} near Bahrain - {inc['aircraft_count']} aircraft - {bh(inc['first_seen'], '%d %b %H:%M')}"
+        prefix = "LATE ALARM" if late else "ALARM"
+        subject = f"{prefix}: {kind} near Bahrain - {inc['aircraft_count']} aircraft - {bh(inc['first_seen'], '%d %b %H:%M')}"
         try:
             send_email(subject, alarm_html(inc, map_url), to)
             inc["emailed"] = iso(t)
             changed = True
-            print(f"Alarm sent for {inc['id']} to {', '.join(to)}")
+            print(f"{prefix} sent for {inc['id']} to {', '.join(to)}")
         except Exception as e:  # noqa: BLE001  - retried on the next run
-            print(f"Could not send alarm for {inc['id']}: {e}")
+            failed.append(inc["id"])
+            print(f"::error::Could not send alarm for {inc['id']}: {e}")
     if changed:
         save_json(INCIDENTS_FILE, incidents)
+    if failed:
+        # Make the GitHub check fail (red) so the failure is noticed; it is retried on the next run.
+        sys.exit(1)
 
 
 def monthly_html(month_label, incs):
