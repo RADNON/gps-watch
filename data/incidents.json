@@ -1439,7 +1439,7 @@
  {
   "id": "JAM-20261020-1523",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-20T12:23:14Z",
   "last_seen": "2026-10-20T12:23:14Z",
   "lat": 26.614,
