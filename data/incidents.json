@@ -1292,7 +1292,77 @@
     "nacp": 0
    }
   },
-  "emailed": false,
+  "emailed": "skipped (too old)",
   "aircraft_count": 19
+ },
+ {
+  "id": "JAM-20261020-0852",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-20T05:52:37Z",
+  "last_seen": "2026-10-20T05:52:37Z",
+  "lat": 26.518,
+  "lon": 50.004,
+  "where": "40 nm NW of Bahrain (26.52, 50.00)",
+  "aircraft": {
+   "06a062": {
+    "hex": "06a062",
+    "flight": "QTR18F",
+    "reg": "A7-BAC",
+    "actype": "B77W",
+    "first_seen": "2026-10-20T05:52:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-20T05:52:37Z",
+    "lat": 26.4674,
+    "lon": 49.3821,
+    "alt": 30000,
+    "alt_geom": 31600,
+    "gs": 476.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a2b3": {
+    "hex": "06a2b3",
+    "flight": "QTR97U",
+    "reg": "A7-BEO",
+    "actype": "B77W",
+    "first_seen": "2026-10-20T05:52:37Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-20T05:52:37Z",
+    "lat": 26.4668,
+    "lon": 49.8647,
+    "alt": 29575,
+    "alt_geom": 31125,
+    "gs": 473.5,
+    "nic": 6,
+    "nacp": 9
+   },
+   "896364": {
+    "hex": "896364",
+    "flight": "ABY337",
+    "reg": "A6-ANM",
+    "actype": "A320",
+    "first_seen": "2026-10-20T05:52:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-20T05:52:37Z",
+    "lat": 26.619,
+    "lon": 50.7664,
+    "alt": 36000,
+    "alt_geom": 37700,
+    "gs": 409.2,
+    "nic": 7,
+    "nacp": 0
+   }
+  },
+  "emailed": false,
+  "aircraft_count": 3
  }
 ]
