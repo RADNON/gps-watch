@@ -1509,5 +1509,97 @@
   },
   "emailed": "2026-10-20T12:23:23Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261020-1957",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-20T16:57:06Z",
+  "last_seen": "2026-10-20T16:57:06Z",
+  "lat": 26.469,
+  "lon": 50.765,
+  "where": "27 nm NE of Bahrain (26.47, 50.77)",
+  "aircraft": {
+   "89627b": {
+    "hex": "89627b",
+    "flight": "ETD562",
+    "reg": "A6-AED",
+    "actype": "A321",
+    "first_seen": "2026-10-20T16:57:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-20T16:57:06Z",
+    "lat": 27.0855,
+    "lon": 50.4078,
+    "alt": 35000,
+    "alt_geom": 35375,
+    "gs": 480.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89405f": {
+    "hex": "89405f",
+    "flight": "GFA110",
+    "reg": "A9C-AH",
+    "actype": "A320",
+    "first_seen": "2026-10-20T16:57:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-20T16:57:06Z",
+    "lat": 26.3118,
+    "lon": 50.8053,
+    "alt": 3025,
+    "alt_geom": 3350,
+    "gs": 235.2,
+    "nic": 0,
+    "nacp": 0
+   },
+   "70606e": {
+    "hex": "70606e",
+    "flight": "KAC353",
+    "reg": "9K-AKS",
+    "actype": "A20N",
+    "first_seen": "2026-10-20T16:57:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-20T16:57:06Z",
+    "lat": 27.0246,
+    "lon": 50.9067,
+    "alt": 34975,
+    "alt_geom": 36600,
+    "gs": 474.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-20T16:57:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-20T16:57:06Z",
+    "lat": 25.4542,
+    "lon": 50.9386,
+    "alt": 4800,
+    "alt_geom": 5050,
+    "gs": 100.3,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-20T16:57:14Z",
+  "aircraft_count": 4
  }
 ]
