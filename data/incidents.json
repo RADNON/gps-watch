@@ -2491,5 +2491,76 @@
   },
   "emailed": "2026-10-21T22:14:21Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261022-0150",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-21T22:50:05Z",
+  "last_seen": "2026-10-21T22:50:05Z",
+  "lat": 26.399,
+  "lon": 50.937,
+  "where": "29 nm NE of Bahrain (26.40, 50.94)",
+  "aircraft": {
+   "a98ac0": {
+    "hex": "a98ac0",
+    "flight": "UNIDENT",
+    "reg": "N71385",
+    "actype": "L8",
+    "first_seen": "2026-10-21T22:14:13Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T22:50:05Z",
+    "lat": 25.6955,
+    "lon": 51.1393,
+    "alt": 14000,
+    "alt_geom": 14675,
+    "gs": 100.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8965fa": {
+    "hex": "8965fa",
+    "flight": "ADY413",
+    "reg": "A6-AUG",
+    "actype": "A320",
+    "first_seen": "2026-10-21T22:14:13Z",
+    "signs": [
+     "GPS integrity low (NIC 6)",
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T22:50:05Z",
+    "lat": 26.6395,
+    "lon": 51.1505,
+    "alt": 34000,
+    "alt_geom": 34425,
+    "gs": 414.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a2fd": {
+    "hex": "06a2fd",
+    "flight": "QTR95W",
+    "reg": "A7-BHZ",
+    "actype": "B789",
+    "first_seen": "2026-10-21T22:50:05Z",
+    "signs": [
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-10-21T22:50:05Z",
+    "lat": 26.8623,
+    "lon": 50.5202,
+    "alt": 30400,
+    "alt_geom": 31925,
+    "gs": 490.9,
+    "nic": 5,
+    "nacp": 9
+   }
+  },
+  "emailed": "2026-10-21T22:50:13Z",
+  "aircraft_count": 3
  }
 ]
