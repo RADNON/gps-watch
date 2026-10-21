@@ -2220,5 +2220,76 @@
   },
   "emailed": "2026-10-21T10:58:15Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261021-1549",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-21T12:49:32Z",
+  "last_seen": "2026-10-21T12:49:32Z",
+  "lat": 26.286,
+  "lon": 50.784,
+  "where": "18 nm NE of Bahrain (26.29, 50.78)",
+  "aircraft": {
+   "a98abc": {
+    "hex": "a98abc",
+    "flight": "UNIDENT",
+    "reg": "N71381",
+    "actype": "L8",
+    "first_seen": "2026-10-21T11:32:38Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T12:49:32Z",
+    "lat": 25.7997,
+    "lon": 51.1117,
+    "alt": 14025,
+    "alt_geom": 14750,
+    "gs": 95.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "728839": {
+    "hex": "728839",
+    "flight": "FBA332",
+    "reg": "YI-BAY",
+    "actype": "B739",
+    "first_seen": "2026-10-21T12:49:32Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T12:49:32Z",
+    "lat": 26.719,
+    "lon": 50.4233,
+    "alt": 34000,
+    "alt_geom": 35600,
+    "gs": 421.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a122": {
+    "hex": "06a122",
+    "flight": "QTR780",
+    "reg": "A7-ANF",
+    "actype": "A35K",
+    "first_seen": "2026-10-21T12:49:32Z",
+    "signs": [
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-21T12:49:32Z",
+    "lat": 26.3401,
+    "lon": 50.8173,
+    "alt": 27000,
+    "alt_geom": 28275,
+    "gs": 472.2,
+    "nic": 0,
+    "nacp": 9
+   }
+  },
+  "emailed": "2026-10-21T12:49:41Z",
+  "aircraft_count": 3
  }
 ]
