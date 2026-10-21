@@ -1678,7 +1678,7 @@
  {
   "id": "JAM-20261021-0415",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-21T01:15:37Z",
   "last_seen": "2026-10-21T01:53:31Z",
   "lat": 26.456,
@@ -1783,5 +1783,76 @@
   },
   "emailed": "2026-10-21T01:15:45Z",
   "aircraft_count": 5
+ },
+ {
+  "id": "JAM-20261021-0557",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-21T02:57:57Z",
+  "last_seen": "2026-10-21T02:57:57Z",
+  "lat": 27.833,
+  "lon": 50.012,
+  "where": "110 nm N of Bahrain (27.83, 50.01)",
+  "aircraft": {
+   "8965b5": {
+    "hex": "8965b5",
+    "flight": "FDB2XP",
+    "reg": "A6-FMY",
+    "actype": "B38M",
+    "first_seen": "2026-10-21T02:57:57Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T02:57:57Z",
+    "lat": 28.3885,
+    "lon": 49.8319,
+    "alt": 37000,
+    "alt_geom": 38575,
+    "gs": 480.7,
+    "nic": 0,
+    "nacp": 0
+   },
+   "3c4590": {
+    "hex": "3c4590",
+    "flight": "BOX746",
+    "reg": "D-AALP",
+    "actype": "B77L",
+    "first_seen": "2026-10-21T02:57:57Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T02:57:57Z",
+    "lat": 27.8221,
+    "lon": 49.8935,
+    "alt": 37000,
+    "alt_geom": 38600,
+    "gs": 516.2,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a2b2": {
+    "hex": "06a2b2",
+    "flight": "QTR1V",
+    "reg": "A7-BEN",
+    "actype": "B77W",
+    "first_seen": "2026-10-21T02:57:57Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T02:57:57Z",
+    "lat": 27.2898,
+    "lon": 50.311,
+    "alt": 27025,
+    "alt_geom": 28425,
+    "gs": 478.0,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-21T02:58:06Z",
+  "aircraft_count": 3
  }
 ]
