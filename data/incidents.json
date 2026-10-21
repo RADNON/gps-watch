@@ -2149,5 +2149,76 @@
   },
   "emailed": "2026-10-21T05:14:05Z",
   "aircraft_count": 15
+ },
+ {
+  "id": "JAM-20261021-1358",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-21T10:58:07Z",
+  "last_seen": "2026-10-21T10:58:07Z",
+  "lat": 27.021,
+  "lon": 50.306,
+  "where": "59 nm N of Bahrain (27.02, 50.31)",
+  "aircraft": {
+   "06a09a": {
+    "hex": "06a09a",
+    "flight": "QTR2U",
+    "reg": "A7-AHS",
+    "actype": "A320",
+    "first_seen": "2026-10-21T10:58:07Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T10:58:07Z",
+    "lat": 26.4278,
+    "lon": 49.9751,
+    "alt": 31050,
+    "alt_geom": 32600,
+    "gs": 436.8,
+    "nic": 0,
+    "nacp": 9
+   },
+   "894076": {
+    "hex": "894076",
+    "flight": "GFA9001",
+    "reg": "A9C-CC",
+    "actype": "A321",
+    "first_seen": "2026-10-21T10:58:07Z",
+    "signs": [
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-21T10:58:07Z",
+    "lat": 27.1262,
+    "lon": 50.4443,
+    "alt": 14475,
+    "alt_geom": 15300,
+    "gs": 348.9,
+    "nic": 0,
+    "nacp": 8
+   },
+   "8965d3": {
+    "hex": "8965d3",
+    "flight": "FDB1BH",
+    "reg": "A6-FKH",
+    "actype": "B38M",
+    "first_seen": "2026-10-21T10:58:07Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-21T10:58:07Z",
+    "lat": 27.5086,
+    "lon": 50.4999,
+    "alt": 39000,
+    "alt_geom": 40650,
+    "gs": 496.5,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-21T10:58:15Z",
+  "aircraft_count": 3
  }
 ]
