@@ -1860,10 +1860,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-21T05:13:56Z",
-  "last_seen": "2026-10-21T07:12:28Z",
-  "lat": 26.508,
-  "lon": 50.652,
-  "where": "27 nm N of Bahrain (26.51, 50.65)",
+  "last_seen": "2026-10-21T07:57:01Z",
+  "lat": 26.56,
+  "lon": 50.525,
+  "where": "29 nm N of Bahrain (26.56, 50.52)",
   "aircraft": {
    "89671c": {
     "hex": "89671c",
@@ -2090,9 +2090,64 @@
     "gs": 395.1,
     "nic": 0,
     "nacp": 0
+   },
+   "06a376": {
+    "hex": "06a376",
+    "flight": "QTR63N",
+    "reg": "A7-BOE",
+    "actype": "B77W",
+    "first_seen": "2026-10-21T07:57:01Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-21T07:57:01Z",
+    "lat": 26.881,
+    "lon": 49.3385,
+    "alt": 34500,
+    "alt_geom": 36125,
+    "gs": 450.7,
+    "nic": 6,
+    "nacp": 9
+   },
+   "4ba9ef": {
+    "hex": "4ba9ef",
+    "flight": "THY6213",
+    "reg": "TC-JOO",
+    "actype": "A332",
+    "first_seen": "2026-10-21T07:57:01Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T07:57:01Z",
+    "lat": 26.5673,
+    "lon": 50.0387,
+    "alt": 33000,
+    "alt_geom": 34675,
+    "gs": 480.7,
+    "nic": 0,
+    "nacp": 0
+   },
+   "706213": {
+    "hex": "706213",
+    "flight": "JZR115",
+    "reg": "9K-CBC",
+    "actype": "A20N",
+    "first_seen": "2026-10-21T07:57:01Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-21T07:57:01Z",
+    "lat": 26.8607,
+    "lon": 50.6731,
+    "alt": 27050,
+    "alt_geom": 28475,
+    "gs": 425.2,
+    "nic": 6,
+    "nacp": 8
    }
   },
   "emailed": "2026-10-21T05:14:05Z",
-  "aircraft_count": 12
+  "aircraft_count": 15
  }
 ]
