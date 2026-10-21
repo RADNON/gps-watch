@@ -2422,7 +2422,7 @@
  {
   "id": "JAM-20261022-0114",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-21T22:14:13Z",
   "last_seen": "2026-10-21T22:14:13Z",
   "lat": 25.924,
