@@ -1860,10 +1860,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-21T05:13:56Z",
-  "last_seen": "2026-10-21T06:18:49Z",
-  "lat": 26.527,
-  "lon": 50.579,
-  "where": "27 nm N of Bahrain (26.53, 50.58)",
+  "last_seen": "2026-10-21T07:12:28Z",
+  "lat": 26.508,
+  "lon": 50.652,
+  "where": "27 nm N of Bahrain (26.51, 50.65)",
   "aircraft": {
    "89671c": {
     "hex": "89671c",
@@ -1931,32 +1931,33 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-10-21T05:13:56Z",
-    "lat": 25.4212,
-    "lon": 51.4923,
-    "alt": 14000,
+    "last_seen": "2026-10-21T07:12:28Z",
+    "lat": 25.4105,
+    "lon": 51.4906,
+    "alt": 13975,
     "alt_geom": 14775,
-    "gs": 89.6,
+    "gs": 94.1,
     "nic": 0,
     "nacp": 0
    },
    "a98abc": {
     "hex": "a98abc",
-    "flight": "",
+    "flight": "UNIDENT",
     "reg": "N71381",
     "actype": "L8",
     "first_seen": "2026-10-21T05:13:56Z",
     "signs": [
-     "GPS integrity low (NIC 0)"
+     "GPS integrity low (NIC 0)",
+     "GPS accuracy low (NACp 0)"
     ],
-    "last_seen": "2026-10-21T05:13:56Z",
-    "lat": 25.4688,
-    "lon": 50.9413,
-    "alt": 12375,
-    "alt_geom": 13075,
-    "gs": 92.2,
+    "last_seen": "2026-10-21T07:12:28Z",
+    "lat": 25.8095,
+    "lon": 51.0794,
+    "alt": 14025,
+    "alt_geom": 14825,
+    "gs": 106.0,
     "nic": 0,
-    "nacp": null
+    "nacp": 0
    },
    "4d2357": {
     "hex": "4d2357",
@@ -2070,9 +2071,28 @@
     "gs": 447.1,
     "nic": 0,
     "nacp": 0
+   },
+   "06a083": {
+    "hex": "06a083",
+    "flight": "QTR48L",
+    "reg": "A7-BAQ",
+    "actype": "B77W",
+    "first_seen": "2026-10-21T07:12:28Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T07:12:28Z",
+    "lat": 25.9666,
+    "lon": 51.3219,
+    "alt": 21700,
+    "alt_geom": 22900,
+    "gs": 395.1,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-21T05:14:05Z",
-  "aircraft_count": 11
+  "aircraft_count": 12
  }
 ]
