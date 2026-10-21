@@ -1854,5 +1854,130 @@
   },
   "emailed": "2026-10-21T02:58:06Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261021-0813",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-21T05:13:56Z",
+  "last_seen": "2026-10-21T05:13:56Z",
+  "lat": 26.204,
+  "lon": 50.92,
+  "where": "22 nm E of Bahrain (26.20, 50.92)",
+  "aircraft": {
+   "89671c": {
+    "hex": "89671c",
+    "flight": "ABY668",
+    "reg": "A6-ARD",
+    "actype": "A20N",
+    "first_seen": "2026-10-21T04:40:26Z",
+    "signs": [
+     "GPS integrity low (NIC 6)",
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T05:13:56Z",
+    "lat": 26.58,
+    "lon": 50.8912,
+    "alt": 38050,
+    "alt_geom": 39750,
+    "gs": 392.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8962d1": {
+    "hex": "8962d1",
+    "flight": "ABY363",
+    "reg": "A6-ANB",
+    "actype": "A320",
+    "first_seen": "2026-10-21T05:13:56Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T05:13:56Z",
+    "lat": 26.957,
+    "lon": 49.5981,
+    "alt": 34000,
+    "alt_geom": 35350,
+    "gs": 414.6,
+    "nic": 0,
+    "nacp": 9
+   },
+   "8963d0": {
+    "hex": "8963d0",
+    "flight": "UAE17K",
+    "reg": "A6-EPA",
+    "actype": "B77W",
+    "first_seen": "2026-10-21T05:13:56Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-21T05:13:56Z",
+    "lat": 26.7368,
+    "lon": 50.3554,
+    "alt": 36000,
+    "alt_geom": 37625,
+    "gs": 433.8,
+    "nic": 7,
+    "nacp": 0
+   },
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-21T04:08:00Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T05:13:56Z",
+    "lat": 25.4212,
+    "lon": 51.4923,
+    "alt": 14000,
+    "alt_geom": 14775,
+    "gs": 89.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "a98abc": {
+    "hex": "a98abc",
+    "flight": "",
+    "reg": "N71381",
+    "actype": "L8",
+    "first_seen": "2026-10-21T05:13:56Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T05:13:56Z",
+    "lat": 25.4688,
+    "lon": 50.9413,
+    "alt": 12375,
+    "alt_geom": 13075,
+    "gs": 92.2,
+    "nic": 0,
+    "nacp": null
+   },
+   "4d2357": {
+    "hex": "4d2357",
+    "flight": "",
+    "reg": "9H-GTS",
+    "actype": "A320",
+    "first_seen": "2026-10-21T05:13:56Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-21T05:13:56Z",
+    "lat": 26.0598,
+    "lon": 52.2423,
+    "alt": 34000,
+    "alt_geom": 35600,
+    "gs": 410.5,
+    "nic": 8,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-21T05:14:05Z",
+  "aircraft_count": 6
  }
 ]
