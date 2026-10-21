@@ -1680,10 +1680,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-21T01:15:37Z",
-  "last_seen": "2026-10-21T01:15:37Z",
-  "lat": 26.215,
-  "lon": 51.721,
-  "where": "64 nm E of Bahrain (26.21, 51.72)",
+  "last_seen": "2026-10-21T01:53:31Z",
+  "lat": 26.456,
+  "lon": 51.377,
+  "where": "50 nm NE of Bahrain (26.46, 51.38)",
   "aircraft": {
    "a98ac7": {
     "hex": "a98ac7",
@@ -1695,12 +1695,12 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-10-21T01:15:37Z",
-    "lat": 25.6801,
-    "lon": 51.1126,
-    "alt": 13975,
-    "alt_geom": 14700,
-    "gs": 94.0,
+    "last_seen": "2026-10-21T01:53:31Z",
+    "lat": 25.7165,
+    "lon": 51.1328,
+    "alt": 14000,
+    "alt_geom": 14725,
+    "gs": 98.6,
     "nic": 0,
     "nacp": 0
    },
@@ -1742,9 +1742,46 @@
     "gs": 483.4,
     "nic": 0,
     "nacp": 0
+   },
+   "4bb841": {
+    "hex": "4bb841",
+    "flight": "PGT131",
+    "reg": "TC-NBA",
+    "actype": "A20N",
+    "first_seen": "2026-10-21T01:53:31Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-21T01:53:31Z",
+    "lat": 27.0231,
+    "lon": 50.3658,
+    "alt": 34025,
+    "alt_geom": 35600,
+    "gs": 424.5,
+    "nic": 6,
+    "nacp": 8
+   },
+   "70605b": {
+    "hex": "70605b",
+    "flight": "KAC284",
+    "reg": "9K-AOI",
+    "actype": "B77W",
+    "first_seen": "2026-10-21T01:53:31Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T01:53:31Z",
+    "lat": 26.5775,
+    "lon": 51.3377,
+    "alt": 28000,
+    "alt_geom": 29375,
+    "gs": 416.7,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-21T01:15:45Z",
-  "aircraft_count": 3
+  "aircraft_count": 5
  }
 ]
