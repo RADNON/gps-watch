@@ -1674,5 +1674,77 @@
   },
   "emailed": "2026-10-20T18:40:22Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261021-0415",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-21T01:15:37Z",
+  "last_seen": "2026-10-21T01:15:37Z",
+  "lat": 26.215,
+  "lon": 51.721,
+  "where": "64 nm E of Bahrain (26.21, 51.72)",
+  "aircraft": {
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-20T23:55:54Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T01:15:37Z",
+    "lat": 25.6801,
+    "lon": 51.1126,
+    "alt": 13975,
+    "alt_geom": 14700,
+    "gs": 94.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "706064": {
+    "hex": "706064",
+    "flight": "KAC348",
+    "reg": "9K-AKM",
+    "actype": "A20N",
+    "first_seen": "2026-10-21T01:15:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T01:15:37Z",
+    "lat": 26.4727,
+    "lon": 51.6533,
+    "alt": 28000,
+    "alt_geom": 29375,
+    "gs": 440.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896718": {
+    "hex": "896718",
+    "flight": "ABY798",
+    "reg": "A6-ARB",
+    "actype": "A20N",
+    "first_seen": "2026-10-21T01:15:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-21T01:15:37Z",
+    "lat": 26.4922,
+    "lon": 52.3975,
+    "alt": 36975,
+    "alt_geom": 38575,
+    "gs": 483.4,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-21T01:15:45Z",
+  "aircraft_count": 3
  }
 ]
