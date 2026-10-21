@@ -2291,5 +2291,76 @@
   },
   "emailed": "2026-10-21T12:49:41Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261021-2112",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-21T18:12:40Z",
+  "last_seen": "2026-10-21T18:12:40Z",
+  "lat": 26.686,
+  "lon": 50.745,
+  "where": "38 nm N of Bahrain (26.69, 50.74)",
+  "aircraft": {
+   "a98abc": {
+    "hex": "a98abc",
+    "flight": "UNIDENT",
+    "reg": "N71381",
+    "actype": "L8",
+    "first_seen": "2026-10-21T17:10:16Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T18:12:40Z",
+    "lat": 25.81,
+    "lon": 51.1094,
+    "alt": 14000,
+    "alt_geom": 14750,
+    "gs": 91.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "4002c5": {
+    "hex": "4002c5",
+    "flight": "VPCMV",
+    "reg": "VP-CMV",
+    "actype": "GLEX",
+    "first_seen": "2026-10-21T18:12:40Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-21T18:12:40Z",
+    "lat": 27.4988,
+    "lon": 50.3096,
+    "alt": 41000,
+    "alt_geom": 42725,
+    "gs": 526.1,
+    "nic": 6,
+    "nacp": 0
+   },
+   "4d2357": {
+    "hex": "4d2357",
+    "flight": "ETD587",
+    "reg": "9H-GTS",
+    "actype": "A320",
+    "first_seen": "2026-10-21T18:12:40Z",
+    "signs": [
+     "GPS accuracy low (NACp 6)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-21T18:12:40Z",
+    "lat": 26.7485,
+    "lon": 50.8151,
+    "alt": 32000,
+    "alt_geom": 33625,
+    "gs": 425.7,
+    "nic": 0,
+    "nacp": 6
+   }
+  },
+  "emailed": "2026-10-21T18:12:48Z",
+  "aircraft_count": 3
  }
 ]
