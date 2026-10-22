@@ -3382,5 +3382,77 @@
   },
   "emailed": "2026-10-22T09:35:20Z",
   "aircraft_count": 11
+ },
+ {
+  "id": "JAM-20261022-1627",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-22T13:27:14Z",
+  "last_seen": "2026-10-22T13:27:14Z",
+  "lat": 26.839,
+  "lon": 49.758,
+  "where": "63 nm NW of Bahrain (26.84, 49.76)",
+  "aircraft": {
+   "06a088": {
+    "hex": "06a088",
+    "flight": "QTR4N",
+    "reg": "A7-AHB",
+    "actype": "A320",
+    "first_seen": "2026-10-22T13:27:14Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T13:27:14Z",
+    "lat": 26.6823,
+    "lon": 49.6573,
+    "alt": 30975,
+    "alt_geom": 32625,
+    "gs": 508.2,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89671c": {
+    "hex": "89671c",
+    "flight": "ABY662",
+    "reg": "A6-ARD",
+    "actype": "A20N",
+    "first_seen": "2026-10-22T13:27:14Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-22T13:27:14Z",
+    "lat": 26.94,
+    "lon": 49.6584,
+    "alt": 38000,
+    "alt_geom": 39750,
+    "gs": 378.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "01026c": {
+    "hex": "01026c",
+    "flight": "SVI5504",
+    "reg": "SU-SKF",
+    "actype": "A321",
+    "first_seen": "2026-10-22T13:27:14Z",
+    "signs": [
+     "GPS accuracy low (NACp 5)",
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-22T13:27:14Z",
+    "lat": 26.8959,
+    "lon": 49.9584,
+    "alt": 32025,
+    "alt_geom": 33575,
+    "gs": 415.9,
+    "nic": 4,
+    "nacp": 5
+   }
+  },
+  "emailed": "2026-10-22T13:27:37Z",
+  "aircraft_count": 3
  }
 ]
