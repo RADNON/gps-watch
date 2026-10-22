@@ -3167,10 +3167,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-22T09:35:07Z",
-  "last_seen": "2026-10-22T09:35:07Z",
-  "lat": 26.673,
-  "lon": 50.202,
-  "where": "41 nm NW of Bahrain (26.67, 50.20)",
+  "last_seen": "2026-10-22T10:14:31Z",
+  "lat": 26.563,
+  "lon": 50.371,
+  "where": "31 nm N of Bahrain (26.56, 50.37)",
   "aircraft": {
    "710dc6": {
     "hex": "710dc6",
@@ -3246,9 +3246,66 @@
     "gs": 424.3,
     "nic": 0,
     "nacp": 9
+   },
+   "a98ac0": {
+    "hex": "a98ac0",
+    "flight": "UNIDENT",
+    "reg": "N71385",
+    "actype": "L8",
+    "first_seen": "2026-10-22T08:59:25Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T10:14:31Z",
+    "lat": 25.7771,
+    "lon": 51.0666,
+    "alt": 14000,
+    "alt_geom": 14700,
+    "gs": 86.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896768": {
+    "hex": "896768",
+    "flight": "ABY335",
+    "reg": "A6-AQU",
+    "actype": "A320",
+    "first_seen": "2026-10-22T10:14:31Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-22T10:14:31Z",
+    "lat": 26.8219,
+    "lon": 50.0579,
+    "alt": 34025,
+    "alt_geom": 35775,
+    "gs": 403.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "778567": {
+    "hex": "778567",
+    "flight": "SYR516",
+    "reg": "YK-AKG",
+    "actype": "A320",
+    "first_seen": "2026-10-22T10:14:31Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-22T10:14:31Z",
+    "lat": 26.6505,
+    "lon": 50.6633,
+    "alt": 32000,
+    "alt_geom": 33675,
+    "gs": 403.2,
+    "nic": 6,
+    "nacp": 9
    }
   },
   "emailed": "2026-10-22T09:35:20Z",
-  "aircraft_count": 4
+  "aircraft_count": 7
  }
 ]
