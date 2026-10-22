@@ -3744,5 +3744,75 @@
   },
   "emailed": "2026-10-22T20:01:51Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261022-2333",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-22T20:33:12Z",
+  "last_seen": "2026-10-22T20:33:12Z",
+  "lat": 25.363,
+  "lon": 53.446,
+  "where": "162 nm E of Bahrain (25.36, 53.45)",
+  "aircraft": {
+   "8940c3": {
+    "hex": "8940c3",
+    "flight": "GFA547",
+    "reg": "A9C-NF",
+    "actype": "A21N",
+    "first_seen": "2026-10-22T20:33:12Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T20:33:12Z",
+    "lat": 25.3847,
+    "lon": 53.2957,
+    "alt": 26025,
+    "alt_geom": 27475,
+    "gs": 446.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89409b": {
+    "hex": "89409b",
+    "flight": "GFA277",
+    "reg": "A9C-TD",
+    "actype": "A20N",
+    "first_seen": "2026-10-22T20:33:12Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T20:33:12Z",
+    "lat": 25.4614,
+    "lon": 53.4158,
+    "alt": 36000,
+    "alt_geom": 37750,
+    "gs": 379.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "801554": {
+    "hex": "801554",
+    "flight": "IGO16V",
+    "reg": "VT-IMX",
+    "actype": "A21N",
+    "first_seen": "2026-10-22T20:33:12Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-22T20:33:12Z",
+    "lat": 25.2436,
+    "lon": 53.6257,
+    "alt": 28525,
+    "alt_geom": 30075,
+    "gs": 370.4,
+    "nic": 8,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-22T20:33:31Z",
+  "aircraft_count": 3
  }
 ]
