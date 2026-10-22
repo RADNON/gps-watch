@@ -2850,10 +2850,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-22T05:31:55Z",
-  "last_seen": "2026-10-22T06:07:38Z",
-  "lat": 26.215,
-  "lon": 50.871,
-  "where": "19 nm NE of Bahrain (26.21, 50.87)",
+  "last_seen": "2026-10-22T06:50:12Z",
+  "lat": 26.295,
+  "lon": 51.064,
+  "where": "31 nm NE of Bahrain (26.30, 51.06)",
   "aircraft": {
    "a98ac0": {
     "hex": "a98ac0",
@@ -2865,12 +2865,12 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-10-22T06:07:38Z",
-    "lat": 25.8515,
-    "lon": 51.2611,
+    "last_seen": "2026-10-22T06:50:12Z",
+    "lat": 25.8567,
+    "lon": 51.2656,
     "alt": 14000,
     "alt_geom": 14775,
-    "gs": 103.7,
+    "gs": 100.5,
     "nic": 0,
     "nacp": 0
    },
@@ -3026,9 +3026,84 @@
     "gs": 377.8,
     "nic": 0,
     "nacp": 0
+   },
+   "896372": {
+    "hex": "896372",
+    "flight": "ABY385",
+    "reg": "A6-ANQ",
+    "actype": "A320",
+    "first_seen": "2026-10-22T06:50:12Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-22T06:50:12Z",
+    "lat": 26.8223,
+    "lon": 50.6501,
+    "alt": 34000,
+    "alt_geom": 35775,
+    "gs": 420.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896668": {
+    "hex": "896668",
+    "flight": "ABY357",
+    "reg": "A6-AQH",
+    "actype": "A320",
+    "first_seen": "2026-10-22T06:50:12Z",
+    "signs": [
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-10-22T06:50:12Z",
+    "lat": 26.576,
+    "lon": 51.3428,
+    "alt": 34000,
+    "alt_geom": 35575,
+    "gs": 398.6,
+    "nic": 5,
+    "nacp": 8
+   },
+   "896633": {
+    "hex": "896633",
+    "flight": "ADY015",
+    "reg": "A6-AUK",
+    "actype": "A320",
+    "first_seen": "2026-10-22T06:50:12Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-22T06:50:12Z",
+    "lat": 26.2611,
+    "lon": 51.7409,
+    "alt": 20525,
+    "alt_geom": 21800,
+    "gs": 397.8,
+    "nic": 6,
+    "nacp": 8
+   },
+   "896408": {
+    "hex": "896408",
+    "flight": "",
+    "reg": "A6-BLC",
+    "actype": "B789",
+    "first_seen": "2026-10-22T06:50:12Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)",
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-22T06:50:12Z",
+    "lat": 26.2423,
+    "lon": 52.2522,
+    "alt": 31625,
+    "alt_geom": 33325,
+    "gs": 456.2,
+    "nic": 4,
+    "nacp": 7
    }
   },
   "emailed": "2026-10-22T05:32:24Z",
-  "aircraft_count": 9
+  "aircraft_count": 13
  }
 ]
