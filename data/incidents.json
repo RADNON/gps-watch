@@ -3543,5 +3543,77 @@
   },
   "emailed": "2026-10-22T15:20:47Z",
   "aircraft_count": 4
+ },
+ {
+  "id": "JAM-20261022-2009",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-22T17:09:35Z",
+  "last_seen": "2026-10-22T17:09:35Z",
+  "lat": 27.202,
+  "lon": 50.509,
+  "where": "68 nm N of Bahrain (27.20, 50.51)",
+  "aircraft": {
+   "70606e": {
+    "hex": "70606e",
+    "flight": "KAC357",
+    "reg": "9K-AKS",
+    "actype": "A20N",
+    "first_seen": "2026-10-22T17:09:35Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T17:09:35Z",
+    "lat": 27.4857,
+    "lon": 50.3368,
+    "alt": 35000,
+    "alt_geom": 36675,
+    "gs": 484.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896440": {
+    "hex": "896440",
+    "flight": "ETD562",
+    "reg": "A6-AEJ",
+    "actype": "A321",
+    "first_seen": "2026-10-22T17:09:35Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T17:09:35Z",
+    "lat": 27.0149,
+    "lon": 50.367,
+    "alt": 33000,
+    "alt_geom": 34600,
+    "gs": 468.1,
+    "nic": 0,
+    "nacp": 7
+   },
+   "4bb0eb": {
+    "hex": "4bb0eb",
+    "flight": "THY45M",
+    "reg": "TC-LGK",
+    "actype": "A359",
+    "first_seen": "2026-10-22T17:09:35Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-22T17:09:35Z",
+    "lat": 27.1052,
+    "lon": 50.8239,
+    "alt": 37000,
+    "alt_geom": 38575,
+    "gs": 531.8,
+    "nic": 6,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-22T17:09:43Z",
+  "aircraft_count": 3
  }
 ]
