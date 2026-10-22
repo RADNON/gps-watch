@@ -3454,5 +3454,94 @@
   },
   "emailed": "2026-10-22T13:27:37Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261022-1820",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-22T15:20:37Z",
+  "last_seen": "2026-10-22T15:20:37Z",
+  "lat": 27.114,
+  "lon": 50.453,
+  "where": "63 nm N of Bahrain (27.11, 50.45)",
+  "aircraft": {
+   "896512": {
+    "hex": "896512",
+    "flight": "FDB8443",
+    "reg": "A6-FMG",
+    "actype": "B38M",
+    "first_seen": "2026-10-22T15:20:37Z",
+    "signs": [
+     "GPS integrity low (NIC 2)"
+    ],
+    "last_seen": "2026-10-22T15:20:37Z",
+    "lat": 26.7595,
+    "lon": 49.9774,
+    "alt": 36000,
+    "alt_geom": 37725,
+    "gs": 395.0,
+    "nic": 2,
+    "nacp": 8
+   },
+   "89668a": {
+    "hex": "89668a",
+    "flight": "FDB3DK",
+    "reg": "A6-FPI",
+    "actype": "B38M",
+    "first_seen": "2026-10-22T15:20:37Z",
+    "signs": [
+     "GPS integrity low (NIC 1)"
+    ],
+    "last_seen": "2026-10-22T15:20:37Z",
+    "lat": 27.611,
+    "lon": 50.4214,
+    "alt": 35000,
+    "alt_geom": 36625,
+    "gs": 458.5,
+    "nic": 1,
+    "nacp": 8
+   },
+   "89409e": {
+    "hex": "89409e",
+    "flight": "GFA013",
+    "reg": "A9C-NA",
+    "actype": "A21N",
+    "first_seen": "2026-10-22T15:20:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T15:20:37Z",
+    "lat": 27.0622,
+    "lon": 50.4951,
+    "alt": 13500,
+    "alt_geom": 14300,
+    "gs": 301.9,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896582": {
+    "hex": "896582",
+    "flight": "ABY367",
+    "reg": "A6-ATD",
+    "actype": "A21N",
+    "first_seen": "2026-10-22T15:20:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-22T15:20:37Z",
+    "lat": 27.0244,
+    "lon": 50.9182,
+    "alt": 37000,
+    "alt_geom": 38750,
+    "gs": 499.1,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-22T15:20:47Z",
+  "aircraft_count": 4
  }
 ]
