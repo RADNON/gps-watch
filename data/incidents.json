@@ -3674,5 +3674,75 @@
   },
   "emailed": "2026-10-22T17:09:43Z",
   "aircraft_count": 6
+ },
+ {
+  "id": "JAM-20261022-2301",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-22T20:01:43Z",
+  "last_seen": "2026-10-22T20:01:43Z",
+  "lat": 26.168,
+  "lon": 50.588,
+  "where": "over Bahrain (26.17, 50.59)",
+  "aircraft": {
+   "a98abd": {
+    "hex": "a98abd",
+    "flight": "UNIDENT",
+    "reg": "N71382",
+    "actype": "L8",
+    "first_seen": "2026-10-22T18:51:40Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T20:01:43Z",
+    "lat": 25.7612,
+    "lon": 51.1077,
+    "alt": 13975,
+    "alt_geom": 14725,
+    "gs": 89.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a2b8": {
+    "hex": "06a2b8",
+    "flight": "QTR88R",
+    "reg": "A7-BET",
+    "actype": "B77W",
+    "first_seen": "2026-10-22T20:01:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T20:01:43Z",
+    "lat": 26.4857,
+    "lon": 49.9928,
+    "alt": 33000,
+    "alt_geom": 34650,
+    "gs": 534.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8966a8": {
+    "hex": "8966a8",
+    "flight": "ETD3DZ",
+    "reg": "A6-LRC",
+    "actype": "A21N",
+    "first_seen": "2026-10-22T20:01:43Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-22T20:01:43Z",
+    "lat": 26.2567,
+    "lon": 50.6649,
+    "alt": 1075,
+    "alt_geom": 1125,
+    "gs": 166.1,
+    "nic": 6,
+    "nacp": 8
+   }
+  },
+  "emailed": "2026-10-22T20:01:51Z",
+  "aircraft_count": 3
  }
 ]
