@@ -2850,10 +2850,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-22T05:31:55Z",
-  "last_seen": "2026-10-22T06:50:12Z",
-  "lat": 26.295,
-  "lon": 51.064,
-  "where": "31 nm NE of Bahrain (26.30, 51.06)",
+  "last_seen": "2026-10-22T07:32:43Z",
+  "lat": 26.458,
+  "lon": 50.962,
+  "where": "32 nm NE of Bahrain (26.46, 50.96)",
   "aircraft": {
    "a98ac0": {
     "hex": "a98ac0",
@@ -3101,9 +3101,65 @@
     "gs": 456.2,
     "nic": 4,
     "nacp": 7
+   },
+   "89648e": {
+    "hex": "89648e",
+    "flight": "FDB201",
+    "reg": "A6-FGI",
+    "actype": "B738",
+    "first_seen": "2026-10-22T07:32:43Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T07:32:43Z",
+    "lat": 27.3264,
+    "lon": 50.3082,
+    "alt": 38000,
+    "alt_geom": 39775,
+    "gs": 405.2,
+    "nic": 0,
+    "nacp": 9
+   },
+   "4c8096": {
+    "hex": "4c8096",
+    "flight": "CYP106",
+    "reg": "5B-DEA",
+    "actype": "BCS3",
+    "first_seen": "2026-10-22T07:32:43Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-22T07:32:43Z",
+    "lat": 27.3837,
+    "lon": 50.4665,
+    "alt": 36975,
+    "alt_geom": 38700,
+    "gs": 492.5,
+    "nic": 0,
+    "nacp": 9
+   },
+   "706077": {
+    "hex": "706077",
+    "flight": "KAC304",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-22T07:32:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-22T07:32:43Z",
+    "lat": 26.7718,
+    "lon": 50.7824,
+    "alt": 28000,
+    "alt_geom": 29500,
+    "gs": 423.8,
+    "nic": 6,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-22T05:32:24Z",
-  "aircraft_count": 13
+  "aircraft_count": 16
  }
 ]
