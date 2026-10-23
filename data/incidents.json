@@ -4209,7 +4209,7 @@
  {
   "id": "JAM-20261023-0656",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-23T03:56:10Z",
   "last_seen": "2026-10-23T08:16:28Z",
   "lat": 26.796,
