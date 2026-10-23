@@ -4609,10 +4609,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-23T10:39:46Z",
-  "last_seen": "2026-10-23T10:39:46Z",
-  "lat": 28.585,
-  "lon": 49.321,
-  "where": "165 nm NW of Bahrain (28.59, 49.32)",
+  "last_seen": "2026-10-23T11:12:55Z",
+  "lat": 27.762,
+  "lon": 49.828,
+  "where": "109 nm N of Bahrain (27.76, 49.83)",
   "aircraft": {
    "896719": {
     "hex": "896719",
@@ -4670,10 +4670,85 @@
     "gs": 475.7,
     "nic": 0,
     "nacp": 9
+   },
+   "4bb1c3": {
+    "hex": "4bb1c3",
+    "flight": "THY2PE",
+    "reg": "TC-LNC",
+    "actype": "A333",
+    "first_seen": "2026-10-23T11:12:55Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T11:12:55Z",
+    "lat": 26.8983,
+    "lon": 49.7941,
+    "alt": 34000,
+    "alt_geom": 34700,
+    "gs": 399.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8962e6": {
+    "hex": "8962e6",
+    "flight": "ETD843",
+    "reg": "A6-ETH",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T11:12:55Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T11:12:55Z",
+    "lat": 27.5796,
+    "lon": 49.8409,
+    "alt": 34000,
+    "alt_geom": 35525,
+    "gs": 442.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896532": {
+    "hex": "896532",
+    "flight": "FDB2RK",
+    "reg": "A6-FMM",
+    "actype": "B38M",
+    "first_seen": "2026-10-23T11:12:55Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-23T11:12:55Z",
+    "lat": 27.4513,
+    "lon": 50.5441,
+    "alt": 37000,
+    "alt_geom": 38675,
+    "gs": 505.1,
+    "nic": 6,
+    "nacp": 9
+   },
+   "8963dc": {
+    "hex": "8963dc",
+    "flight": "UAE5M",
+    "reg": "A6-EPM",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T11:12:55Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T11:12:55Z",
+    "lat": 26.6525,
+    "lon": 50.6564,
+    "alt": 34000,
+    "alt_geom": 35625,
+    "gs": 419.6,
+    "nic": 0,
+    "nacp": 8
    }
   },
   "emailed": "2026-10-23T10:39:55Z",
-  "aircraft_count": 3
+  "aircraft_count": 7
  },
  {
   "id": "JAM-20261023-1339-2",
