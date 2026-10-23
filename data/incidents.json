@@ -5546,5 +5546,76 @@
   },
   "emailed": "2026-10-23T19:48:53Z",
   "aircraft_count": 6
+ },
+ {
+  "id": "JAM-20261024-0152",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-23T22:52:03Z",
+  "last_seen": "2026-10-23T22:52:03Z",
+  "lat": 27.194,
+  "lon": 50.358,
+  "where": "68 nm N of Bahrain (27.19, 50.36)",
+  "aircraft": {
+   "4baa62": {
+    "hex": "4baa62",
+    "flight": "THY7TJ",
+    "reg": "TC-JSB",
+    "actype": "A321",
+    "first_seen": "2026-10-23T22:52:03Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T22:52:03Z",
+    "lat": 27.7658,
+    "lon": 49.7971,
+    "alt": 30000,
+    "alt_geom": 31350,
+    "gs": null,
+    "nic": 0,
+    "nacp": null
+   },
+   "8940ca": {
+    "hex": "8940ca",
+    "flight": "GFA87S",
+    "reg": "A9C-NH",
+    "actype": "A21N",
+    "first_seen": "2026-10-23T22:52:03Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T22:52:03Z",
+    "lat": 26.9863,
+    "lon": 50.3956,
+    "alt": 17425,
+    "alt_geom": 18275,
+    "gs": 363.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "74482c": {
+    "hex": "74482c",
+    "flight": "RJA622",
+    "reg": "JY-RAL",
+    "actype": "A20N",
+    "first_seen": "2026-10-23T22:52:03Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T22:52:03Z",
+    "lat": 26.8305,
+    "lon": 50.8807,
+    "alt": 36975,
+    "alt_geom": 38675,
+    "gs": 504.2,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-23T22:52:12Z",
+  "aircraft_count": 3
  }
 ]
