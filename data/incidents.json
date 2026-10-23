@@ -5323,5 +5323,169 @@
   },
   "emailed": "2026-10-23T16:57:15Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261023-2248",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-23T19:48:45Z",
+  "last_seen": "2026-10-23T19:48:45Z",
+  "lat": 25.58,
+  "lon": 54.149,
+  "where": "197 nm E of Bahrain (25.58, 54.15)",
+  "aircraft": {
+   "896366": {
+    "hex": "896366",
+    "flight": "ABY620",
+    "reg": "A6-ANO",
+    "actype": "A320",
+    "first_seen": "2026-10-23T19:48:45Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 4)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T19:48:45Z",
+    "lat": 25.5374,
+    "lon": 53.7255,
+    "alt": 26275,
+    "alt_geom": 27525,
+    "gs": 402.4,
+    "nic": 4,
+    "nacp": 0
+   },
+   "4ba9ea": {
+    "hex": "4ba9ea",
+    "flight": "THY51U",
+    "reg": "TC-JOJ",
+    "actype": "A333",
+    "first_seen": "2026-10-23T19:48:45Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T19:48:45Z",
+    "lat": 25.756,
+    "lon": 54.2882,
+    "alt": 37000,
+    "alt_geom": 38700,
+    "gs": 548.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "4bb276": {
+    "hex": "4bb276",
+    "flight": "THY2YJ",
+    "reg": "TC-LSV",
+    "actype": "A21N",
+    "first_seen": "2026-10-23T19:48:45Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T19:48:45Z",
+    "lat": 25.7547,
+    "lon": 54.2915,
+    "alt": 33025,
+    "alt_geom": 33200,
+    "gs": 511.7,
+    "nic": 7,
+    "nacp": 0
+   },
+   "8940ca": {
+    "hex": "8940ca",
+    "flight": "GFA135",
+    "reg": "A9C-NH",
+    "actype": "A21N",
+    "first_seen": "2026-10-23T19:48:45Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T19:48:45Z",
+    "lat": 25.2715,
+    "lon": 54.2918,
+    "alt": 30000,
+    "alt_geom": 31550,
+    "gs": 407.6,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-23T19:48:53Z",
+  "aircraft_count": 4
+ },
+ {
+  "id": "JAM-20261023-2248-2",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-23T19:48:45Z",
+  "last_seen": "2026-10-23T19:48:45Z",
+  "lat": 25.586,
+  "lon": 51.776,
+  "where": "72 nm SE of Bahrain (25.59, 51.78)",
+  "aircraft": {
+   "a98ac6": {
+    "hex": "a98ac6",
+    "flight": "UNIDENT",
+    "reg": "N7139A",
+    "actype": "C172",
+    "first_seen": "2026-10-23T18:36:42Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T19:48:45Z",
+    "lat": 25.7536,
+    "lon": 51.0835,
+    "alt": 14025,
+    "alt_geom": 14725,
+    "gs": 94.9,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a374": {
+    "hex": "06a374",
+    "flight": "QTR1083",
+    "reg": "A7-BOC",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T19:48:45Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T19:48:45Z",
+    "lat": 25.6695,
+    "lon": 51.807,
+    "alt": 13925,
+    "alt_geom": 14675,
+    "gs": 322.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a13d": {
+    "hex": "06a13d",
+    "flight": "QTR933",
+    "reg": "A7-BEA",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T19:48:45Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T19:48:45Z",
+    "lat": 25.3358,
+    "lon": 52.4383,
+    "alt": 19725,
+    "alt_geom": 20775,
+    "gs": 394.0,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-23T19:48:53Z",
+  "aircraft_count": 3
  }
 ]
