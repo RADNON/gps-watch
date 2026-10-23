@@ -5046,5 +5046,75 @@
   },
   "emailed": "2026-10-23T10:39:55Z",
   "aircraft_count": 15
+ },
+ {
+  "id": "JAM-20261023-1840",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-23T15:40:19Z",
+  "last_seen": "2026-10-23T15:40:19Z",
+  "lat": 25.735,
+  "lon": 52.72,
+  "where": "119 nm E of Bahrain (25.73, 52.72)",
+  "aircraft": {
+   "748051": {
+    "hex": "748051",
+    "flight": "MEA428",
+    "reg": "OD-MEE",
+    "actype": "A332",
+    "first_seen": "2026-10-23T15:40:19Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T15:40:19Z",
+    "lat": 26.3761,
+    "lon": 52.3186,
+    "alt": 33000,
+    "alt_geom": 34625,
+    "gs": 556.6,
+    "nic": 0,
+    "nacp": 8
+   },
+   "01026c": {
+    "hex": "01026c",
+    "flight": "SVI4606",
+    "reg": "SU-SKF",
+    "actype": "A321",
+    "first_seen": "2026-10-23T15:40:19Z",
+    "signs": [
+     "GPS accuracy low (NACp 5)",
+     "GPS integrity low (NIC 2)"
+    ],
+    "last_seen": "2026-10-23T15:40:19Z",
+    "lat": 25.8638,
+    "lon": 52.6813,
+    "alt": 32000,
+    "alt_geom": 32325,
+    "gs": 393.6,
+    "nic": 2,
+    "nacp": 5
+   },
+   "06a136": {
+    "hex": "06a136",
+    "flight": "QTR934",
+    "reg": "A7-BAT",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T15:40:19Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T15:40:19Z",
+    "lat": 24.9646,
+    "lon": 53.1608,
+    "alt": 24050,
+    "alt_geom": 25325,
+    "gs": 493.1,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-23T15:40:27Z",
+  "aircraft_count": 3
  }
 ]
