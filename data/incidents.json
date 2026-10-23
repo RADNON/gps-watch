@@ -4753,7 +4753,7 @@
  {
   "id": "JAM-20261023-1339-2",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-23T10:39:46Z",
   "last_seen": "2026-10-23T13:43:02Z",
   "lat": 26.1,
