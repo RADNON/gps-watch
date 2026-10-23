@@ -4755,10 +4755,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-23T10:39:46Z",
-  "last_seen": "2026-10-23T13:02:32Z",
-  "lat": 26.253,
-  "lon": 50.874,
-  "where": "21 nm NE of Bahrain (26.25, 50.87)",
+  "last_seen": "2026-10-23T13:43:02Z",
+  "lat": 26.1,
+  "lon": 50.943,
+  "where": "21 nm E of Bahrain (26.10, 50.94)",
   "aircraft": {
    "a98abd": {
     "hex": "a98abd",
@@ -4770,12 +4770,12 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-10-23T12:14:09Z",
-    "lat": 25.7336,
-    "lon": 50.9863,
+    "last_seen": "2026-10-23T13:43:02Z",
+    "lat": 25.6829,
+    "lon": 50.9768,
     "alt": 14000,
     "alt_geom": 14675,
-    "gs": 83.0,
+    "gs": 101.5,
     "nic": 0,
     "nacp": 0
    },
@@ -4966,9 +4966,85 @@
     "gs": 494.9,
     "nic": 0,
     "nacp": 0
+   },
+   "06a13a": {
+    "hex": "06a13a",
+    "flight": "QTR79Q",
+    "reg": "A7-BAX",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T13:43:02Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T13:43:02Z",
+    "lat": 26.1399,
+    "lon": 50.9462,
+    "alt": 24225,
+    "alt_geom": 25475,
+    "gs": 440.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89659b": {
+    "hex": "89659b",
+    "flight": "ETD8NY",
+    "reg": "A6-XWE",
+    "actype": "A35K",
+    "first_seen": "2026-10-23T13:43:02Z",
+    "signs": [
+     "GPS accuracy low (NACp 6)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-23T13:43:02Z",
+    "lat": 26.4534,
+    "lon": 51.0745,
+    "alt": 37000,
+    "alt_geom": 38700,
+    "gs": 574.0,
+    "nic": 6,
+    "nacp": 6
+   },
+   "06a2af": {
+    "hex": "06a2af",
+    "flight": "QTR17E",
+    "reg": "A7-BEK",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T13:43:02Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T13:43:02Z",
+    "lat": 25.3183,
+    "lon": 51.2053,
+    "alt": 12550,
+    "alt_geom": 13350,
+    "gs": 322.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a105": {
+    "hex": "06a105",
+    "flight": "QTR67G",
+    "reg": "A7-ALQ",
+    "actype": "A359",
+    "first_seen": "2026-10-23T13:43:02Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T13:43:02Z",
+    "lat": 24.849,
+    "lon": 51.3096,
+    "alt": 19075,
+    "alt_geom": 20050,
+    "gs": 314.7,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-23T10:39:55Z",
-  "aircraft_count": 11
+  "aircraft_count": 15
  }
 ]
