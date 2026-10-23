@@ -4211,10 +4211,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-23T03:56:10Z",
-  "last_seen": "2026-10-23T03:56:10Z",
-  "lat": 27.244,
-  "lon": 50.54,
-  "where": "70 nm N of Bahrain (27.24, 50.54)",
+  "last_seen": "2026-10-23T05:04:35Z",
+  "lat": 26.938,
+  "lon": 50.255,
+  "where": "54 nm N of Bahrain (26.94, 50.26)",
   "aircraft": {
    "896603": {
     "hex": "896603",
@@ -4272,9 +4272,89 @@
     "gs": 500.1,
     "nic": 0,
     "nacp": 0
+   },
+   "06a09c": {
+    "hex": "06a09c",
+    "flight": "QTR35E",
+    "reg": "A7-AHU",
+    "actype": "A320",
+    "first_seen": "2026-10-23T05:04:35Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T05:04:35Z",
+    "lat": 26.8821,
+    "lon": 49.5392,
+    "alt": 30000,
+    "alt_geom": 30675,
+    "gs": 426.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a063": {
+    "hex": "06a063",
+    "flight": "QTR49Q",
+    "reg": "A7-BAI",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T05:04:35Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T05:04:35Z",
+    "lat": 26.4302,
+    "lon": 49.6006,
+    "alt": 36000,
+    "alt_geom": 37725,
+    "gs": 395.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89630c": {
+    "hex": "89630c",
+    "flight": "UAE98X",
+    "reg": "A6-ENJ",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T05:04:35Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T05:04:35Z",
+    "lat": 26.773,
+    "lon": 50.2165,
+    "alt": 34000,
+    "alt_geom": 35625,
+    "gs": 422.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896503": {
+    "hex": "896503",
+    "flight": "ABY246",
+    "reg": "A6-AOW",
+    "actype": "A320",
+    "first_seen": "2026-10-23T05:04:35Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T05:04:35Z",
+    "lat": 26.7499,
+    "lon": 50.8085,
+    "alt": 32000,
+    "alt_geom": 33575,
+    "gs": 416.9,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-23T03:56:25Z",
-  "aircraft_count": 3
+  "aircraft_count": 7
  }
 ]
