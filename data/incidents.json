@@ -4211,10 +4211,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-23T03:56:10Z",
-  "last_seen": "2026-10-23T05:04:35Z",
-  "lat": 26.938,
-  "lon": 50.255,
-  "where": "54 nm N of Bahrain (26.94, 50.26)",
+  "last_seen": "2026-10-23T05:36:00Z",
+  "lat": 26.964,
+  "lon": 50.269,
+  "where": "56 nm N of Bahrain (26.96, 50.27)",
   "aircraft": {
    "896603": {
     "hex": "896603",
@@ -4352,9 +4352,103 @@
     "gs": 416.9,
     "nic": 0,
     "nacp": 0
+   },
+   "06a0f4": {
+    "hex": "06a0f4",
+    "flight": "QTR58G",
+    "reg": "A7-ANT",
+    "actype": "A35K",
+    "first_seen": "2026-10-23T05:36:00Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)"
+    ],
+    "last_seen": "2026-10-23T05:36:00Z",
+    "lat": 27.5451,
+    "lon": 49.8722,
+    "alt": 28000,
+    "alt_geom": 29400,
+    "gs": 480.0,
+    "nic": 7,
+    "nacp": 7
+   },
+   "89655f": {
+    "hex": "89655f",
+    "flight": "UAE51N",
+    "reg": "A6-EVS",
+    "actype": "A388",
+    "first_seen": "2026-10-23T05:36:00Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)"
+    ],
+    "last_seen": "2026-10-23T05:36:00Z",
+    "lat": 27.4238,
+    "lon": 49.9804,
+    "alt": 32000,
+    "alt_geom": null,
+    "gs": 450.0,
+    "nic": 7,
+    "nacp": 7
+   },
+   "896364": {
+    "hex": "896364",
+    "flight": "ABY583",
+    "reg": "A6-ANM",
+    "actype": "A320",
+    "first_seen": "2026-10-23T05:36:00Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T05:36:00Z",
+    "lat": 26.7588,
+    "lon": 50.1049,
+    "alt": 36025,
+    "alt_geom": 37125,
+    "gs": 372.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "74483a": {
+    "hex": "74483a",
+    "flight": "RJA081",
+    "reg": "JY-RAZ",
+    "actype": "A321",
+    "first_seen": "2026-10-23T05:36:00Z",
+    "signs": [
+     "GPS integrity low (NIC 3)"
+    ],
+    "last_seen": "2026-10-23T05:36:00Z",
+    "lat": 27.0229,
+    "lon": 50.4282,
+    "alt": 33000,
+    "alt_geom": 34550,
+    "gs": 510.2,
+    "nic": 3,
+    "nacp": 9
+   },
+   "06a12d": {
+    "hex": "06a12d",
+    "flight": "QTR16A",
+    "reg": "A7-ANQ",
+    "actype": "A35K",
+    "first_seen": "2026-10-23T05:36:00Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-23T05:36:00Z",
+    "lat": 26.2521,
+    "lon": 51.0547,
+    "alt": 19250,
+    "alt_geom": 20350,
+    "gs": 415.8,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-23T03:56:25Z",
-  "aircraft_count": 7
+  "aircraft_count": 12
  }
 ]
