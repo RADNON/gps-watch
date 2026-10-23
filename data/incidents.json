@@ -5419,7 +5419,7 @@
  {
   "id": "JAM-20261023-2248-2",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-23T19:48:45Z",
   "last_seen": "2026-10-23T20:48:01Z",
   "lat": 25.982,
