@@ -4211,10 +4211,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-23T03:56:10Z",
-  "last_seen": "2026-10-23T06:09:49Z",
-  "lat": 26.829,
-  "lon": 50.356,
-  "where": "47 nm N of Bahrain (26.83, 50.36)",
+  "last_seen": "2026-10-23T07:37:17Z",
+  "lat": 26.811,
+  "lon": 50.385,
+  "where": "45 nm N of Bahrain (26.81, 50.38)",
   "aircraft": {
    "896603": {
     "hex": "896603",
@@ -4457,12 +4457,12 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-10-23T06:09:49Z",
-    "lat": 25.775,
-    "lon": 51.0998,
-    "alt": 14000,
-    "alt_geom": 14750,
-    "gs": 100.2,
+    "last_seen": "2026-10-23T07:37:17Z",
+    "lat": 25.7434,
+    "lon": 51.1016,
+    "alt": 13975,
+    "alt_geom": 14725,
+    "gs": 102.5,
     "nic": 0,
     "nacp": 0
    },
@@ -4505,9 +4505,45 @@
     "gs": 387.8,
     "nic": 0,
     "nacp": 0
+   },
+   "896769": {
+    "hex": "896769",
+    "flight": "ABY071",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-23T07:37:17Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-23T07:37:17Z",
+    "lat": 26.9721,
+    "lon": 50.578,
+    "alt": 37000,
+    "alt_geom": 38775,
+    "gs": 520.2,
+    "nic": 7,
+    "nacp": 0
+   },
+   "8963d4": {
+    "hex": "8963d4",
+    "flight": "UAE2U",
+    "reg": "A6-EPE",
+    "actype": "B77W",
+    "first_seen": "2026-10-23T07:37:17Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-23T07:37:17Z",
+    "lat": 26.4036,
+    "lon": 50.627,
+    "alt": 4275,
+    "alt_geom": 4525,
+    "gs": 278.4,
+    "nic": 0,
+    "nacp": 9
    }
   },
   "emailed": "2026-10-23T03:56:25Z",
-  "aircraft_count": 15
+  "aircraft_count": 17
  }
 ]
