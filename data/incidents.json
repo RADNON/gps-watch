@@ -4607,7 +4607,7 @@
  {
   "id": "JAM-20261023-1339",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-23T10:39:46Z",
   "last_seen": "2026-10-23T11:12:55Z",
   "lat": 27.762,
@@ -4755,10 +4755,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-23T10:39:46Z",
-  "last_seen": "2026-10-23T11:50:13Z",
-  "lat": 25.935,
-  "lon": 51.059,
-  "where": "29 nm E of Bahrain (25.93, 51.06)",
+  "last_seen": "2026-10-23T12:14:09Z",
+  "lat": 25.927,
+  "lon": 51.119,
+  "where": "32 nm E of Bahrain (25.93, 51.12)",
   "aircraft": {
    "a98abd": {
     "hex": "a98abd",
@@ -4770,12 +4770,12 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-10-23T11:50:13Z",
-    "lat": 25.7587,
-    "lon": 50.9931,
+    "last_seen": "2026-10-23T12:14:09Z",
+    "lat": 25.7336,
+    "lon": 50.9863,
     "alt": 14000,
     "alt_geom": 14675,
-    "gs": 85.4,
+    "gs": 83.0,
     "nic": 0,
     "nacp": 0
    },
@@ -4872,9 +4872,45 @@
     "gs": null,
     "nic": 0,
     "nacp": 9
+   },
+   "503cc6": {
+    "hex": "503cc6",
+    "flight": "ETD6DU",
+    "reg": "LY-NOW",
+    "actype": "A320",
+    "first_seen": "2026-10-23T12:14:09Z",
+    "signs": [
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-23T12:14:09Z",
+    "lat": 26.4758,
+    "lon": 51.2195,
+    "alt": 32000,
+    "alt_geom": 33575,
+    "gs": 408.6,
+    "nic": 4,
+    "nacp": 8
+   },
+   "06a120": {
+    "hex": "06a120",
+    "flight": "QTR98P",
+    "reg": "A7-AND",
+    "actype": "A35K",
+    "first_seen": "2026-10-23T12:14:09Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-23T12:14:09Z",
+    "lat": 25.3548,
+    "lon": 51.3802,
+    "alt": 4575,
+    "alt_geom": 4775,
+    "gs": 224.4,
+    "nic": 8,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-23T10:39:55Z",
-  "aircraft_count": 6
+  "aircraft_count": 8
  }
 ]
