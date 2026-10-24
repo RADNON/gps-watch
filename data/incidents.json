@@ -6991,7 +6991,7 @@
  {
   "id": "JAM-20261024-2207",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-24T19:07:25Z",
   "last_seen": "2026-10-24T20:50:47Z",
   "lat": 25.243,
@@ -7451,7 +7451,7 @@
  {
   "id": "JAM-20261024-2350",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-24T20:50:47Z",
   "last_seen": "2026-10-24T20:50:47Z",
   "lat": 26.017,
