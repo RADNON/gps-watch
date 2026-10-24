@@ -5552,10 +5552,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-23T22:52:03Z",
-  "last_seen": "2026-10-24T00:08:46Z",
-  "lat": 26.771,
-  "lon": 50.628,
-  "where": "42 nm N of Bahrain (26.77, 50.63)",
+  "last_seen": "2026-10-24T00:58:37Z",
+  "lat": 26.807,
+  "lon": 50.383,
+  "where": "45 nm N of Bahrain (26.81, 50.38)",
   "aircraft": {
    "4baa62": {
     "hex": "4baa62",
@@ -5670,9 +5670,102 @@
     "gs": 214.4,
     "nic": 2,
     "nacp": 7
+   },
+   "7100b1": {
+    "hex": "7100b1",
+    "flight": "SVA1131",
+    "reg": "HZ-ASW",
+    "actype": "A321",
+    "first_seen": "2026-10-24T00:58:37Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-24T00:58:37Z",
+    "lat": 26.6036,
+    "lon": 49.3793,
+    "alt": 11375,
+    "alt_geom": 11925,
+    "gs": 293.0,
+    "nic": 6,
+    "nacp": 8
+   },
+   "06a0b0": {
+    "hex": "06a0b0",
+    "flight": "QTR263",
+    "reg": "A7-BCL",
+    "actype": "B788",
+    "first_seen": "2026-10-24T00:58:37Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-24T00:58:37Z",
+    "lat": 26.6441,
+    "lon": 49.6691,
+    "alt": 36850,
+    "alt_geom": 38500,
+    "gs": 420.1,
+    "nic": 6,
+    "nacp": 9
+   },
+   "8963d5": {
+    "hex": "8963d5",
+    "flight": "UAE7DN",
+    "reg": "A6-EPF",
+    "actype": "B77W",
+    "first_seen": "2026-10-24T00:58:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-24T00:58:37Z",
+    "lat": 27.0545,
+    "lon": 49.9681,
+    "alt": 37000,
+    "alt_geom": 38650,
+    "gs": 567.2,
+    "nic": 8,
+    "nacp": 0
+   },
+   "8963e2": {
+    "hex": "8963e2",
+    "flight": "UAE145",
+    "reg": "A6-EPS",
+    "actype": "B77W",
+    "first_seen": "2026-10-24T00:58:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-24T00:58:37Z",
+    "lat": 26.8162,
+    "lon": 50.6314,
+    "alt": 34000,
+    "alt_geom": 35550,
+    "gs": 425.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896531": {
+    "hex": "896531",
+    "flight": "FDB2NG",
+    "reg": "A6-FMK",
+    "actype": "B38M",
+    "first_seen": "2026-10-24T00:58:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-24T00:58:37Z",
+    "lat": 27.135,
+    "lon": 50.7916,
+    "alt": 35000,
+    "alt_geom": 36550,
+    "gs": 517.7,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-23T22:52:12Z",
-  "aircraft_count": 6
+  "aircraft_count": 11
  }
 ]
