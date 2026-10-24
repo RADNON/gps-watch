@@ -7698,10 +7698,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-24T22:36:37Z",
-  "last_seen": "2026-10-24T23:02:05Z",
-  "lat": 26.638,
-  "lon": 50.564,
-  "where": "34 nm N of Bahrain (26.64, 50.56)",
+  "last_seen": "2026-10-24T23:50:36Z",
+  "lat": 26.953,
+  "lon": 50.413,
+  "where": "54 nm N of Bahrain (26.95, 50.41)",
   "aircraft": {
    "a98ac7": {
     "hex": "a98ac7",
@@ -7815,9 +7815,86 @@
     "gs": 398.5,
     "nic": 6,
     "nacp": 8
+   },
+   "8965d0": {
+    "hex": "8965d0",
+    "flight": "FDB872",
+    "reg": "A6-FKE",
+    "actype": "B38M",
+    "first_seen": "2026-10-24T23:50:36Z",
+    "signs": [
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-10-24T23:50:36Z",
+    "lat": 27.7523,
+    "lon": 50.0087,
+    "alt": 33000,
+    "alt_geom": 34350,
+    "gs": 504.2,
+    "nic": 5,
+    "nacp": 8
+   },
+   "06a146": {
+    "hex": "06a146",
+    "flight": "QTR38P",
+    "reg": "A7-APE",
+    "actype": "A388",
+    "first_seen": "2026-10-24T23:50:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 4)",
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-24T23:50:36Z",
+    "lat": 27.3639,
+    "lon": 50.0359,
+    "alt": 33375,
+    "alt_geom": null,
+    "gs": 459.0,
+    "nic": 4,
+    "nacp": 4
+   },
+   "70c124": {
+    "hex": "70c124",
+    "flight": "OMA172",
+    "reg": "A4O-SK",
+    "actype": "B789",
+    "first_seen": "2026-10-24T23:50:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-24T23:50:36Z",
+    "lat": 27.8518,
+    "lon": 50.2409,
+    "alt": 36975,
+    "alt_geom": 38350,
+    "gs": 498.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8940a1": {
+    "hex": "8940a1",
+    "flight": "GFA091",
+    "reg": "A9C-FJ",
+    "actype": "B789",
+    "first_seen": "2026-10-24T23:50:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-24T23:50:36Z",
+    "lat": 26.7371,
+    "lon": 50.4617,
+    "alt": 13200,
+    "alt_geom": 12975,
+    "gs": 731.1,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-24T22:36:46Z",
-  "aircraft_count": 6
+  "aircraft_count": 10
  }
 ]
