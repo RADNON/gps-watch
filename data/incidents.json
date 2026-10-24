@@ -5552,10 +5552,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-23T22:52:03Z",
-  "last_seen": "2026-10-23T22:52:03Z",
-  "lat": 27.194,
-  "lon": 50.358,
-  "where": "68 nm N of Bahrain (27.19, 50.36)",
+  "last_seen": "2026-10-24T00:08:46Z",
+  "lat": 26.771,
+  "lon": 50.628,
+  "where": "42 nm N of Bahrain (26.77, 50.63)",
   "aircraft": {
    "4baa62": {
     "hex": "4baa62",
@@ -5613,9 +5613,66 @@
     "gs": 504.2,
     "nic": 0,
     "nacp": 0
+   },
+   "a98ac6": {
+    "hex": "a98ac6",
+    "flight": "UNIDENT",
+    "reg": "N7139A",
+    "actype": "C172",
+    "first_seen": "2026-10-23T22:52:03Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-24T00:08:46Z",
+    "lat": 25.7516,
+    "lon": 51.0809,
+    "alt": 14025,
+    "alt_geom": 14675,
+    "gs": 86.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "010153": {
+    "hex": "010153",
+    "flight": "MSR958",
+    "reg": "SU-GDP",
+    "actype": "B77W",
+    "first_seen": "2026-10-24T00:08:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-24T00:08:46Z",
+    "lat": 27.111,
+    "lon": 50.7655,
+    "alt": 33000,
+    "alt_geom": 34400,
+    "gs": 516.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "710226": {
+    "hex": "710226",
+    "flight": "HZA4",
+    "reg": "HZ-A4",
+    "actype": "A319",
+    "first_seen": "2026-10-24T00:08:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)",
+     "GPS integrity low (NIC 2)"
+    ],
+    "last_seen": "2026-10-24T00:08:46Z",
+    "lat": 26.1828,
+    "lon": 50.8504,
+    "alt": 2025,
+    "alt_geom": 2075,
+    "gs": 214.4,
+    "nic": 2,
+    "nacp": 7
    }
   },
   "emailed": "2026-10-23T22:52:12Z",
-  "aircraft_count": 3
+  "aircraft_count": 6
  }
 ]
