@@ -7520,7 +7520,7 @@
  {
   "id": "SPF-20261024-2350",
   "type": "spoofing",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-24T20:50:47Z",
   "last_seen": "2026-10-24T21:11:14Z",
   "lat": 24.685,
@@ -7692,5 +7692,76 @@
   },
   "emailed": "2026-10-24T20:50:56Z",
   "aircraft_count": 9
+ },
+ {
+  "id": "JAM-20261025-0136",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-24T22:36:37Z",
+  "last_seen": "2026-10-24T22:36:37Z",
+  "lat": 26.261,
+  "lon": 50.762,
+  "where": "16 nm NE of Bahrain (26.26, 50.76)",
+  "aircraft": {
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-24T21:11:14Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-24T22:36:37Z",
+    "lat": 25.7332,
+    "lon": 51.0995,
+    "alt": 14000,
+    "alt_geom": 14625,
+    "gs": 75.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a098": {
+    "hex": "06a098",
+    "flight": "QTR43X",
+    "reg": "A7-AHQ",
+    "actype": "A320",
+    "first_seen": "2026-10-24T22:36:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-24T22:36:37Z",
+    "lat": 26.7706,
+    "lon": 50.571,
+    "alt": 30025,
+    "alt_geom": 30900,
+    "gs": 399.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8940c3": {
+    "hex": "8940c3",
+    "flight": "GFA019",
+    "reg": "A9C-NF",
+    "actype": "A21N",
+    "first_seen": "2026-10-24T22:36:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-24T22:36:37Z",
+    "lat": 26.2805,
+    "lon": 50.6169,
+    "alt": null,
+    "alt_geom": null,
+    "gs": 178.1,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-24T22:36:46Z",
+  "aircraft_count": 3
  }
 ]
