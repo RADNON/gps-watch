@@ -6177,5 +6177,147 @@
   },
   "emailed": "2026-10-24T05:21:20Z",
   "aircraft_count": 15
+ },
+ {
+  "id": "JAM-20261024-1508",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-24T12:08:43Z",
+  "last_seen": "2026-10-24T12:08:43Z",
+  "lat": 29.087,
+  "lon": 48.703,
+  "where": "206 nm NW of Bahrain (29.09, 48.70)",
+  "aircraft": {
+   "706135": {
+    "hex": "706135",
+    "flight": "JZR131",
+    "reg": "9K-CAT",
+    "actype": "A320",
+    "first_seen": "2026-10-24T12:08:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-24T12:08:43Z",
+    "lat": 28.9958,
+    "lon": 48.5062,
+    "alt": 18325,
+    "alt_geom": 19125,
+    "gs": 393.4,
+    "nic": 6,
+    "nacp": 0
+   },
+   "8964d3": {
+    "hex": "8964d3",
+    "flight": "FDB1PC",
+    "reg": "A6-FMD",
+    "actype": "B38M",
+    "first_seen": "2026-10-24T12:08:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-24T12:08:43Z",
+    "lat": 28.9991,
+    "lon": 48.6424,
+    "alt": 32000,
+    "alt_geom": 33350,
+    "gs": 429.9,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896642": {
+    "hex": "896642",
+    "flight": "FDB4VD",
+    "reg": "A6-FQD",
+    "actype": "B38M",
+    "first_seen": "2026-10-24T12:08:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-24T12:08:43Z",
+    "lat": 29.2648,
+    "lon": 48.9613,
+    "alt": 35000,
+    "alt_geom": 36375,
+    "gs": 491.2,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-24T12:08:52Z",
+  "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261024-1508-2",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-24T12:08:43Z",
+  "last_seen": "2026-10-24T12:08:43Z",
+  "lat": 25.685,
+  "lon": 53.547,
+  "where": "164 nm E of Bahrain (25.68, 53.55)",
+  "aircraft": {
+   "896480": {
+    "hex": "896480",
+    "flight": "UAE9LT",
+    "reg": "A6-EUV",
+    "actype": "A388",
+    "first_seen": "2026-10-24T12:08:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 3)",
+     "GPS integrity low (NIC 3)"
+    ],
+    "last_seen": "2026-10-24T12:08:43Z",
+    "lat": 25.7615,
+    "lon": 52.9066,
+    "alt": 33575,
+    "alt_geom": null,
+    "gs": 424.5,
+    "nic": 3,
+    "nacp": 3
+   },
+   "8960f2": {
+    "hex": "8960f2",
+    "flight": "UAE131",
+    "reg": "A6-EDQ",
+    "actype": "A388",
+    "first_seen": "2026-10-24T12:08:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 4)",
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-24T12:08:43Z",
+    "lat": 25.7738,
+    "lon": 53.4078,
+    "alt": 27025,
+    "alt_geom": null,
+    "gs": 437.7,
+    "nic": 4,
+    "nacp": 4
+   },
+   "8964b2": {
+    "hex": "8964b2",
+    "flight": "UAE4CK",
+    "reg": "A6-EVD",
+    "actype": "A388",
+    "first_seen": "2026-10-24T12:08:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 3)",
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-24T12:08:43Z",
+    "lat": 25.5186,
+    "lon": 54.3263,
+    "alt": 19100,
+    "alt_geom": null,
+    "gs": 408.3,
+    "nic": 4,
+    "nacp": 3
+   }
+  },
+  "emailed": "2026-10-24T12:08:52Z",
+  "aircraft_count": 3
  }
 ]
