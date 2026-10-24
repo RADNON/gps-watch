@@ -6851,7 +6851,7 @@
  {
   "id": "SPF-20261024-1942",
   "type": "spoofing",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-24T16:42:18Z",
   "last_seen": "2026-10-24T17:10:06Z",
   "lat": 24.446,
