@@ -6395,10 +6395,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-24T13:52:14Z",
-  "last_seen": "2026-10-24T14:47:46Z",
-  "lat": 25.829,
-  "lon": 52.234,
-  "where": "92 nm E of Bahrain (25.83, 52.23)",
+  "last_seen": "2026-10-24T15:10:55Z",
+  "lat": 25.92,
+  "lon": 51.834,
+  "where": "70 nm E of Bahrain (25.92, 51.83)",
   "aircraft": {
    "151da7": {
     "hex": "151da7",
@@ -6504,12 +6504,12 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-10-24T14:47:46Z",
-    "lat": 25.7614,
-    "lon": 51.1105,
+    "last_seen": "2026-10-24T15:10:55Z",
+    "lat": 25.762,
+    "lon": 51.0812,
     "alt": 14000,
     "alt_geom": 14650,
-    "gs": 102.1,
+    "gs": 100.0,
     "nic": 0,
     "nacp": 0
    },
@@ -6550,10 +6550,46 @@
     "gs": 299.3,
     "nic": 0,
     "nacp": 9
+   },
+   "7105bc": {
+    "hex": "7105bc",
+    "flight": "KNE909",
+    "reg": "HZ-NS28",
+    "actype": "A20N",
+    "first_seen": "2026-10-24T15:10:55Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-24T15:10:55Z",
+    "lat": 26.284,
+    "lon": 50.0025,
+    "alt": 4500,
+    "alt_geom": 4725,
+    "gs": 235.0,
+    "nic": 6,
+    "nacp": 8
+   },
+   "503d41": {
+    "hex": "503d41",
+    "flight": "GJT9901",
+    "reg": "LY-TEN",
+    "actype": "A320",
+    "first_seen": "2026-10-24T15:10:55Z",
+    "signs": [
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-10-24T15:10:55Z",
+    "lat": 26.2785,
+    "lon": 50.49,
+    "alt": 39000,
+    "alt_geom": 40675,
+    "gs": 493.1,
+    "nic": 5,
+    "nacp": 8
    }
   },
   "emailed": "2026-10-24T13:52:23Z",
-  "aircraft_count": 8
+  "aircraft_count": 10
  },
  {
   "id": "JAM-20261024-1747",
