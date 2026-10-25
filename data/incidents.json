@@ -8985,5 +8985,113 @@
   },
   "emailed": "2026-10-25T19:11:22Z",
   "aircraft_count": 4
+ },
+ {
+  "id": "JAM-20261025-2239",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-25T19:39:32Z",
+  "last_seen": "2026-10-25T19:39:32Z",
+  "lat": 26.619,
+  "lon": 50.844,
+  "where": "37 nm NE of Bahrain (26.62, 50.84)",
+  "aircraft": {
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-25T18:37:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-25T19:39:32Z",
+    "lat": 25.807,
+    "lon": 51.2016,
+    "alt": 12000,
+    "alt_geom": 12600,
+    "gs": 96.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "77058f": {
+    "hex": "77058f",
+    "flight": "ALK501",
+    "reg": "4R-ALO",
+    "actype": "A333",
+    "first_seen": "2026-10-25T19:39:32Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-25T19:39:32Z",
+    "lat": 27.3927,
+    "lon": 50.4078,
+    "alt": 37000,
+    "alt_geom": 38550,
+    "gs": 505.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896482": {
+    "hex": "896482",
+    "flight": "UAE1LW",
+    "reg": "A6-EUX",
+    "actype": "A388",
+    "first_seen": "2026-10-25T19:39:32Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-25T19:39:32Z",
+    "lat": 27.0321,
+    "lon": 50.6444,
+    "alt": 41000,
+    "alt_geom": null,
+    "gs": 550.0,
+    "nic": 6,
+    "nacp": 7
+   },
+   "8018b0": {
+    "hex": "8018b0",
+    "flight": "AIC32C",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-25T19:39:32Z",
+    "signs": [
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-25T19:39:32Z",
+    "lat": 26.6479,
+    "lon": 50.6918,
+    "alt": 37975,
+    "alt_geom": 39600,
+    "gs": 424.0,
+    "nic": 4,
+    "nacp": 9
+   },
+   "06a0f8": {
+    "hex": "06a0f8",
+    "flight": "QTR132",
+    "reg": "A7-ALD",
+    "actype": "A359",
+    "first_seen": "2026-10-25T19:39:32Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-25T19:39:32Z",
+    "lat": 26.2146,
+    "lon": 51.2726,
+    "alt": 21000,
+    "alt_geom": 22075,
+    "gs": 438.8,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-25T19:39:41Z",
+  "aircraft_count": 5
  }
 ]
