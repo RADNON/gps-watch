@@ -9093,5 +9093,76 @@
   },
   "emailed": "2026-10-25T19:39:41Z",
   "aircraft_count": 5
+ },
+ {
+  "id": "JAM-20261026-0205",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-25T23:05:00Z",
+  "last_seen": "2026-10-25T23:05:00Z",
+  "lat": 26.355,
+  "lon": 50.527,
+  "where": "17 nm N of Bahrain (26.36, 50.53)",
+  "aircraft": {
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-25T21:51:15Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-25T23:05:00Z",
+    "lat": 25.7291,
+    "lon": 51.0958,
+    "alt": 12075,
+    "alt_geom": 12675,
+    "gs": 89.9,
+    "nic": 0,
+    "nacp": 0
+   },
+   "74482d": {
+    "hex": "74482d",
+    "flight": "RJA612N",
+    "reg": "JY-RAM",
+    "actype": "A21N",
+    "first_seen": "2026-10-25T23:05:00Z",
+    "signs": [
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-25T23:05:00Z",
+    "lat": 27.0522,
+    "lon": 50.0338,
+    "alt": 31000,
+    "alt_geom": 32400,
+    "gs": 519.2,
+    "nic": 4,
+    "nacp": 8
+   },
+   "010245": {
+    "hex": "010245",
+    "flight": "MSR916",
+    "reg": "SU-GFU",
+    "actype": "A21N",
+    "first_seen": "2026-10-25T23:05:00Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-25T23:05:00Z",
+    "lat": 26.285,
+    "lon": 50.4503,
+    "alt": 35000,
+    "alt_geom": 36625,
+    "gs": 534.0,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-25T23:05:09Z",
+  "aircraft_count": 3
  }
 ]
