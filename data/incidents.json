@@ -8288,5 +8288,77 @@
   },
   "emailed": "2026-10-25T00:09:14Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261025-0603",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-25T03:03:31Z",
+  "last_seen": "2026-10-25T03:03:31Z",
+  "lat": 28.054,
+  "lon": 49.87,
+  "where": "125 nm N of Bahrain (28.05, 49.87)",
+  "aircraft": {
+   "728673": {
+    "hex": "728673",
+    "flight": "IAW450",
+    "reg": "YI-ASS",
+    "actype": "B738",
+    "first_seen": "2026-10-25T02:28:57Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-25T03:03:31Z",
+    "lat": 27.724,
+    "lon": 49.7143,
+    "alt": 37975,
+    "alt_geom": 39425,
+    "gs": 400.9,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8964b2": {
+    "hex": "8964b2",
+    "flight": "UAE6",
+    "reg": "A6-EVD",
+    "actype": "A388",
+    "first_seen": "2026-10-25T03:03:31Z",
+    "signs": [
+     "GPS accuracy low (NACp 2)",
+     "GPS integrity low (NIC 2)"
+    ],
+    "last_seen": "2026-10-25T03:03:31Z",
+    "lat": 28.4281,
+    "lon": 49.7739,
+    "alt": 39000,
+    "alt_geom": null,
+    "gs": 538.1,
+    "nic": 2,
+    "nacp": 2
+   },
+   "801859": {
+    "hex": "801859",
+    "flight": "AIC130",
+    "reg": "VT-AWB",
+    "actype": "B789",
+    "first_seen": "2026-10-25T03:03:31Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-25T03:03:31Z",
+    "lat": 28.0097,
+    "lon": 50.1229,
+    "alt": 39000,
+    "alt_geom": 40425,
+    "gs": 516.7,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-25T03:03:51Z",
+  "aircraft_count": 3
  }
 ]
