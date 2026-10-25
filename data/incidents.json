@@ -8989,7 +8989,7 @@
  {
   "id": "JAM-20261025-2239",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-25T19:39:32Z",
   "last_seen": "2026-10-25T19:39:32Z",
   "lat": 26.619,
