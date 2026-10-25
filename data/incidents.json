@@ -8360,5 +8360,76 @@
   },
   "emailed": "2026-10-25T03:03:51Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261025-0635",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-25T03:35:03Z",
+  "last_seen": "2026-10-25T03:35:03Z",
+  "lat": 26.282,
+  "lon": 50.558,
+  "where": "over Bahrain (26.28, 50.56)",
+  "aircraft": {
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-25T02:28:57Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-25T03:35:03Z",
+    "lat": 25.7168,
+    "lon": 51.0909,
+    "alt": 14000,
+    "alt_geom": 14650,
+    "gs": 95.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8963b8": {
+    "hex": "8963b8",
+    "flight": "FDB1115",
+    "reg": "A6-FEV",
+    "actype": "B738",
+    "first_seen": "2026-10-25T03:35:03Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-25T03:35:03Z",
+    "lat": 26.8521,
+    "lon": 49.9586,
+    "alt": 38000,
+    "alt_geom": 40950,
+    "gs": 383.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8940b5": {
+    "hex": "8940b5",
+    "flight": "DHX170",
+    "reg": "A9C-DHU",
+    "actype": "B763",
+    "first_seen": "2026-10-25T03:35:03Z",
+    "signs": [
+     "GPS accuracy low (NACp 4)",
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-25T03:35:03Z",
+    "lat": 26.277,
+    "lon": 50.6239,
+    "alt": 625,
+    "alt_geom": 550,
+    "gs": 169.8,
+    "nic": 4,
+    "nacp": 4
+   }
+  },
+  "emailed": "2026-10-25T03:35:12Z",
+  "aircraft_count": 3
  }
 ]
