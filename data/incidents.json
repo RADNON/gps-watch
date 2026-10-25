@@ -8717,10 +8717,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-25T11:39:36Z",
-  "last_seen": "2026-10-25T11:39:36Z",
-  "lat": 27.126,
-  "lon": 50.02,
-  "where": "69 nm NW of Bahrain (27.13, 50.02)",
+  "last_seen": "2026-10-25T12:41:51Z",
+  "lat": 26.913,
+  "lon": 50.062,
+  "where": "57 nm NW of Bahrain (26.91, 50.06)",
   "aircraft": {
    "896623": {
     "hex": "896623",
@@ -8776,9 +8776,67 @@
     "gs": 497.9,
     "nic": 0,
     "nacp": 0
+   },
+   "07c09d": {
+    "hex": "07c09d",
+    "flight": "TQQ209",
+    "reg": "ST-TAM",
+    "actype": "B738",
+    "first_seen": "2026-10-25T12:41:51Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-25T12:41:51Z",
+    "lat": 26.4794,
+    "lon": 49.5483,
+    "alt": 7450,
+    "alt_geom": 7825,
+    "gs": 340.2,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a099": {
+    "hex": "06a099",
+    "flight": "QTR64F",
+    "reg": "A7-AHR",
+    "actype": "A320",
+    "first_seen": "2026-10-25T12:41:51Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-25T12:41:51Z",
+    "lat": 26.4787,
+    "lon": 50.3291,
+    "alt": 31000,
+    "alt_geom": 31475,
+    "gs": 511.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a122": {
+    "hex": "06a122",
+    "flight": "QTR1X",
+    "reg": "A7-ANF",
+    "actype": "A35K",
+    "first_seen": "2026-10-25T12:41:51Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-25T12:41:51Z",
+    "lat": 27.14,
+    "lon": 50.4329,
+    "alt": 29000,
+    "alt_geom": 29075,
+    "gs": 530.1,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-25T11:39:45Z",
-  "aircraft_count": 3
+  "aircraft_count": 6
  }
 ]
