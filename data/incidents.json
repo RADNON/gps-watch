@@ -9099,10 +9099,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-25T23:05:00Z",
-  "last_seen": "2026-10-26T00:31:46Z",
-  "lat": 26.436,
-  "lon": 50.856,
-  "where": "27 nm NE of Bahrain (26.44, 50.86)",
+  "last_seen": "2026-10-26T01:24:44Z",
+  "lat": 26.759,
+  "lon": 50.734,
+  "where": "43 nm N of Bahrain (26.76, 50.73)",
   "aircraft": {
    "a98ac7": {
     "hex": "a98ac7",
@@ -9234,9 +9234,64 @@
     "gs": 433.6,
     "nic": 6,
     "nacp": 8
+   },
+   "896557": {
+    "hex": "896557",
+    "flight": "FDB4CE",
+    "reg": "A6-FMP",
+    "actype": "B38M",
+    "first_seen": "2026-10-26T01:24:44Z",
+    "signs": [
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-26T01:24:44Z",
+    "lat": 28.2128,
+    "lon": 49.9682,
+    "alt": 35000,
+    "alt_geom": null,
+    "gs": null,
+    "nic": 0,
+    "nacp": 0
+   },
+   "70c0ee": {
+    "hex": "70c0ee",
+    "flight": "OMA132",
+    "reg": "A4O-SC",
+    "actype": "B789",
+    "first_seen": "2026-10-26T01:24:44Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-26T01:24:44Z",
+    "lat": 27.4904,
+    "lon": 50.5135,
+    "alt": 36975,
+    "alt_geom": 38400,
+    "gs": 524.5,
+    "nic": 0,
+    "nacp": 8
+   },
+   "896401": {
+    "hex": "896401",
+    "flight": "ABY581",
+    "reg": "A6-AOB",
+    "actype": "A320",
+    "first_seen": "2026-10-26T01:24:44Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-26T01:24:44Z",
+    "lat": 26.8387,
+    "lon": 50.8652,
+    "alt": 37000,
+    "alt_geom": 38350,
+    "gs": 520.2,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-25T23:05:09Z",
-  "aircraft_count": 7
+  "aircraft_count": 10
  }
 ]
