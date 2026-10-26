@@ -9442,7 +9442,7 @@
  {
   "id": "JAM-20261026-0933",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-26T06:33:07Z",
   "last_seen": "2026-10-26T06:33:07Z",
   "lat": 25.326,
