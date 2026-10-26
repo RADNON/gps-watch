@@ -9545,5 +9545,75 @@
   },
   "emailed": "2026-10-26T06:33:26Z",
   "aircraft_count": 5
+ },
+ {
+  "id": "JAM-20261026-2004",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-26T17:04:46Z",
+  "last_seen": "2026-10-26T17:04:46Z",
+  "lat": 26.838,
+  "lon": 50.447,
+  "where": "46 nm N of Bahrain (26.84, 50.45)",
+  "aircraft": {
+   "06a128": {
+    "hex": "06a128",
+    "flight": "QTR61G",
+    "reg": "A7-ANL",
+    "actype": "A35K",
+    "first_seen": "2026-10-26T17:04:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-26T17:04:46Z",
+    "lat": 26.4187,
+    "lon": 49.999,
+    "alt": 32000,
+    "alt_geom": 33475,
+    "gs": 447.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "706069": {
+    "hex": "706069",
+    "flight": "KAC675",
+    "reg": "9K-AKP",
+    "actype": "A20N",
+    "first_seen": "2026-10-26T17:04:46Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-26T17:04:46Z",
+    "lat": 27.3024,
+    "lon": 50.6585,
+    "alt": 35075,
+    "alt_geom": 36300,
+    "gs": 474.3,
+    "nic": 0,
+    "nacp": 8
+   },
+   "778821": {
+    "hex": "778821",
+    "flight": "FYC728",
+    "reg": "YK-BAA",
+    "actype": "A320",
+    "first_seen": "2026-10-26T17:04:46Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-26T17:04:46Z",
+    "lat": 26.7926,
+    "lon": 50.683,
+    "alt": 34000,
+    "alt_geom": 35975,
+    "gs": 434.2,
+    "nic": 0,
+    "nacp": 9
+   }
+  },
+  "emailed": "2026-10-26T17:04:56Z",
+  "aircraft_count": 3
  }
 ]
