@@ -9361,5 +9361,112 @@
   },
   "emailed": "2026-10-26T05:54:54Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261026-0933",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-26T06:33:07Z",
+  "last_seen": "2026-10-26T06:33:07Z",
+  "lat": 25.326,
+  "lon": 53.369,
+  "where": "159 nm E of Bahrain (25.33, 53.37)",
+  "aircraft": {
+   "8964a1": {
+    "hex": "8964a1",
+    "flight": "UAE3U",
+    "reg": "A6-EQI",
+    "actype": "B77W",
+    "first_seen": "2026-10-26T06:33:07Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-26T06:33:07Z",
+    "lat": 25.8511,
+    "lon": 53.1646,
+    "alt": 28000,
+    "alt_geom": 29400,
+    "gs": 456.0,
+    "nic": 0,
+    "nacp": null
+   },
+   "06a092": {
+    "hex": "06a092",
+    "flight": "QTR55C",
+    "reg": "A7-AHH",
+    "actype": "A320",
+    "first_seen": "2026-10-26T06:33:07Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-26T06:33:07Z",
+    "lat": 24.8795,
+    "lon": 53.2888,
+    "alt": 20200,
+    "alt_geom": 21325,
+    "gs": 399.8,
+    "nic": 8,
+    "nacp": 0
+   },
+   "8966df": {
+    "hex": "8966df",
+    "flight": "FVS104",
+    "reg": "A6-FLS",
+    "actype": "DH8D",
+    "first_seen": "2026-10-26T06:33:07Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-26T06:33:07Z",
+    "lat": 24.9767,
+    "lon": 53.3115,
+    "alt": 9950,
+    "alt_geom": 10525,
+    "gs": 293.9,
+    "nic": 8,
+    "nacp": 0
+   },
+   "801670": {
+    "hex": "801670",
+    "flight": "AXB367",
+    "reg": "VT-BXM",
+    "actype": "B38M",
+    "first_seen": "2026-10-26T06:33:07Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-26T06:33:07Z",
+    "lat": 25.2507,
+    "lon": 53.396,
+    "alt": 34000,
+    "alt_geom": 35650,
+    "gs": 402.9,
+    "nic": 0,
+    "nacp": 9
+   },
+   "89665d": {
+    "hex": "89665d",
+    "flight": "ABY041",
+    "reg": "A6-AQF",
+    "actype": "A320",
+    "first_seen": "2026-10-26T06:33:07Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-26T06:33:07Z",
+    "lat": 25.6733,
+    "lon": 53.6852,
+    "alt": 21000,
+    "alt_geom": 22150,
+    "gs": 446.6,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-26T06:33:26Z",
+  "aircraft_count": 5
  }
 ]
