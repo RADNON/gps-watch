@@ -9686,5 +9686,96 @@
   },
   "emailed": "2026-10-26T21:35:13Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261027-0214",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-26T23:14:46Z",
+  "last_seen": "2026-10-26T23:14:46Z",
+  "lat": 26.596,
+  "lon": 50.488,
+  "where": "32 nm N of Bahrain (26.60, 50.49)",
+  "aircraft": {
+   "a98abc": {
+    "hex": "a98abc",
+    "flight": "UNIDENT",
+    "reg": "N71381",
+    "actype": "L8",
+    "first_seen": "2026-10-26T22:09:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-26T23:14:46Z",
+    "lat": 25.7463,
+    "lon": 51.1258,
+    "alt": 14000,
+    "alt_geom": 14700,
+    "gs": 104.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a2f3": {
+    "hex": "06a2f3",
+    "flight": "QTR79U",
+    "reg": "A7-BHP",
+    "actype": "B789",
+    "first_seen": "2026-10-26T23:14:46Z",
+    "signs": [
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-10-26T23:14:46Z",
+    "lat": 26.5372,
+    "lon": 49.7505,
+    "alt": 32100,
+    "alt_geom": 33600,
+    "gs": 472.7,
+    "nic": 5,
+    "nacp": 8
+   },
+   "70620a": {
+    "hex": "70620a",
+    "flight": "JZR1433",
+    "reg": "9K-CAI",
+    "actype": "A320",
+    "first_seen": "2026-10-26T23:14:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-26T23:14:46Z",
+    "lat": 27.4555,
+    "lon": 50.3985,
+    "alt": 39025,
+    "alt_geom": 36675,
+    "gs": 9.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896354": {
+    "hex": "896354",
+    "flight": "ETD49D",
+    "reg": "A6-ETQ",
+    "actype": "B77W",
+    "first_seen": "2026-10-26T23:14:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-26T23:14:46Z",
+    "lat": 26.6458,
+    "lon": 50.6786,
+    "alt": 32000,
+    "alt_geom": 33500,
+    "gs": 461.1,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-26T23:15:06Z",
+  "aircraft_count": 4
  }
 ]
