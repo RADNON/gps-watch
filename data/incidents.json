@@ -9549,7 +9549,7 @@
  {
   "id": "JAM-20261026-2004",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-26T17:04:46Z",
   "last_seen": "2026-10-26T17:04:46Z",
   "lat": 26.838,
