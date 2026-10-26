@@ -9619,7 +9619,7 @@
  {
   "id": "JAM-20261027-0035",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-26T21:35:06Z",
   "last_seen": "2026-10-26T21:35:06Z",
   "lat": 26.288,
