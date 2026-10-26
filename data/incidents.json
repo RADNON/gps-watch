@@ -9293,5 +9293,73 @@
   },
   "emailed": "2026-10-25T23:05:09Z",
   "aircraft_count": 10
+ },
+ {
+  "id": "JAM-20261026-0854",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-26T05:54:46Z",
+  "last_seen": "2026-10-26T05:54:46Z",
+  "lat": 26.905,
+  "lon": 50.288,
+  "where": "52 nm N of Bahrain (26.91, 50.29)",
+  "aircraft": {
+   "8963a9": {
+    "hex": "8963a9",
+    "flight": "ETD857",
+    "reg": "A6-EIX",
+    "actype": "A320",
+    "first_seen": "2026-10-26T05:54:46Z",
+    "signs": [
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-10-26T05:54:46Z",
+    "lat": 27.2773,
+    "lon": 50.104,
+    "alt": 36025,
+    "alt_geom": 37625,
+    "gs": 393.2,
+    "nic": 5,
+    "nacp": 8
+   },
+   "8962d1": {
+    "hex": "8962d1",
+    "flight": "ABY597",
+    "reg": "A6-ANB",
+    "actype": "A320",
+    "first_seen": "2026-10-26T05:54:46Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-26T05:54:46Z",
+    "lat": 26.7583,
+    "lon": 50.1986,
+    "alt": 34025,
+    "alt_geom": 35575,
+    "gs": 398.0,
+    "nic": 7,
+    "nacp": 0
+   },
+   "8964a7": {
+    "hex": "8964a7",
+    "flight": "UAE67V",
+    "reg": "A6-EQO",
+    "actype": "B77W",
+    "first_seen": "2026-10-26T05:54:46Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-26T05:54:46Z",
+    "lat": 26.6802,
+    "lon": 50.5624,
+    "alt": 32000,
+    "alt_geom": 33550,
+    "gs": 427.5,
+    "nic": 6,
+    "nacp": 8
+   }
+  },
+  "emailed": "2026-10-26T05:54:54Z",
+  "aircraft_count": 3
  }
 ]
