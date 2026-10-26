@@ -9097,7 +9097,7 @@
  {
   "id": "JAM-20261026-0205",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-25T23:05:00Z",
   "last_seen": "2026-10-26T01:24:44Z",
   "lat": 26.759,
