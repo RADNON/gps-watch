@@ -9615,5 +9615,76 @@
   },
   "emailed": "2026-10-26T17:04:56Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261027-0035",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-26T21:35:06Z",
+  "last_seen": "2026-10-26T21:35:06Z",
+  "lat": 26.288,
+  "lon": 50.986,
+  "where": "27 nm NE of Bahrain (26.29, 50.99)",
+  "aircraft": {
+   "a98abc": {
+    "hex": "a98abc",
+    "flight": "UNIDENT",
+    "reg": "N71381",
+    "actype": "L8",
+    "first_seen": "2026-10-26T20:23:17Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-26T21:35:06Z",
+    "lat": 25.7521,
+    "lon": 51.0736,
+    "alt": 13975,
+    "alt_geom": 14700,
+    "gs": 103.2,
+    "nic": 0,
+    "nacp": 0
+   },
+   "4bb068": {
+    "hex": "4bb068",
+    "flight": "THY6US",
+    "reg": "TC-LCH",
+    "actype": "B38M",
+    "first_seen": "2026-10-26T21:35:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-26T21:35:06Z",
+    "lat": 26.4688,
+    "lon": 50.3838,
+    "alt": 31000,
+    "alt_geom": 32450,
+    "gs": 484.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "4bb323": {
+    "hex": "4bb323",
+    "flight": "THY7KT",
+    "reg": "TC-LYC",
+    "actype": "B39M",
+    "first_seen": "2026-10-26T21:35:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-26T21:35:06Z",
+    "lat": 26.6438,
+    "lon": 51.502,
+    "alt": 35000,
+    "alt_geom": 36525,
+    "gs": 486.0,
+    "nic": 7,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-26T21:35:13Z",
+  "aircraft_count": 3
  }
 ]
