@@ -9834,5 +9834,76 @@
   },
   "emailed": "2026-10-26T23:15:06Z",
   "aircraft_count": 7
+ },
+ {
+  "id": "JAM-20261027-0935",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-27T06:35:28Z",
+  "last_seen": "2026-10-27T06:35:28Z",
+  "lat": 25.279,
+  "lon": 54.331,
+  "where": "210 nm E of Bahrain (25.28, 54.33)",
+  "aircraft": {
+   "06a2c7": {
+    "hex": "06a2c7",
+    "flight": "VOZ002",
+    "reg": "A7-BEX",
+    "actype": "B77W",
+    "first_seen": "2026-10-27T06:35:28Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-27T06:35:28Z",
+    "lat": 24.5793,
+    "lon": 54.2069,
+    "alt": 31000,
+    "alt_geom": 32525,
+    "gs": 524.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "706214": {
+    "hex": "706214",
+    "flight": "JZR540",
+    "reg": "9K-CBD",
+    "actype": "A20N",
+    "first_seen": "2026-10-27T06:35:28Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-27T06:35:28Z",
+    "lat": 25.5133,
+    "lon": 54.3416,
+    "alt": 37975,
+    "alt_geom": 39650,
+    "gs": 392.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "728673": {
+    "hex": "728673",
+    "flight": "IAW445",
+    "reg": "YI-ASS",
+    "actype": "B738",
+    "first_seen": "2026-10-27T06:35:28Z",
+    "signs": [
+     "GPS integrity low (NIC 3)"
+    ],
+    "last_seen": "2026-10-27T06:35:28Z",
+    "lat": 25.7455,
+    "lon": 54.4456,
+    "alt": 33000,
+    "alt_geom": 34500,
+    "gs": 492.1,
+    "nic": 3,
+    "nacp": 8
+   }
+  },
+  "emailed": "2026-10-27T06:35:37Z",
+  "aircraft_count": 3
  }
 ]
