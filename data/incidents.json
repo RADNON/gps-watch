@@ -10130,5 +10130,95 @@
   },
   "emailed": "2026-10-27T13:13:06Z",
   "aircraft_count": 11
+ },
+ {
+  "id": "JAM-20261027-2059",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-27T17:59:20Z",
+  "last_seen": "2026-10-27T17:59:20Z",
+  "lat": 25.99,
+  "lon": 51.762,
+  "where": "66 nm E of Bahrain (25.99, 51.76)",
+  "aircraft": {
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-27T17:15:08Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-27T17:59:20Z",
+    "lat": 25.7178,
+    "lon": 51.0816,
+    "alt": 14000,
+    "alt_geom": 14750,
+    "gs": 116.7,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a07f": {
+    "hex": "06a07f",
+    "flight": "QTR8179",
+    "reg": "A7-BFA",
+    "actype": "B77L",
+    "first_seen": "2026-10-27T17:59:20Z",
+    "signs": [
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-27T17:59:20Z",
+    "lat": 25.9946,
+    "lon": 51.5563,
+    "alt": 17625,
+    "alt_geom": 14475,
+    "gs": 61.0,
+    "nic": 0,
+    "nacp": 9
+   },
+   "894061": {
+    "hex": "894061",
+    "flight": "GFA511",
+    "reg": "A9C-AI",
+    "actype": "A320",
+    "first_seen": "2026-10-27T17:59:20Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-27T17:59:20Z",
+    "lat": 26.0289,
+    "lon": 52.1045,
+    "alt": 24000,
+    "alt_geom": 25325,
+    "gs": 382.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "748016": {
+    "hex": "748016",
+    "flight": "MEA419",
+    "reg": "OD-MRT",
+    "actype": "A320",
+    "first_seen": "2026-10-27T17:59:20Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)",
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-27T17:59:20Z",
+    "lat": 26.2196,
+    "lon": 52.304,
+    "alt": 30025,
+    "alt_geom": 31575,
+    "gs": 427.1,
+    "nic": 4,
+    "nacp": 7
+   }
+  },
+  "emailed": "2026-10-27T17:59:30Z",
+  "aircraft_count": 4
  }
 ]
