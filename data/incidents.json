@@ -9692,10 +9692,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-26T23:14:46Z",
-  "last_seen": "2026-10-26T23:14:46Z",
-  "lat": 26.596,
-  "lon": 50.488,
-  "where": "32 nm N of Bahrain (26.60, 50.49)",
+  "last_seen": "2026-10-27T01:04:35Z",
+  "lat": 26.864,
+  "lon": 50.514,
+  "where": "48 nm N of Bahrain (26.86, 50.51)",
   "aircraft": {
    "a98abc": {
     "hex": "a98abc",
@@ -9773,9 +9773,66 @@
     "gs": 461.1,
     "nic": 0,
     "nacp": 0
+   },
+   "70612c": {
+    "hex": "70612c",
+    "flight": "JZR428",
+    "reg": "9K-CBE",
+    "actype": "A20N",
+    "first_seen": "2026-10-27T01:04:35Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-27T01:04:35Z",
+    "lat": 27.457,
+    "lon": 49.9506,
+    "alt": 28000,
+    "alt_geom": 28875,
+    "gs": 410.9,
+    "nic": 0,
+    "nacp": 0
+   },
+   "706066": {
+    "hex": "706066",
+    "flight": "KAC382",
+    "reg": "9K-APF",
+    "actype": "A338",
+    "first_seen": "2026-10-27T01:04:35Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-10-27T01:04:35Z",
+    "lat": 26.9251,
+    "lon": 50.4825,
+    "alt": 28000,
+    "alt_geom": 29325,
+    "gs": 425.8,
+    "nic": 5,
+    "nacp": 0
+   },
+   "507cb6": {
+    "hex": "507cb6",
+    "flight": "MFX3322",
+    "reg": "UK33032",
+    "actype": "A333",
+    "first_seen": "2026-10-27T01:04:35Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-27T01:04:35Z",
+    "lat": 27.2814,
+    "lon": 51.2143,
+    "alt": 33000,
+    "alt_geom": 34425,
+    "gs": 466.8,
+    "nic": 0,
+    "nacp": 9
    }
   },
   "emailed": "2026-10-26T23:15:06Z",
-  "aircraft_count": 4
+  "aircraft_count": 7
  }
 ]
