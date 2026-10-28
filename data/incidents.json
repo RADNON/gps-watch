@@ -10734,5 +10734,116 @@
   },
   "emailed": "2026-10-28T19:17:53Z",
   "aircraft_count": 5
+ },
+ {
+  "id": "JAM-20261029-0256",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-28T23:56:37Z",
+  "last_seen": "2026-10-28T23:56:37Z",
+  "lat": 26.718,
+  "lon": 50.441,
+  "where": "39 nm N of Bahrain (26.72, 50.44)",
+  "aircraft": {
+   "8965fa": {
+    "hex": "8965fa",
+    "flight": "ADY402",
+    "reg": "A6-AUG",
+    "actype": "A320",
+    "first_seen": "2026-10-28T23:56:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-28T23:56:37Z",
+    "lat": 26.2244,
+    "lon": 49.8117,
+    "alt": 39000,
+    "alt_geom": 40825,
+    "gs": 480.7,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a128": {
+    "hex": "06a128",
+    "flight": "QTR779",
+    "reg": "A7-ANL",
+    "actype": "A35K",
+    "first_seen": "2026-10-28T23:56:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-28T23:56:37Z",
+    "lat": 26.8634,
+    "lon": 50.4908,
+    "alt": 26775,
+    "alt_geom": 28050,
+    "gs": 433.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "010246": {
+    "hex": "010246",
+    "flight": "MSR967",
+    "reg": "SU-GFV",
+    "actype": "A21N",
+    "first_seen": "2026-10-28T23:56:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-28T23:56:37Z",
+    "lat": 26.8852,
+    "lon": 50.5691,
+    "alt": 30000,
+    "alt_geom": 31475,
+    "gs": 430.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896354": {
+    "hex": "896354",
+    "flight": "ETD49D",
+    "reg": "A6-ETQ",
+    "actype": "B77W",
+    "first_seen": "2026-10-28T23:56:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 4)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-28T23:56:37Z",
+    "lat": 26.8184,
+    "lon": 50.6282,
+    "alt": 32000,
+    "alt_geom": 33525,
+    "gs": 438.0,
+    "nic": 4,
+    "nacp": 0
+   },
+   "01013d": {
+    "hex": "01013d",
+    "flight": "MSR959",
+    "reg": "SU-GDO",
+    "actype": "B77W",
+    "first_seen": "2026-10-28T23:56:37Z",
+    "signs": [
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-28T23:56:37Z",
+    "lat": 26.7963,
+    "lon": 50.7063,
+    "alt": 32000,
+    "alt_geom": 33550,
+    "gs": 446.0,
+    "nic": 4,
+    "nacp": 8
+   }
+  },
+  "emailed": "2026-10-28T23:56:46Z",
+  "aircraft_count": 5
  }
 ]
