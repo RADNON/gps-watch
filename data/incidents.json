@@ -10624,5 +10624,115 @@
   },
   "emailed": "2026-10-28T10:52:27Z",
   "aircraft_count": 4
+ },
+ {
+  "id": "JAM-20261028-2217",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-28T19:17:44Z",
+  "last_seen": "2026-10-28T19:17:44Z",
+  "lat": 25.517,
+  "lon": 54.131,
+  "where": "196 nm E of Bahrain (25.52, 54.13)",
+  "aircraft": {
+   "06a14b": {
+    "hex": "06a14b",
+    "flight": "QTR835",
+    "reg": "A7-APJ",
+    "actype": "A388",
+    "first_seen": "2026-10-28T19:17:44Z",
+    "signs": [
+     "GPS accuracy low (NACp 4)",
+     "GPS integrity low (NIC 3)"
+    ],
+    "last_seen": "2026-10-28T19:17:44Z",
+    "lat": 25.3179,
+    "lon": 52.988,
+    "alt": 20750,
+    "alt_geom": 23900,
+    "gs": 400.5,
+    "nic": 3,
+    "nacp": 4
+   },
+   "8965c0": {
+    "hex": "8965c0",
+    "flight": "FDB16T",
+    "reg": "A6-FPA",
+    "actype": "B38M",
+    "first_seen": "2026-10-28T19:17:44Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-28T19:17:44Z",
+    "lat": 25.8011,
+    "lon": 53.9081,
+    "alt": 21000,
+    "alt_geom": 22075,
+    "gs": 369.1,
+    "nic": 6,
+    "nacp": 0
+   },
+   "8966ff": {
+    "hex": "8966ff",
+    "flight": "UAE41M",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-28T19:17:44Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-28T19:17:44Z",
+    "lat": 25.6895,
+    "lon": 54.2264,
+    "alt": 18325,
+    "alt_geom": 19225,
+    "gs": 402.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896603": {
+    "hex": "896603",
+    "flight": "FDB4XC",
+    "reg": "A6-FKM",
+    "actype": "B38M",
+    "first_seen": "2026-10-28T19:17:44Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-28T19:17:44Z",
+    "lat": 25.4136,
+    "lon": 54.6805,
+    "alt": 15075,
+    "alt_geom": 15675,
+    "gs": 373.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "706075": {
+    "hex": "706075",
+    "flight": "KAC676",
+    "reg": "9K-AQC",
+    "actype": "A21N",
+    "first_seen": "2026-10-28T19:17:44Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 3)"
+    ],
+    "last_seen": "2026-10-28T19:17:44Z",
+    "lat": 25.3648,
+    "lon": 54.8505,
+    "alt": 15925,
+    "alt_geom": 16675,
+    "gs": 359.2,
+    "nic": 3,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-28T19:17:53Z",
+  "aircraft_count": 5
  }
 ]
