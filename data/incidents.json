@@ -11073,7 +11073,7 @@
  {
   "id": "JAM-20261029-2320",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-29T20:20:48Z",
   "last_seen": "2026-10-29T21:08:20Z",
   "lat": 26.18,
