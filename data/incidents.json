@@ -10960,5 +10960,114 @@
   },
   "emailed": "2026-10-28T23:56:46Z",
   "aircraft_count": 11
+ },
+ {
+  "id": "JAM-20261029-1122",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-29T08:22:06Z",
+  "last_seen": "2026-10-29T08:22:06Z",
+  "lat": 25.833,
+  "lon": 51.455,
+  "where": "51 nm E of Bahrain (25.83, 51.45)",
+  "aircraft": {
+   "a98ac0": {
+    "hex": "a98ac0",
+    "flight": "UNIDENT",
+    "reg": "N71385",
+    "actype": "L8",
+    "first_seen": "2026-10-29T08:22:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-29T08:22:06Z",
+    "lat": 25.4695,
+    "lon": 50.9676,
+    "alt": 13025,
+    "alt_geom": 13675,
+    "gs": 109.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "a340c0": {
+    "hex": "a340c0",
+    "flight": "SHR32",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-29T08:22:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 5)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-29T08:22:06Z",
+    "lat": 25.9074,
+    "lon": 51.2013,
+    "alt": 700,
+    "alt_geom": 725,
+    "gs": 124.5,
+    "nic": 5,
+    "nacp": 0
+   },
+   "716ff8": {
+    "hex": "716ff8",
+    "flight": "RXI9763",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-29T08:22:06Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-29T08:22:06Z",
+    "lat": 26.6063,
+    "lon": 51.62,
+    "alt": 38975,
+    "alt_geom": 40750,
+    "gs": 577.0,
+    "nic": 6,
+    "nacp": 8
+   },
+   "89409d": {
+    "hex": "89409d",
+    "flight": "GFA525",
+    "reg": "A9C-TF",
+    "actype": "A20N",
+    "first_seen": "2026-10-29T08:22:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-29T08:22:06Z",
+    "lat": 25.2934,
+    "lon": 51.7128,
+    "alt": 11950,
+    "alt_geom": 12550,
+    "gs": 304.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89662e": {
+    "hex": "89662e",
+    "flight": "ADY016",
+    "reg": "A6-AUJ",
+    "actype": "A320",
+    "first_seen": "2026-10-29T08:22:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)",
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-10-29T08:22:06Z",
+    "lat": 25.8863,
+    "lon": 51.7724,
+    "alt": 23175,
+    "alt_geom": 24325,
+    "gs": 432.2,
+    "nic": 5,
+    "nacp": 7
+   }
+  },
+  "emailed": "2026-10-29T08:22:15Z",
+  "aircraft_count": 5
  }
 ]
