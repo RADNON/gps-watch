@@ -11220,7 +11220,7 @@
  {
   "id": "JAM-20261030-0246",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-29T23:46:41Z",
   "last_seen": "2026-10-30T03:09:38Z",
   "lat": 27.007,
