@@ -11286,5 +11286,110 @@
   },
   "emailed": "2026-10-29T23:46:49Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261030-0319",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-30T00:19:57Z",
+  "last_seen": "2026-10-30T00:19:57Z",
+  "lat": 28.005,
+  "lon": 49.354,
+  "where": "133 nm NW of Bahrain (28.00, 49.35)",
+  "aircraft": {
+   "899022": {
+    "hex": "899022",
+    "flight": "CAL073",
+    "reg": "B-18905",
+    "actype": "A359",
+    "first_seen": "2026-10-30T00:19:57Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-30T00:19:57Z",
+    "lat": 28.8804,
+    "lon": 48.734,
+    "alt": 40000,
+    "alt_geom": 41625,
+    "gs": 421.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "4bab45": {
+    "hex": "4bab45",
+    "flight": "",
+    "reg": "TC-JZE",
+    "actype": "B738",
+    "first_seen": "2026-10-30T00:19:57Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-30T00:19:57Z",
+    "lat": 27.2486,
+    "lon": 48.9397,
+    "alt": 34000,
+    "alt_geom": 35525,
+    "gs": 410.2,
+    "nic": 0,
+    "nacp": 8
+   },
+   "896451": {
+    "hex": "896451",
+    "flight": "UAE2J",
+    "reg": "A6-EQB",
+    "actype": "B77W",
+    "first_seen": "2026-10-30T00:19:57Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-30T00:19:57Z",
+    "lat": 28.085,
+    "lon": 49.3912,
+    "alt": 30000,
+    "alt_geom": 31375,
+    "gs": 460.7,
+    "nic": 6,
+    "nacp": 9
+   },
+   "8940a4": {
+    "hex": "8940a4",
+    "flight": "",
+    "reg": "A9C-ND",
+    "actype": "A21N",
+    "first_seen": "2026-10-30T00:19:57Z",
+    "signs": [
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-30T00:19:57Z",
+    "lat": 28.0251,
+    "lon": 49.4167,
+    "alt": 28000,
+    "alt_geom": 29275,
+    "gs": 419.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "70c107": {
+    "hex": "70c107",
+    "flight": "OMA124",
+    "reg": "A4O-ML",
+    "actype": "B38M",
+    "first_seen": "2026-10-30T00:19:57Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-30T00:19:57Z",
+    "lat": 27.785,
+    "lon": 50.2908,
+    "alt": 37000,
+    "alt_geom": 38600,
+    "gs": 498.4,
+    "nic": 6,
+    "nacp": 8
+   }
+  },
+  "emailed": "2026-10-30T00:20:07Z",
+  "aircraft_count": 5
  }
 ]
