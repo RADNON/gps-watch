@@ -11949,5 +11949,113 @@
   },
   "emailed": "2026-10-30T09:55:00Z",
   "aircraft_count": 15
+ },
+ {
+  "id": "JAM-20261030-2101",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-30T18:01:52Z",
+  "last_seen": "2026-10-30T18:01:52Z",
+  "lat": 25.702,
+  "lon": 51.212,
+  "where": "42 nm SE of Bahrain (25.70, 51.21)",
+  "aircraft": {
+   "323232": {
+    "hex": "323232",
+    "flight": "UNIDENT",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-30T17:15:15Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-30T18:01:52Z",
+    "lat": 25.7407,
+    "lon": 51.1051,
+    "alt": 14025,
+    "alt_geom": 14700,
+    "gs": 106.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89405c": {
+    "hex": "89405c",
+    "flight": "GFA546",
+    "reg": "A9C-AE",
+    "actype": "A320",
+    "first_seen": "2026-10-30T18:01:52Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-30T18:01:52Z",
+    "lat": 26.2726,
+    "lon": 50.687,
+    "alt": 2025,
+    "alt_geom": 2100,
+    "gs": 215.1,
+    "nic": 6,
+    "nacp": 8
+   },
+   "06a12c": {
+    "hex": "06a12c",
+    "flight": "QTR61G",
+    "reg": "A7-ANP",
+    "actype": "A35K",
+    "first_seen": "2026-10-30T18:01:52Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-30T18:01:52Z",
+    "lat": 26.1069,
+    "lon": 51.0233,
+    "alt": 22400,
+    "alt_geom": 23575,
+    "gs": 406.1,
+    "nic": 6,
+    "nacp": 8
+   },
+   "06a2b4": {
+    "hex": "06a2b4",
+    "flight": "QTR88K",
+    "reg": "A7-BEP",
+    "actype": "B77W",
+    "first_seen": "2026-10-30T18:01:52Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-30T18:01:52Z",
+    "lat": 25.2127,
+    "lon": 51.6039,
+    "alt": 10650,
+    "alt_geom": 11200,
+    "gs": 327.7,
+    "nic": 6,
+    "nacp": 0
+   },
+   "7705c5": {
+    "hex": "7705c5",
+    "flight": "",
+    "reg": "4R-ANE",
+    "actype": "A21N",
+    "first_seen": "2026-10-30T18:01:52Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-30T18:01:52Z",
+    "lat": 25.1747,
+    "lon": 51.6409,
+    "alt": 1175,
+    "alt_geom": 1250,
+    "gs": 172.0,
+    "nic": 8,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-30T18:02:02Z",
+  "aircraft_count": 5
  }
 ]
