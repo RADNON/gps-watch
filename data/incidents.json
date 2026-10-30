@@ -11222,10 +11222,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-29T23:46:41Z",
-  "last_seen": "2026-10-29T23:46:41Z",
-  "lat": 26.656,
-  "lon": 50.619,
-  "where": "35 nm N of Bahrain (26.66, 50.62)",
+  "last_seen": "2026-10-30T01:29:06Z",
+  "lat": 27.118,
+  "lon": 50.387,
+  "where": "64 nm N of Bahrain (27.12, 50.39)",
   "aircraft": {
    "a98ac7": {
     "hex": "a98ac7",
@@ -11282,15 +11282,70 @@
     "gs": 443.4,
     "nic": 0,
     "nacp": 0
+   },
+   "896713": {
+    "hex": "896713",
+    "flight": "ETD142",
+    "reg": "A6-LRK",
+    "actype": "A21N",
+    "first_seen": "2026-10-30T01:29:06Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-30T01:29:06Z",
+    "lat": 28.2045,
+    "lon": 49.7687,
+    "alt": 35000,
+    "alt_geom": 36550,
+    "gs": 498.5,
+    "nic": 6,
+    "nacp": 8
+   },
+   "8964be": {
+    "hex": "8964be",
+    "flight": "ETD11Y",
+    "reg": "A6-BLN",
+    "actype": "B789",
+    "first_seen": "2026-10-30T01:29:06Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-30T01:29:06Z",
+    "lat": 27.55,
+    "lon": 50.2873,
+    "alt": 38975,
+    "alt_geom": 40625,
+    "gs": 555.3,
+    "nic": 0,
+    "nacp": 8
+   },
+   "8960e0": {
+    "hex": "8960e0",
+    "flight": "UAE929",
+    "reg": "A6-EBY",
+    "actype": "B77W",
+    "first_seen": "2026-10-30T01:29:06Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-30T01:29:06Z",
+    "lat": 26.9854,
+    "lon": 50.4104,
+    "alt": 34000,
+    "alt_geom": 35575,
+    "gs": 439.4,
+    "nic": 8,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-29T23:46:49Z",
-  "aircraft_count": 3
+  "aircraft_count": 6
  },
  {
   "id": "JAM-20261030-0319",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-30T00:19:57Z",
   "last_seen": "2026-10-30T00:19:57Z",
   "lat": 28.005,
