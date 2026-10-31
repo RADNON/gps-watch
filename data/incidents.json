@@ -12999,5 +12999,76 @@
   },
   "emailed": "2026-10-31T16:19:45Z",
   "aircraft_count": 13
+ },
+ {
+  "id": "JAM-20261031-1957",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-31T16:57:41Z",
+  "last_seen": "2026-10-31T16:57:41Z",
+  "lat": 26.254,
+  "lon": 51.839,
+  "where": "70 nm E of Bahrain (26.25, 51.84)",
+  "aircraft": {
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-31T15:48:05Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-31T16:57:41Z",
+    "lat": 25.7677,
+    "lon": 51.178,
+    "alt": 13975,
+    "alt_geom": 14750,
+    "gs": 105.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "0100a6": {
+    "hex": "0100a6",
+    "flight": "MSR968",
+    "reg": "SU-GCI",
+    "actype": "A332",
+    "first_seen": "2026-10-31T16:57:41Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-31T16:57:41Z",
+    "lat": 26.5137,
+    "lon": 51.9068,
+    "alt": 39000,
+    "alt_geom": 40900,
+    "gs": 547.2,
+    "nic": 0,
+    "nacp": 0
+   },
+   "706060": {
+    "hex": "706060",
+    "flight": "KAC345",
+    "reg": "9K-AKL",
+    "actype": "A20N",
+    "first_seen": "2026-10-31T16:57:41Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T16:57:41Z",
+    "lat": 26.4809,
+    "lon": 52.4325,
+    "alt": 35000,
+    "alt_geom": 36725,
+    "gs": 518.0,
+    "nic": 8,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-31T16:58:04Z",
+  "aircraft_count": 3
  }
 ]
