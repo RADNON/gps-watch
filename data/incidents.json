@@ -13149,7 +13149,7 @@
  {
   "id": "JAM-20261101-0044",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-31T21:44:36Z",
   "last_seen": "2026-10-31T21:44:36Z",
   "lat": 26.342,
