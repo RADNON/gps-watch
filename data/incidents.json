@@ -13003,7 +13003,7 @@
  {
   "id": "JAM-20261031-1957",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-31T16:57:41Z",
   "last_seen": "2026-10-31T18:44:34Z",
   "lat": 26.279,
