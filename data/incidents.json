@@ -12735,5 +12735,269 @@
   },
   "emailed": "2026-10-31T13:58:56Z",
   "aircraft_count": 6
+ },
+ {
+  "id": "JAM-20261031-1919",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-31T16:19:36Z",
+  "last_seen": "2026-10-31T16:19:36Z",
+  "lat": 25.06,
+  "lon": 53.649,
+  "where": "178 nm E of Bahrain (25.06, 53.65)",
+  "aircraft": {
+   "06a001": {
+    "hex": "06a001",
+    "flight": "A7HHK",
+    "reg": "A7-HHK",
+    "actype": "A342",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 25.0964,
+    "lon": 52.6721,
+    "alt": 22525,
+    "alt_geom": 19375,
+    "gs": 459.1,
+    "nic": 8,
+    "nacp": 0
+   },
+   "896741": {
+    "hex": "896741",
+    "flight": "ABY731",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 26.1509,
+    "lon": 52.9135,
+    "alt": 31725,
+    "alt_geom": 33325,
+    "gs": 505.0,
+    "nic": 6,
+    "nacp": 8
+   },
+   "80187b": {
+    "hex": "80187b",
+    "flight": "IGO45V",
+    "reg": "VT-NLA",
+    "actype": "A21N",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 26.0239,
+    "lon": 53.2519,
+    "alt": 35000,
+    "alt_geom": 36850,
+    "gs": 546.0,
+    "nic": 7,
+    "nacp": 0
+   },
+   "4d250a": {
+    "hex": "4d250a",
+    "flight": "ETD87A",
+    "reg": "9H-HFK",
+    "actype": "A332",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 24.9502,
+    "lon": 53.3235,
+    "alt": 22450,
+    "alt_geom": 24000,
+    "gs": 439.4,
+    "nic": 6,
+    "nacp": 0
+   },
+   "70c0c9": {
+    "hex": "70c0c9",
+    "flight": "OMA647",
+    "reg": "A4O-BY",
+    "actype": "B739",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 4)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 25.4888,
+    "lon": 53.5248,
+    "alt": 32000,
+    "alt_geom": 33600,
+    "gs": 408.0,
+    "nic": 4,
+    "nacp": 0
+   },
+   "896371": {
+    "hex": "896371",
+    "flight": "ABY283",
+    "reg": "A6-ANP",
+    "actype": "A320",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 25.5815,
+    "lon": 53.5409,
+    "alt": 29900,
+    "alt_geom": 31400,
+    "gs": 416.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a0ab": {
+    "hex": "06a0ab",
+    "flight": "QTR540",
+    "reg": "A7-BCG",
+    "actype": "B788",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 24.7609,
+    "lon": 54.0516,
+    "alt": 31750,
+    "alt_geom": 31900,
+    "gs": 548.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8940d1": {
+    "hex": "8940d1",
+    "flight": "DHX263",
+    "reg": "A9C-DHAB",
+    "actype": "B763",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 25.684,
+    "lon": 54.2441,
+    "alt": 17950,
+    "alt_geom": 19000,
+    "gs": 418.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "80158c": {
+    "hex": "80158c",
+    "flight": "AIC2026",
+    "reg": "VT-TSP",
+    "actype": "B789",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 25.8213,
+    "lon": 54.334,
+    "alt": 39000,
+    "alt_geom": 40875,
+    "gs": 571.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "46b8aa": {
+    "hex": "46b8aa",
+    "flight": "AEE959",
+    "reg": "SX-NEJ",
+    "actype": "A20N",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 23.7101,
+    "lon": 53.5286,
+    "alt": 36000,
+    "alt_geom": 38000,
+    "gs": 404.6,
+    "nic": 6,
+    "nacp": 8
+   },
+   "717cd1": {
+    "hex": "717cd1",
+    "flight": "KNE510",
+    "reg": "HZ-NS53",
+    "actype": "A20N",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 23.8347,
+    "lon": 53.7628,
+    "alt": 34000,
+    "alt_geom": 35850,
+    "gs": 408.6,
+    "nic": 6,
+    "nacp": 0
+   },
+   "801546": {
+    "hex": "801546",
+    "flight": "AKJ505",
+    "reg": "VT-YAK",
+    "actype": "B38M",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 24.5229,
+    "lon": 53.9167,
+    "alt": 34000,
+    "alt_geom": 35775,
+    "gs": 385.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8963b2": {
+    "hex": "8963b2",
+    "flight": "FDB645",
+    "reg": "A6-FEP",
+    "actype": "B738",
+    "first_seen": "2026-10-31T16:19:36Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T16:19:36Z",
+    "lat": 24.1571,
+    "lon": 54.3788,
+    "alt": 32450,
+    "alt_geom": 34050,
+    "gs": 390.0,
+    "nic": 8,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-31T16:19:45Z",
+  "aircraft_count": 13
  }
 ]
