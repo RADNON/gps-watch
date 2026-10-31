@@ -12606,5 +12606,134 @@
   },
   "emailed": "2026-10-31T08:28:51Z",
   "aircraft_count": 6
+ },
+ {
+  "id": "JAM-20261031-1658",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-31T13:58:48Z",
+  "last_seen": "2026-10-31T13:58:48Z",
+  "lat": 26.228,
+  "lon": 51.174,
+  "where": "35 nm E of Bahrain (26.23, 51.17)",
+  "aircraft": {
+   "8964d3": {
+    "hex": "8964d3",
+    "flight": "FDB3CF",
+    "reg": "A6-FMD",
+    "actype": "B38M",
+    "first_seen": "2026-10-31T13:58:48Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-10-31T13:58:48Z",
+    "lat": 26.826,
+    "lon": 50.6164,
+    "alt": 32000,
+    "alt_geom": 33550,
+    "gs": 424.2,
+    "nic": 6,
+    "nacp": 8
+   },
+   "8966fc": {
+    "hex": "8966fc",
+    "flight": "UAE44",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-10-31T13:58:48Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T13:58:48Z",
+    "lat": 26.9313,
+    "lon": 50.6845,
+    "alt": 41000,
+    "alt_geom": 42725,
+    "gs": 555.7,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89653b": {
+    "hex": "89653b",
+    "flight": "ETD98V",
+    "reg": "A6-BND",
+    "actype": "B789",
+    "first_seen": "2026-10-31T13:58:48Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-31T13:58:48Z",
+    "lat": 26.7742,
+    "lon": 50.8944,
+    "alt": 39000,
+    "alt_geom": 40800,
+    "gs": 538.1,
+    "nic": 0,
+    "nacp": 8
+   },
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-10-31T13:15:57Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-31T13:58:48Z",
+    "lat": 25.6681,
+    "lon": 51.1117,
+    "alt": 14025,
+    "alt_geom": 14725,
+    "gs": 92.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8966c7": {
+    "hex": "8966c7",
+    "flight": "ETD99P",
+    "reg": "A6-BNK",
+    "actype": "B789",
+    "first_seen": "2026-10-31T13:58:48Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T13:58:48Z",
+    "lat": 25.5,
+    "lon": 51.7188,
+    "alt": 35000,
+    "alt_geom": null,
+    "gs": 564.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89662e": {
+    "hex": "89662e",
+    "flight": "ADY731",
+    "reg": "A6-AUJ",
+    "actype": "A320",
+    "first_seen": "2026-10-31T13:58:48Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T13:58:48Z",
+    "lat": 25.6704,
+    "lon": 52.0154,
+    "alt": 33000,
+    "alt_geom": 36150,
+    "gs": 598.0,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-31T13:58:56Z",
+  "aircraft_count": 6
  }
 ]
