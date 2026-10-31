@@ -12610,7 +12610,7 @@
  {
   "id": "JAM-20261031-1658",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-31T13:58:48Z",
   "last_seen": "2026-10-31T13:58:48Z",
   "lat": 26.228,
