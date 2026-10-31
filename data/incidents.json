@@ -12477,5 +12477,134 @@
   },
   "emailed": "2026-10-31T06:06:52Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261031-1128",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-10-31T08:28:42Z",
+  "last_seen": "2026-10-31T08:28:42Z",
+  "lat": 24.6,
+  "lon": 54.118,
+  "where": "213 nm SE of Bahrain (24.60, 54.12)",
+  "aircraft": {
+   "a88ede": {
+    "hex": "a88ede",
+    "flight": "N650XY",
+    "reg": "N650XY",
+    "actype": "GLF6",
+    "first_seen": "2026-10-31T08:28:42Z",
+    "signs": [
+     "GPS integrity low (NIC 2)"
+    ],
+    "last_seen": "2026-10-31T08:28:42Z",
+    "lat": 25.0055,
+    "lon": 53.3345,
+    "alt": 21900,
+    "alt_geom": 23075,
+    "gs": 428.7,
+    "nic": 2,
+    "nacp": 8
+   },
+   "4bb14e": {
+    "hex": "4bb14e",
+    "flight": "THY6360",
+    "reg": "TC-LJN",
+    "actype": "B77L",
+    "first_seen": "2026-10-31T08:28:42Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T08:28:42Z",
+    "lat": 24.8667,
+    "lon": 53.5625,
+    "alt": 41000,
+    "alt_geom": 42900,
+    "gs": 549.7,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8965e1": {
+    "hex": "8965e1",
+    "flight": "ADY016",
+    "reg": "A6-AUD",
+    "actype": "A320",
+    "first_seen": "2026-10-31T08:28:42Z",
+    "signs": [
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-10-31T08:28:42Z",
+    "lat": 24.6416,
+    "lon": 53.9386,
+    "alt": 16300,
+    "alt_geom": 17175,
+    "gs": 419.5,
+    "nic": 4,
+    "nacp": 9
+   },
+   "06a38c": {
+    "hex": "06a38c",
+    "flight": "QTR2H",
+    "reg": "A7-BOH",
+    "actype": "B77W",
+    "first_seen": "2026-10-31T08:28:42Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T08:28:42Z",
+    "lat": 24.3786,
+    "lon": 54.5316,
+    "alt": 38000,
+    "alt_geom": 39875,
+    "gs": 408.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "500388": {
+    "hex": "500388",
+    "flight": "T7MAHA",
+    "reg": "T7-MAHA",
+    "actype": "GL7T",
+    "first_seen": "2026-10-31T08:28:42Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-10-31T08:28:42Z",
+    "lat": 24.3152,
+    "lon": 54.5945,
+    "alt": 33875,
+    "alt_geom": 35550,
+    "gs": 480.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8966a8": {
+    "hex": "8966a8",
+    "flight": "ETD80M",
+    "reg": "A6-LRC",
+    "actype": "A21N",
+    "first_seen": "2026-10-31T08:28:42Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-10-31T08:28:42Z",
+    "lat": 24.3897,
+    "lon": 54.7444,
+    "alt": 1575,
+    "alt_geom": 1650,
+    "gs": 170.2,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-10-31T08:28:51Z",
+  "aircraft_count": 6
  }
 ]
