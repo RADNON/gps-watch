@@ -12282,7 +12282,7 @@
  {
   "id": "JAM-20261031-0217",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-10-30T23:17:55Z",
   "last_seen": "2026-10-30T23:17:55Z",
   "lat": 26.764,
