@@ -13666,7 +13666,7 @@
  {
   "id": "JAM-20261101-0957",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-01T06:57:39Z",
   "last_seen": "2026-11-01T06:57:39Z",
   "lat": 23.916,
@@ -13792,7 +13792,7 @@
  {
   "id": "JAM-20261101-0957-2",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-01T06:57:39Z",
   "last_seen": "2026-11-01T06:57:39Z",
   "lat": 26.852,
@@ -13862,7 +13862,7 @@
  {
   "id": "SPF-20261101-0957",
   "type": "spoofing",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-01T06:57:39Z",
   "last_seen": "2026-11-01T06:57:39Z",
   "lat": 23.927,
