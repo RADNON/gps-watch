@@ -14213,5 +14213,75 @@
   },
   "emailed": "2026-11-01T17:15:20Z",
   "aircraft_count": 6
+ },
+ {
+  "id": "JAM-20261101-2213",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-11-01T19:13:40Z",
+  "last_seen": "2026-11-01T19:13:40Z",
+  "lat": 26.398,
+  "lon": 51.309,
+  "where": "45 nm NE of Bahrain (26.40, 51.31)",
+  "aircraft": {
+   "323232": {
+    "hex": "323232",
+    "flight": "UNIDENT",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-11-01T17:51:00Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T19:13:40Z",
+    "lat": 25.73,
+    "lon": 51.0722,
+    "alt": 14000,
+    "alt_geom": 14700,
+    "gs": 105.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89642d": {
+    "hex": "89642d",
+    "flight": "ABY288",
+    "reg": "A6-AOJ",
+    "actype": "A320",
+    "first_seen": "2026-11-01T19:13:40Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-11-01T19:13:40Z",
+    "lat": 26.6721,
+    "lon": 51.4131,
+    "alt": 37000,
+    "alt_geom": 38725,
+    "gs": 525.6,
+    "nic": 4,
+    "nacp": 0
+   },
+   "89611f": {
+    "hex": "89611f",
+    "flight": "UAE136",
+    "reg": "A6-ECX",
+    "actype": "B77W",
+    "first_seen": "2026-11-01T19:13:40Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T19:13:40Z",
+    "lat": 26.791,
+    "lon": 51.4414,
+    "alt": 35000,
+    "alt_geom": 36650,
+    "gs": 559.4,
+    "nic": 0,
+    "nacp": 9
+   }
+  },
+  "emailed": "2026-11-01T19:13:51Z",
+  "aircraft_count": 3
  }
 ]
