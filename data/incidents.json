@@ -14086,5 +14086,132 @@
   },
   "emailed": "2026-11-01T15:27:05Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261101-2015",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-11-01T17:15:11Z",
+  "last_seen": "2026-11-01T17:15:11Z",
+  "lat": 25.126,
+  "lon": 54.05,
+  "where": "198 nm E of Bahrain (25.13, 54.05)",
+  "aircraft": {
+   "06a2f2": {
+    "hex": "06a2f2",
+    "flight": "QTR830",
+    "reg": "A7-BHO",
+    "actype": "B789",
+    "first_seen": "2026-11-01T17:15:11Z",
+    "signs": [
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T17:15:11Z",
+    "lat": 24.7377,
+    "lon": 53.5484,
+    "alt": 31300,
+    "alt_geom": 32975,
+    "gs": 598.1,
+    "nic": 0,
+    "nacp": 8
+   },
+   "8961ea": {
+    "hex": "8961ea",
+    "flight": "ETD669",
+    "reg": "A6-EIH",
+    "actype": "A320",
+    "first_seen": "2026-11-01T17:15:11Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-01T17:15:11Z",
+    "lat": 24.558,
+    "lon": 53.7772,
+    "alt": 18000,
+    "alt_geom": 19025,
+    "gs": 356.0,
+    "nic": 6,
+    "nacp": 0
+   },
+   "80044a": {
+    "hex": "80044a",
+    "flight": "AXB491",
+    "reg": "VT-AXZ",
+    "actype": "B738",
+    "first_seen": "2026-11-01T17:15:11Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-01T17:15:11Z",
+    "lat": 24.5319,
+    "lon": 53.8783,
+    "alt": 30350,
+    "alt_geom": 31975,
+    "gs": 411.2,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896745": {
+    "hex": "896745",
+    "flight": "ABY669",
+    "reg": "A6-ARI",
+    "actype": "A20N",
+    "first_seen": "2026-11-01T17:15:11Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-01T17:15:11Z",
+    "lat": 26.0031,
+    "lon": 53.6333,
+    "alt": 27200,
+    "alt_geom": 28700,
+    "gs": 505.4,
+    "nic": 6,
+    "nacp": 8
+   },
+   "896761": {
+    "hex": "896761",
+    "flight": "FDB1ND",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-11-01T17:15:11Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T17:15:11Z",
+    "lat": 25.7489,
+    "lon": 54.4348,
+    "alt": 17200,
+    "alt_geom": 18200,
+    "gs": 387.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "710115": {
+    "hex": "710115",
+    "flight": "SVA551",
+    "reg": "HZ-AS53",
+    "actype": "A320",
+    "first_seen": "2026-11-01T17:15:11Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-01T17:15:11Z",
+    "lat": 25.1781,
+    "lon": 55.027,
+    "alt": 9700,
+    "alt_geom": 10275,
+    "gs": 298.2,
+    "nic": 6,
+    "nacp": 8
+   }
+  },
+  "emailed": "2026-11-01T17:15:20Z",
+  "aircraft_count": 6
  }
 ]
