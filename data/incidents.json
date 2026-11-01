@@ -13444,10 +13444,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-10-31T23:59:25Z",
-  "last_seen": "2026-10-31T23:59:25Z",
-  "lat": 28.131,
-  "lon": 49.279,
-  "where": "141 nm NW of Bahrain (28.13, 49.28)",
+  "last_seen": "2026-11-01T00:58:40Z",
+  "lat": 28.326,
+  "lon": 49.11,
+  "where": "156 nm NW of Bahrain (28.33, 49.11)",
   "aircraft": {
    "4bb275": {
     "hex": "4bb275",
@@ -13543,9 +13543,124 @@
     "gs": 442.3,
     "nic": 6,
     "nacp": 6
+   },
+   "06a152": {
+    "hex": "06a152",
+    "flight": "QTR1V",
+    "reg": "A7-AHX",
+    "actype": "A320",
+    "first_seen": "2026-11-01T00:58:40Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T00:58:40Z",
+    "lat": 28.6395,
+    "lon": 47.9644,
+    "alt": 30000,
+    "alt_geom": 31325,
+    "gs": 421.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8963f7": {
+    "hex": "8963f7",
+    "flight": "UAE7",
+    "reg": "A6-EOZ",
+    "actype": "A388",
+    "first_seen": "2026-11-01T00:58:40Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-01T00:58:40Z",
+    "lat": 29.3612,
+    "lon": 48.3645,
+    "alt": 34000,
+    "alt_geom": null,
+    "gs": 470.1,
+    "nic": 6,
+    "nacp": 7
+   },
+   "4bc8d4": {
+    "hex": "4bc8d4",
+    "flight": "PGT741",
+    "reg": "TC-RFT",
+    "actype": "A21N",
+    "first_seen": "2026-11-01T00:58:40Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-01T00:58:40Z",
+    "lat": 28.51,
+    "lon": 48.869,
+    "alt": 32000,
+    "alt_geom": 33600,
+    "gs": 430.9,
+    "nic": 6,
+    "nacp": 8
+   },
+   "894097": {
+    "hex": "894097",
+    "flight": "GFA009",
+    "reg": "A9C-FF",
+    "actype": "B789",
+    "first_seen": "2026-11-01T00:58:40Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-01T00:58:40Z",
+    "lat": 28.305,
+    "lon": 49.2993,
+    "alt": 29975,
+    "alt_geom": 31325,
+    "gs": 1072.7,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8962e6": {
+    "hex": "8962e6",
+    "flight": "ETD49D",
+    "reg": "A6-ETH",
+    "actype": "B77W",
+    "first_seen": "2026-11-01T00:58:40Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-01T00:58:40Z",
+    "lat": 28.1358,
+    "lon": 49.5912,
+    "alt": 30000,
+    "alt_geom": 31425,
+    "gs": 465.6,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896558": {
+    "hex": "896558",
+    "flight": "ABY265",
+    "reg": "A6-ATB",
+    "actype": "A21N",
+    "first_seen": "2026-11-01T00:58:40Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T00:58:40Z",
+    "lat": 27.982,
+    "lon": 49.7286,
+    "alt": 31975,
+    "alt_geom": 32575,
+    "gs": null,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-10-31T23:59:34Z",
-  "aircraft_count": 5
+  "aircraft_count": 11
  }
 ]
