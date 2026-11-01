@@ -14090,7 +14090,7 @@
  {
   "id": "JAM-20261101-2015",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-01T17:15:11Z",
   "last_seen": "2026-11-01T17:15:11Z",
   "lat": 25.126,
