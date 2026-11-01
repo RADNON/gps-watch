@@ -14283,5 +14283,93 @@
   },
   "emailed": "2026-11-01T19:13:51Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261102-0149",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-11-01T22:49:47Z",
+  "last_seen": "2026-11-01T22:49:47Z",
+  "lat": 26.399,
+  "lon": 50.942,
+  "where": "29 nm NE of Bahrain (26.40, 50.94)",
+  "aircraft": {
+   "323232": {
+    "hex": "323232",
+    "flight": "UNIDENT",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-11-01T21:35:13Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T22:49:47Z",
+    "lat": 25.7446,
+    "lon": 51.1234,
+    "alt": 14000,
+    "alt_geom": 14650,
+    "gs": 83.2,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89659d": {
+    "hex": "89659d",
+    "flight": "ABY259",
+    "reg": "A6-ATF",
+    "actype": "A21N",
+    "first_seen": "2026-11-01T22:49:47Z",
+    "signs": [
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-11-01T22:49:47Z",
+    "lat": 27.0029,
+    "lon": 50.5469,
+    "alt": 36975,
+    "alt_geom": 38650,
+    "gs": 515.7,
+    "nic": 5,
+    "nacp": 9
+   },
+   "8940c3": {
+    "hex": "8940c3",
+    "flight": "GFA027",
+    "reg": "A9C-NF",
+    "actype": "A21N",
+    "first_seen": "2026-11-01T22:49:47Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-01T22:49:47Z",
+    "lat": 26.4021,
+    "lon": 50.7905,
+    "alt": 9700,
+    "alt_geom": 10225,
+    "gs": 278.7,
+    "nic": 6,
+    "nacp": 0
+   },
+   "89642a": {
+    "hex": "89642a",
+    "flight": "ETD2K5",
+    "reg": "A6-AEE",
+    "actype": "A321",
+    "first_seen": "2026-11-01T22:49:47Z",
+    "signs": [
+     "GPS integrity low (NIC 5)"
+    ],
+    "last_seen": "2026-11-01T22:49:47Z",
+    "lat": 26.4483,
+    "lon": 51.3055,
+    "alt": 12175,
+    "alt_geom": 12575,
+    "gs": 357.4,
+    "nic": 5,
+    "nacp": 8
+   }
+  },
+  "emailed": "2026-11-01T22:49:55Z",
+  "aircraft_count": 4
  }
 ]
