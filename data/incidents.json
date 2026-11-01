@@ -13944,5 +13944,76 @@
   },
   "emailed": "2026-11-01T06:57:47Z",
   "aircraft_count": 4
+ },
+ {
+  "id": "JAM-20261101-1754",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-11-01T14:54:27Z",
+  "last_seen": "2026-11-01T14:54:27Z",
+  "lat": 26.234,
+  "lon": 51.44,
+  "where": "49 nm E of Bahrain (26.23, 51.44)",
+  "aircraft": {
+   "323232": {
+    "hex": "323232",
+    "flight": "UNIDENT",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-11-01T13:30:37Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T14:54:27Z",
+    "lat": 25.7416,
+    "lon": 51.0819,
+    "alt": 14000,
+    "alt_geom": 14700,
+    "gs": 107.8,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896513": {
+    "hex": "896513",
+    "flight": "FDB4SH",
+    "reg": "A6-FMF",
+    "actype": "B38M",
+    "first_seen": "2026-11-01T14:54:27Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T14:54:27Z",
+    "lat": 26.6102,
+    "lon": 51.2384,
+    "alt": 32000,
+    "alt_geom": 33625,
+    "gs": 409.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896752": {
+    "hex": "896752",
+    "flight": "FDB1405",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-11-01T14:54:27Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-01T14:54:27Z",
+    "lat": 26.3508,
+    "lon": 51.9997,
+    "alt": 32000,
+    "alt_geom": 33575,
+    "gs": 409.3,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-11-01T14:54:35Z",
+  "aircraft_count": 3
  }
 ]
