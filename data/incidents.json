@@ -14289,10 +14289,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-11-01T22:49:47Z",
-  "last_seen": "2026-11-01T23:20:30Z",
-  "lat": 26.691,
-  "lon": 50.577,
-  "where": "37 nm N of Bahrain (26.69, 50.58)",
+  "last_seen": "2026-11-01T23:54:59Z",
+  "lat": 26.781,
+  "lon": 50.453,
+  "where": "43 nm N of Bahrain (26.78, 50.45)",
   "aircraft": {
    "323232": {
     "hex": "323232",
@@ -14446,10 +14446,105 @@
     "gs": 409.7,
     "nic": 0,
     "nacp": 0
+   },
+   "89655f": {
+    "hex": "89655f",
+    "flight": "UAE8ER",
+    "reg": "A6-EVS",
+    "actype": "A388",
+    "first_seen": "2026-11-01T23:20:30Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-01T23:54:59Z",
+    "lat": 26.7835,
+    "lon": 50.7079,
+    "alt": 32000,
+    "alt_geom": 33550,
+    "gs": 430.4,
+    "nic": 6,
+    "nacp": 9
+   },
+   "8966f9": {
+    "hex": "8966f9",
+    "flight": "UAE88F",
+    "reg": "A6-EXV",
+    "actype": "A359",
+    "first_seen": "2026-11-01T23:54:59Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-01T23:54:59Z",
+    "lat": 27.6425,
+    "lon": 49.7865,
+    "alt": 36000,
+    "alt_geom": 37550,
+    "gs": 427.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "89624b": {
+    "hex": "89624b",
+    "flight": "A6HMS",
+    "reg": "A6-HMS",
+    "actype": "A320",
+    "first_seen": "2026-11-01T23:54:59Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-01T23:54:59Z",
+    "lat": 26.7612,
+    "lon": 49.9127,
+    "alt": 32025,
+    "alt_geom": 33625,
+    "gs": 410.0,
+    "nic": 6,
+    "nacp": 8
+   },
+   "010153": {
+    "hex": "010153",
+    "flight": "MSR959",
+    "reg": "SU-GDP",
+    "actype": "B77W",
+    "first_seen": "2026-11-01T23:54:59Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-01T23:54:59Z",
+    "lat": 26.7323,
+    "lon": 50.3721,
+    "alt": 34000,
+    "alt_geom": 35550,
+    "gs": 430.9,
+    "nic": 0,
+    "nacp": 0
+   },
+   "aa3086": {
+    "hex": "aa3086",
+    "flight": "NCR885",
+    "reg": "N756CA",
+    "actype": "B744",
+    "first_seen": "2026-11-01T23:54:59Z",
+    "signs": [
+     "GPS accuracy low (NACp 7)",
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-01T23:54:59Z",
+    "lat": 26.7044,
+    "lon": 50.4903,
+    "alt": 17000,
+    "alt_geom": 17875,
+    "gs": 399.6,
+    "nic": 6,
+    "nacp": 7
    }
   },
   "emailed": "2026-11-01T22:49:55Z",
-  "aircraft_count": 8
+  "aircraft_count": 13
  },
  {
   "id": "JAM-20261102-0220",
