@@ -14622,10 +14622,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-11-02T04:32:00Z",
-  "last_seen": "2026-11-02T04:32:00Z",
-  "lat": 26.557,
-  "lon": 50.743,
-  "where": "31 nm N of Bahrain (26.56, 50.74)",
+  "last_seen": "2026-11-02T05:33:43Z",
+  "lat": 26.3,
+  "lon": 50.821,
+  "where": "20 nm NE of Bahrain (26.30, 50.82)",
   "aircraft": {
    "323232": {
     "hex": "323232",
@@ -14637,14 +14637,14 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-11-02T04:32:00Z",
-    "lat": 25.7609,
-    "lon": 51.0977,
-    "alt": 14000,
-    "alt_geom": 14700,
-    "gs": 110.4,
+    "last_seen": "2026-11-02T05:33:43Z",
+    "lat": 25.4297,
+    "lon": 50.9434,
+    "alt": 13500,
+    "alt_geom": 14200,
+    "gs": 107.8,
     "nic": 0,
-    "nacp": 0
+    "nacp": null
    },
    "89409f": {
     "hex": "89409f",
@@ -14703,15 +14703,74 @@
     "gs": 536.5,
     "nic": 6,
     "nacp": 8
+   },
+   "89671c": {
+    "hex": "89671c",
+    "flight": "ABY101",
+    "reg": "A6-ARD",
+    "actype": "A20N",
+    "first_seen": "2026-11-02T05:33:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-02T05:33:43Z",
+    "lat": 26.3149,
+    "lon": 50.557,
+    "alt": 850,
+    "alt_geom": 825,
+    "gs": 149.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-11-02T05:33:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-02T05:33:43Z",
+    "lat": 25.5071,
+    "lon": 50.868,
+    "alt": 10450,
+    "alt_geom": 11050,
+    "gs": 106.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "7609eb": {
+    "hex": "7609eb",
+    "flight": "PIA247",
+    "reg": "AP-BOK",
+    "actype": "A320",
+    "first_seen": "2026-11-02T05:33:43Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-02T05:33:43Z",
+    "lat": 26.3854,
+    "lon": 51.5026,
+    "alt": 16975,
+    "alt_geom": 17900,
+    "gs": 334.0,
+    "nic": 0,
+    "nacp": 0
    }
   },
   "emailed": "2026-11-02T04:32:08Z",
-  "aircraft_count": 4
+  "aircraft_count": 7
  },
  {
   "id": "JAM-20261102-0732-2",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-02T04:32:00Z",
   "last_seen": "2026-11-02T04:32:00Z",
   "lat": 25.313,
@@ -14801,7 +14860,7 @@
  {
   "id": "SPF-20261102-0732",
   "type": "spoofing",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-02T04:32:00Z",
   "last_seen": "2026-11-02T04:32:00Z",
   "lat": 25.134,
