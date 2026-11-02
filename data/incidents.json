@@ -15085,5 +15085,76 @@
   },
   "emailed": "2026-11-02T17:40:53Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261102-2320",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-11-02T20:20:15Z",
+  "last_seen": "2026-11-02T20:20:15Z",
+  "lat": 26.262,
+  "lon": 51.25,
+  "where": "39 nm E of Bahrain (26.26, 51.25)",
+  "aircraft": {
+   "a98abc": {
+    "hex": "a98abc",
+    "flight": "UNIDENT",
+    "reg": "N71381",
+    "actype": "L8",
+    "first_seen": "2026-11-02T19:32:05Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-02T20:20:15Z",
+    "lat": 25.6857,
+    "lon": 51.1155,
+    "alt": 13975,
+    "alt_geom": 14700,
+    "gs": 92.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a146": {
+    "hex": "06a146",
+    "flight": "QTR45P",
+    "reg": "A7-APE",
+    "actype": "A388",
+    "first_seen": "2026-11-02T20:20:15Z",
+    "signs": [
+     "GPS accuracy low (NACp 4)",
+     "GPS integrity low (NIC 4)"
+    ],
+    "last_seen": "2026-11-02T20:20:15Z",
+    "lat": 26.325,
+    "lon": 51.1881,
+    "alt": 21000,
+    "alt_geom": null,
+    "gs": 439.6,
+    "nic": 4,
+    "nacp": 4
+   },
+   "706130": {
+    "hex": "706130",
+    "flight": "JZR539",
+    "reg": "9K-CBI",
+    "actype": "A20N",
+    "first_seen": "2026-11-02T20:20:15Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-02T20:20:15Z",
+    "lat": 26.7758,
+    "lon": 51.445,
+    "alt": 35000,
+    "alt_geom": 35325,
+    "gs": 527.5,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-11-02T20:20:23Z",
+  "aircraft_count": 3
  }
 ]
