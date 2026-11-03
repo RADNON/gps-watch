@@ -32,6 +32,26 @@
   .legend span { display:inline-flex; align-items:center; gap:6px; margin-right:14px; font-size:12px; color:var(--muted); }
   .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
   .tablewrap { overflow-x:auto; }
+  .tr-grid { display:grid; grid-template-columns: 340px 1fr; gap:20px; }
+  @media (max-width: 960px) { .tr-grid { grid-template-columns: 1fr; } }
+  .tr-form label.f { display:block; font-size:12px; color:var(--muted); margin:10px 0 4px; }
+  .tr-form input[type=date], .tr-form input[type=time], .tr-form input[type=text], .tr-form input[type=password], .tr-form textarea {
+    width:100%; background:#0f151c; color:var(--text); border:1px solid var(--line); border-radius:6px;
+    padding:8px 10px; font:inherit; color-scheme:dark; }
+  .tr-form textarea { resize:vertical; min-height:60px; }
+  .tr-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .bands { display:flex; gap:8px; flex-wrap:wrap; }
+  .bands label { display:inline-flex; align-items:center; gap:6px; background:#0f151c; border:1px solid var(--line);
+    border-radius:6px; padding:7px 12px; cursor:pointer; font-weight:600; }
+  .bands input { accent-color: var(--accent); }
+  .bands label:has(input:checked) { border-color:var(--accent); background:#12283a; }
+  button.primary { margin-top:14px; width:100%; background:var(--accent); color:#06121d; border:0; border-radius:6px;
+    padding:10px; font:inherit; font-weight:700; cursor:pointer; }
+  button.primary:disabled { opacity:.6; cursor:wait; }
+  .msg { font-size:13px; margin-top:8px; min-height:18px; }
+  .msg.ok { color:var(--ok); } .msg.err { color:#ff8a7a; }
+  .band { display:inline-block; font-size:11px; font-weight:700; padding:2px 6px; border-radius:4px; background:#12283a;
+    border:1px solid #2a5a80; margin:0 3px 3px 0; }
 </style>
 </head>
 <body>
@@ -69,6 +89,36 @@
     <div class="card">
       <h2>Monthly reports</h2>
       <div id="reports" class="muted">None yet — the first is made on the 1st of next month.</div>
+    </div>
+  </div>
+  <div class="card wide" id="team">
+    <h2>Team reports — GPS interference</h2>
+    <div id="tr-setup" class="muted" hidden>Team reports are not connected yet. Follow the "Team reports" steps in README.md.</div>
+    <div class="tr-grid" id="tr-main">
+      <form class="tr-form" id="tr-form" autocomplete="off">
+        <div class="tr-row">
+          <div><label class="f" for="tr-date">Date</label><input type="date" id="tr-date" required></div>
+          <div><label class="f" for="tr-time">Time (Bahrain)</label><input type="time" id="tr-time" required></div>
+        </div>
+        <label class="f">Affected band(s)</label>
+        <div class="bands">
+          <label><input type="checkbox" name="band" value="L1">L1</label>
+          <label><input type="checkbox" name="band" value="L2">L2</label>
+          <label><input type="checkbox" name="band" value="L3">L3</label>
+          <label><input type="checkbox" name="band" value="L5">L5</label>
+        </div>
+        <label class="f" for="tr-pin">Team PIN</label><input type="password" id="tr-pin" required>
+        <label class="f" for="tr-notes">Notes (optional)</label>
+        <textarea id="tr-notes" maxlength="500" placeholder="Location, duration, equipment, what was observed…"></textarea>
+        <button class="primary" type="submit" id="tr-submit">Add report</button>
+        <div class="msg" id="tr-msg"></div>
+      </form>
+      <div>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Date</th><th>Time</th><th>Bands</th><th>Notes</th></tr></thead>
+          <tbody id="tr-rows"><tr><td colspan="4" class="muted">Enter the team PIN to see reports.</td></tr></tbody>
+        </table></div>
+      </div>
     </div>
   </div>
   <div class="card wide">
@@ -128,6 +178,62 @@ Promise.all([get("data/status.json"), get("data/incidents.json"), get("data/repo
   if (reps && reps.length) document.getElementById("reports").innerHTML =
     reps.map(r => `<div><a href="reports/${encodeURIComponent(r)}">${esc(new Date(r.slice(0,7) + "-01T00:00:00Z").toLocaleString("en-GB",{month:"long",year:"numeric",timeZone:"UTC"}))}</a></div>`).join("");
 });
+</script>
+<script src="config.js"></script>
+<script>
+(() => {
+  const URL_ = (window.TEAM_REPORTS_URL || "").trim();
+  const $ = id => document.getElementById(id);
+  const escT = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  if (!URL_) { $("tr-setup").hidden = false; $("tr-main").hidden = true; return; }
+
+  const store = { get(k) { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } },
+                  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  const nowBH = () => {
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB", { timeZone:"Asia/Bahrain", year:"numeric", month:"2-digit",
+      day:"2-digit", hour:"2-digit", minute:"2-digit", hourCycle:"h23" }).formatToParts(new Date()).map(x => [x.type, x.value]));
+    return { date: `${p.year}-${p.month}-${p.day}`, time: `${p.hour}:${p.minute}` };
+  };
+  const reset = () => { const n = nowBH(); $("tr-date").value = n.date; $("tr-time").value = n.time;
+    document.querySelectorAll("input[name=band]").forEach(b => b.checked = false); $("tr-notes").value = ""; };
+  reset();
+  $("tr-pin").value = store.get("tr-pin");
+  const msg = (t, cls) => { $("tr-msg").textContent = t; $("tr-msg").className = "msg " + (cls || ""); };
+
+  async function load() {
+    const pin = $("tr-pin").value.trim();
+    if (!pin) return;
+    try {
+      const r = await fetch(URL_ + "?pin=" + encodeURIComponent(pin) + "&ts=" + Date.now()).then(r => r.json());
+      if (!r.ok) { $("tr-rows").innerHTML = `<tr><td colspan="4" class="muted">${r.error === "pin" ? "Wrong team PIN." : "Could not load reports."}</td></tr>`; return; }
+      r.reports.sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
+      const fmtD = d => /^\d{4}-\d{2}-\d{2}$/.test(d) ? new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day:"2-digit", month:"short", year:"numeric", timeZone:"UTC" }) : d;
+      $("tr-rows").innerHTML = r.reports.length ? r.reports.map(x => `<tr><td style="white-space:nowrap">${escT(fmtD(x.date))}</td><td>${escT(x.time)}</td>
+        <td>${String(x.bands).split(",").map(b => b.trim()).filter(Boolean).map(b => `<span class="band">${escT(b)}</span>`).join("")}</td>
+        <td>${escT(x.notes)}</td></tr>`).join("")
+        : `<tr><td colspan="4" class="muted">No team reports yet.</td></tr>`;
+    } catch (e) { $("tr-rows").innerHTML = `<tr><td colspan="4" class="muted">Could not reach the reports sheet.</td></tr>`; }
+  }
+  $("tr-pin").addEventListener("change", () => { store.set("tr-pin", $("tr-pin").value.trim()); load(); });
+
+  $("tr-form").addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const bands = [...document.querySelectorAll("input[name=band]:checked")].map(b => b.value);
+    if (!bands.length) { msg("Please choose at least one band.", "err"); return; }
+    const body = { pin: $("tr-pin").value.trim(), date: $("tr-date").value, time: $("tr-time").value,
+                   bands, notes: $("tr-notes").value.trim() };
+    $("tr-submit").disabled = true; msg("Saving…");
+    try {
+      const r = await fetch(URL_, { method: "POST", body: JSON.stringify(body) }).then(r => r.json());
+      if (r.ok) {
+        store.set("tr-pin", body.pin);
+        msg("Report saved. Thank you.", "ok"); reset(); load();
+      } else msg(r.error === "pin" ? "Wrong team PIN." : r.error, "err");
+    } catch (e) { msg("Could not save — check your connection and try again.", "err"); }
+    $("tr-submit").disabled = false;
+  });
+  load();
+})();
 </script>
 </body>
 </html>
