@@ -15432,7 +15432,7 @@
  {
   "id": "JAM-20261103-0814",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-03T05:14:26Z",
   "last_seen": "2026-11-03T06:11:15Z",
   "lat": 26.018,
@@ -15579,7 +15579,7 @@
  {
   "id": "SPF-20261103-0814",
   "type": "spoofing",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-03T05:14:26Z",
   "last_seen": "2026-11-03T05:14:26Z",
   "lat": 24.297,
