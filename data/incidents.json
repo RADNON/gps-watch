@@ -15809,7 +15809,7 @@
  {
   "id": "JAM-20261103-2322",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-03T20:22:10Z",
   "last_seen": "2026-11-03T20:22:10Z",
   "lat": 25.899,
