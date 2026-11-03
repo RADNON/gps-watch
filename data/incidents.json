@@ -15805,5 +15805,75 @@
   },
   "emailed": "2026-11-03T05:14:36Z",
   "aircraft_count": 12
+ },
+ {
+  "id": "JAM-20261103-2322",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-11-03T20:22:10Z",
+  "last_seen": "2026-11-03T20:22:10Z",
+  "lat": 25.899,
+  "lon": 53.451,
+  "where": "157 nm E of Bahrain (25.90, 53.45)",
+  "aircraft": {
+   "8963b6": {
+    "hex": "8963b6",
+    "flight": "FDB871",
+    "reg": "A6-FET",
+    "actype": "B738",
+    "first_seen": "2026-11-03T20:22:10Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-03T20:22:10Z",
+    "lat": 25.9204,
+    "lon": 52.5566,
+    "alt": 36000,
+    "alt_geom": null,
+    "gs": null,
+    "nic": 0,
+    "nacp": 0
+   },
+   "760a0c": {
+    "hex": "760a0c",
+    "flight": "FJL767",
+    "reg": "AP-BPL",
+    "actype": "A320",
+    "first_seen": "2026-11-03T20:22:10Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)"
+    ],
+    "last_seen": "2026-11-03T20:22:10Z",
+    "lat": 25.9581,
+    "lon": 53.4305,
+    "alt": 34175,
+    "alt_geom": 35725,
+    "gs": 509.9,
+    "nic": 7,
+    "nacp": 0
+   },
+   "4ba9ec": {
+    "hex": "4ba9ec",
+    "flight": "THY9ZD",
+    "reg": "TC-JOL",
+    "actype": "A333",
+    "first_seen": "2026-11-03T20:22:10Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-03T20:22:10Z",
+    "lat": 25.8199,
+    "lon": 54.3663,
+    "alt": 16100,
+    "alt_geom": 16925,
+    "gs": 342.0,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-11-03T20:22:20Z",
+  "aircraft_count": 3
  }
 ]
