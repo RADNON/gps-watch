@@ -15875,5 +15875,76 @@
   },
   "emailed": "2026-11-03T20:22:20Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261104-0302",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-11-04T00:02:16Z",
+  "last_seen": "2026-11-04T00:02:16Z",
+  "lat": 27.054,
+  "lon": 50.311,
+  "where": "60 nm N of Bahrain (27.05, 50.31)",
+  "aircraft": {
+   "010246": {
+    "hex": "010246",
+    "flight": "MSR967",
+    "reg": "SU-GFV",
+    "actype": "A21N",
+    "first_seen": "2026-11-04T00:02:16Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-04T00:02:16Z",
+    "lat": 27.6106,
+    "lon": 49.8056,
+    "alt": 34000,
+    "alt_geom": 35400,
+    "gs": 399.5,
+    "nic": 0,
+    "nacp": 0
+   },
+   "801665": {
+    "hex": "801665",
+    "flight": "AIC98V",
+    "reg": "VT-JRI",
+    "actype": "A359",
+    "first_seen": "2026-11-04T00:02:16Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-04T00:02:16Z",
+    "lat": 27.1507,
+    "lon": 50.2116,
+    "alt": 38000,
+    "alt_geom": 39450,
+    "gs": 424.3,
+    "nic": 0,
+    "nacp": 0
+   },
+   "4bb074": {
+    "hex": "4bb074",
+    "flight": "THY4WP",
+    "reg": "TC-LCT",
+    "actype": "B38M",
+    "first_seen": "2026-11-04T00:02:16Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-04T00:02:16Z",
+    "lat": 26.402,
+    "lon": 50.9157,
+    "alt": 23750,
+    "alt_geom": 24900,
+    "gs": 446.3,
+    "nic": 6,
+    "nacp": 9
+   }
+  },
+  "emailed": "2026-11-04T00:02:25Z",
+  "aircraft_count": 3
  }
 ]
