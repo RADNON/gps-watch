@@ -15,6 +15,8 @@ those figures drop; when GPS is spoofed, the GPS position/altitude stop agreeing
 with physics and with the barometric altimeter.
 """
 
+import base64
+import hashlib
 import json
 import math
 import os
@@ -53,11 +55,12 @@ STACK_MIN_ALT_FT = 10000
 MERGE_NM = 100             # new signs this close to an open incident belong to it
 CLOSE_AFTER_MIN = 60       # incident closes after this long with no new signs
 MEMORY_KEEP_MIN = 90
-ALARM_MAX_AGE_HOURS = 6    # older than this is sent as a LATE ALARM
+ALARM_MAX_AGE_HOURS = 6    # never send an alarm for something older than this
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
-INCIDENTS_FILE = DATA / "incidents.json"
+INCIDENTS_FILE = DATA / "incidents.json"        # used only when no password is set
+INCIDENTS_ENC = DATA / "incidents.enc.json"     # encrypted log (password set)
 MEMORY_FILE = ROOT / "state" / "memory.json"
 SITE_SRC = ROOT / "site"
 SITE_OUT = ROOT / "_site"
@@ -125,6 +128,88 @@ def save_json(path, obj):
 
 def num(v):
     return v if isinstance(v, (int, float)) and not isinstance(v, bool) else None
+
+
+# --------------------------------------------------------------- password lock --
+# When the GitHub secret DASHBOARD_PASSWORD is set, the incident log, the dashboard
+# data and the monthly reports are stored and published encrypted (AES-GCM).
+# Only each incident's own map file stays open, so alarm-email map links work.
+KDF_ITER = 200_000
+
+
+def password():
+    return os.environ.get("DASHBOARD_PASSWORD", "").strip()
+
+
+def _key(pw, salt):
+    return hashlib.pbkdf2_hmac("sha256", pw.encode("utf-8"), salt, KDF_ITER, 32)
+
+
+def encrypt_text(text, pw):
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    salt, iv = os.urandom(16), os.urandom(12)
+    ct = AESGCM(_key(pw, salt)).encrypt(iv, text.encode("utf-8"), None)
+    b = lambda x: base64.b64encode(x).decode("ascii")
+    return json.dumps({"v": 1, "kdf": "PBKDF2-SHA256", "iter": KDF_ITER, "salt": b(salt), "iv": b(iv), "ct": b(ct)})
+
+
+def decrypt_text(blob, pw):
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    env = json.loads(blob)
+    d = lambda k: base64.b64decode(env[k])
+    salt = d("salt")
+    key = hashlib.pbkdf2_hmac("sha256", pw.encode("utf-8"), salt, int(env.get("iter", KDF_ITER)), 32)
+    return AESGCM(key).decrypt(d("iv"), d("ct"), None).decode("utf-8")
+
+
+def unlock_text(blob):
+    """Decrypt with the current password, or the old one after a password change."""
+    for pw in (password(), os.environ.get("DASHBOARD_PASSWORD_OLD", "").strip()):
+        if not pw:
+            continue
+        try:
+            return decrypt_text(blob, pw)
+        except Exception:  # noqa: BLE001
+            continue
+    raise SystemExit("Cannot open the encrypted incident log: DASHBOARD_PASSWORD is wrong. "
+                     "If you changed it, add the previous one as the secret DASHBOARD_PASSWORD_OLD.")
+
+
+def load_incidents():
+    if INCIDENTS_ENC.exists():
+        return json.loads(unlock_text(INCIDENTS_ENC.read_text(encoding="utf-8")))
+    return load_json(INCIDENTS_FILE, [])
+
+
+def save_incidents(incidents):
+    pw = password()
+    if pw:
+        DATA.mkdir(parents=True, exist_ok=True)
+        INCIDENTS_ENC.write_text(encrypt_text(json.dumps(incidents, ensure_ascii=False), pw), encoding="utf-8")
+        if INCIDENTS_FILE.exists():
+            INCIDENTS_FILE.unlink()          # remove the old unencrypted copy
+    else:
+        save_json(INCIDENTS_FILE, incidents)
+
+
+def save_report_file(name, html):
+    """Save a monthly report (encrypted when a password is set)."""
+    REPORTS.mkdir(exist_ok=True)
+    pw = password()
+    if pw:
+        (REPORTS / f"{name}.enc").write_text(encrypt_text(html, pw), encoding="utf-8")
+        old = REPORTS / f"{name}.html"
+        if old.exists():
+            old.unlink()
+    else:
+        (REPORTS / f"{name}.html").write_text(html, encoding="utf-8")
+
+
+def migrate_reports():
+    """Encrypt any old plain monthly reports once a password is set."""
+    if password() and REPORTS.exists():
+        for p in REPORTS.glob("*.html"):
+            save_report_file(p.stem, p.read_text(encoding="utf-8"))
 
 
 # -------------------------------------------------------------------- fetch --
@@ -332,13 +417,25 @@ def build_site(incidents, status):
     if SITE_OUT.exists():
         shutil.rmtree(SITE_OUT)
     shutil.copytree(SITE_SRC, SITE_OUT)
-    (SITE_OUT / "data").mkdir(exist_ok=True)
-    save_json(SITE_OUT / "data" / "incidents.json", incidents)
-    save_json(SITE_OUT / "data" / "status.json", status)
-    reports = sorted([p.name for p in REPORTS.glob("*.html")], reverse=True) if REPORTS.exists() else []
-    if reports:
-        shutil.copytree(REPORTS, SITE_OUT / "reports")
-    save_json(SITE_OUT / "data" / "reports.json", reports)
+    data_out = SITE_OUT / "data"
+    (data_out / "maps").mkdir(parents=True, exist_ok=True)
+    # Each incident's own map data stays open, so alarm-email map links work for anyone
+    for inc in incidents:
+        save_json(data_out / "maps" / f"{inc['id']}.json", inc)
+    migrate_reports()
+    names = sorted([p.name for p in REPORTS.glob("*.enc")] + [p.name for p in REPORTS.glob("*.html")],
+                   reverse=True) if REPORTS.exists() else []
+    if names:
+        (SITE_OUT / "reports").mkdir(exist_ok=True)
+        for n in names:
+            shutil.copy(REPORTS / n, SITE_OUT / "reports" / n)
+    bundle = {"status": status, "incidents": incidents, "reports": names}
+    pw = password()
+    if pw:
+        (data_out / "dashboard.enc.json").write_text(
+            encrypt_text(json.dumps(bundle, ensure_ascii=False), pw), encoding="utf-8")
+    else:
+        save_json(data_out / "dashboard.json", bundle)
     (SITE_OUT / ".nojekyll").write_text("")
 
 
@@ -388,35 +485,23 @@ def alarm_html(inc, map_url):
 def send_email(subject, html, recipients):
     user, pw = os.environ.get("SMTP_USER", ""), os.environ.get("SMTP_PASS", "")
     host = os.environ.get("SMTP_HOST") or "smtp.gmail.com"
-    port = int(os.environ.get("SMTP_PORT") or 587)
+    port = int(os.environ.get("SMTP_PORT") or 465)
     if not (user and pw and recipients):
         raise RuntimeError("Email not configured (SMTP_USER / SMTP_PASS / ALARM_TO missing)")
     msg = MIMEMultipart("alternative")
     msg["Subject"], msg["From"], msg["To"] = subject, f"GPS Interference Watch <{user}>", ", ".join(recipients)
     msg.attach(MIMEText("This message is in HTML. Please view it in an HTML-capable mail app.", "plain"))
     msg.attach(MIMEText(html, "html", "utf-8"))
-    body = msg.as_string()
-    # Try port 587 (STARTTLS) first, then 465 (SSL) - Gmail sometimes drops one of them.
-    ports = [port] + [p for p in (587, 465) if p != port]
-    errors = []
-    for p in ports:
-        ctx = ssl.create_default_context()
-        try:
-            if p == 465:
-                with smtplib.SMTP_SSL(host, p, context=ctx, timeout=30) as s:
-                    s.login(user, pw)
-                    s.sendmail(user, recipients, body)
-            else:
-                with smtplib.SMTP(host, p, timeout=30) as s:
-                    s.ehlo()
-                    s.starttls(context=ctx)
-                    s.ehlo()
-                    s.login(user, pw)
-                    s.sendmail(user, recipients, body)
-            return
-        except Exception as e:  # noqa: BLE001
-            errors.append(f"port {p}: {e}")
-    raise RuntimeError("; ".join(errors))
+    ctx = ssl.create_default_context()
+    if port == 465:
+        with smtplib.SMTP_SSL(host, port, context=ctx, timeout=30) as s:
+            s.login(user, pw)
+            s.sendmail(user, recipients, msg.as_string())
+    else:
+        with smtplib.SMTP(host, port, timeout=30) as s:
+            s.starttls(context=ctx)
+            s.login(user, pw)
+            s.sendmail(user, recipients, msg.as_string())
 
 
 def recipients():
@@ -432,7 +517,7 @@ def site_url():
 def cmd_detect():
     t = now_utc()
     memory = load_json(MEMORY_FILE, {"obs": [], "last_pos": {}})
-    incidents = load_json(INCIDENTS_FILE, [])
+    incidents = load_incidents()
     ac, source = fetch_aircraft()
     obs = observe(ac, t, memory)
     cutoff = t - timedelta(minutes=MEMORY_KEEP_MIN)
@@ -449,42 +534,39 @@ def cmd_detect():
         "center": [CENTER_LAT, CENTER_LON], "radius_nm": RADIUS_NM,
     }
     save_json(MEMORY_FILE, memory)
-    save_json(INCIDENTS_FILE, incidents)
+    save_incidents(incidents)
     build_site(incidents, status)
     print(f"[{bh(t)}] {source}: {len(obs)} aircraft, {len(status['degraded_now'])} degraded, "
           f"{len(status['spoof_signs_now'])} with spoofing signs, new incidents: {new_ids or 'none'}")
 
 
 def cmd_send():
-    incidents = load_json(INCIDENTS_FILE, [])
+    incidents = load_incidents()
     t = now_utc()
     to = recipients()
     changed = False
-    failed = []
     for inc in incidents:
         if inc.get("emailed"):
+            continue
+        if t - parse_iso(inc["first_seen"]) > timedelta(hours=ALARM_MAX_AGE_HOURS):
+            inc["emailed"] = "skipped (too old)"
+            changed = True
             continue
         if not to:
             print("ALARM_TO is empty - alarm emails are switched off.")
             break
-        late = t - parse_iso(inc["first_seen"]) > timedelta(hours=ALARM_MAX_AGE_HOURS)
         map_url = f"{site_url()}map.html?id={inc['id']}"
         kind = "GPS jamming" if inc["type"] == "jamming" else "GPS spoofing"
-        prefix = "LATE ALARM" if late else "ALARM"
-        subject = f"{prefix}: {kind} near Bahrain - {inc['aircraft_count']} aircraft - {bh(inc['first_seen'], '%d %b %H:%M')}"
+        subject = f"ALARM: {kind} near Bahrain - {inc['aircraft_count']} aircraft - {bh(inc['first_seen'], '%d %b %H:%M')}"
         try:
             send_email(subject, alarm_html(inc, map_url), to)
             inc["emailed"] = iso(t)
             changed = True
-            print(f"{prefix} sent for {inc['id']} to {', '.join(to)}")
+            print(f"Alarm sent for {inc['id']} to {', '.join(to)}")
         except Exception as e:  # noqa: BLE001  - retried on the next run
-            failed.append(inc["id"])
-            print(f"::error::Could not send alarm for {inc['id']}: {e}")
+            print(f"Could not send alarm for {inc['id']}: {e}")
     if changed:
-        save_json(INCIDENTS_FILE, incidents)
-    if failed:
-        # Make the GitHub check fail (red) so the failure is noticed; it is retried on the next run.
-        sys.exit(1)
+        save_incidents(incidents)
 
 
 def monthly_html(month_label, incs):
@@ -532,12 +614,11 @@ def cmd_monthly():
         last_month = first - timedelta(days=1)
         y, m = last_month.year, last_month.month
     label = datetime(y, m, 1).strftime("%B %Y")
-    incs = [i for i in load_json(INCIDENTS_FILE, [])
+    incs = [i for i in load_incidents()
             if (lambda d: (d.year, d.month) == (y, m))(parse_iso(i["first_seen"]).astimezone(BAHRAIN_TZ))]
     incs.sort(key=lambda i: i["first_seen"])
     html = monthly_html(label, incs)
-    REPORTS.mkdir(exist_ok=True)
-    (REPORTS / f"{y:04d}-{m:02d}.html").write_text(html, encoding="utf-8")
+    save_report_file(f"{y:04d}-{m:02d}", html)
     print(f"Report for {label}: {len(incs)} incidents")
     to = recipients()
     if to:

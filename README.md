@@ -62,6 +62,44 @@ From now on it runs by itself every 5 minutes.
 
 ---
 
+## Team reports (staff add GPS interference reports on the dashboard)
+
+The dashboard has a **Team reports** panel. Staff enter the date, time (Bahrain), affected band(s) (L1, L2, L5, or Clear) and optional notes. Reports are saved in a Google Sheet that only you can open. Adding or viewing reports needs the **team PIN**, so the public can't see or add them. Each browser remembers the PIN after the first use.
+
+### One-time setup (about 10 minutes)
+1. Sign in to Google as `bahrain.gps.watch@gmail.com` and create a new Google Sheet at **sheets.new**. Name it `GPS Watch - Team reports`.
+2. In the sheet, click **Extensions → Apps Script**.
+3. Delete everything in the code box, paste the whole contents of `apps-script/Code.gs`, then change `CHANGE-ME` on line 9 to your team PIN, e.g. `'TRA-4821'`. Click the **Save** icon.
+4. Click **Deploy → New deployment**. Click the gear icon next to "Select type" and choose **Web app**. Set:
+   - **Execute as:** Me
+   - **Who has access:** Anyone
+5. Click **Deploy**, then **Authorize access** and choose the Gmail account. Google warns that the app isn't verified. That's normal for your own script: click **Advanced → Go to (project name) (unsafe) → Allow**.
+6. Copy the **Web app URL**. It ends in `/exec`.
+7. In GitHub, open the `site` folder → **Add file → Create new file**. Name it `config.js` and paste this one line, with your URL between the quotes:
+   `window.TEAM_REPORTS_URL = "https://script.google.com/macros/s/.../exec";`
+   Then click **Commit changes**.
+8. In the `site` folder, click **Add file → Upload files** and upload the new `index.html`. It replaces the old one. Click **Commit changes**.
+9. The panel appears on the dashboard after the next 5-minute check.
+
+### Good to know
+- **Change the PIN:** edit it in Apps Script, click **Save**, then **Deploy → Manage deployments → ✏️ → Version: New version → Deploy**. The URL stays the same.
+- **Delete a report:** click **Delete** next to it on the dashboard, then **Confirm delete**. You can also edit or delete rows directly in the Google Sheet.
+- **Team report emails:** each new report is emailed to the addresses in `EMAIL_TO` at the top of the Apps Script. After changing them, save and publish a new version (see "Change the PIN").
+- **When submitted:** each report records when it was submitted.
+
+---
+
+## Password lock
+
+The dashboard, the incident log and the monthly reports are encrypted with the password in the GitHub secret `DASHBOARD_PASSWORD`. Anyone opening the dashboard must enter it. Each browser can tick **Remember on this computer**, and the **Lock** button at the top right forgets it again.
+
+- **Alarm-email map links still open without the password.** Each incident's own map stays reachable by its link, as before.
+- **Use the same password as the team PIN** if you like. The Team reports panel then fills in the PIN automatically after unlocking.
+- **Change the password:** first add the current one as a new secret `DASHBOARD_PASSWORD_OLD`, then update `DASHBOARD_PASSWORD`. After the next 5-minute check has run, you can delete `DASHBOARD_PASSWORD_OLD`.
+- **If you lose the password:** set a new one. The old encrypted incident history can't be opened again, so keep the password somewhere safe.
+
+---
+
 ## Good to know
 
 - **Emails not arriving at a work address?** Ask IT to allow-list the Gmail sender address. Company mail filters often block automated emails from Gmail.
@@ -75,7 +113,8 @@ From now on it runs by itself every 5 minutes.
 
 ## Files
 - `monitor.py`: checks the aircraft, decides what is confirmed, builds the website, and sends emails.
-- `site/`: dashboard (`index.html`) and incident map (`map.html`).
-- `data/incidents.json`: log of every confirmed incident.
+- `site/`: dashboard (`index.html`), incident map (`map.html`), monthly report viewer (`report.html`), password lock (`lock.js`) and `config.js` (team reports link).
+- `apps-script/Code.gs`: the Google Sheet script that stores team reports.
+- `data/incidents.enc.json`: encrypted log of every confirmed incident (`incidents.json` if no password is set).
 - `reports/`: saved monthly reports.
 - `.github/workflows/`: the two schedules (every 5 minutes, and monthly).
