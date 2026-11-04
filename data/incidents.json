@@ -15952,10 +15952,10 @@
   "type": "jamming",
   "status": "open",
   "first_seen": "2026-11-04T04:30:14Z",
-  "last_seen": "2026-11-04T04:30:14Z",
-  "lat": 25.931,
-  "lon": 51.14,
-  "where": "33 nm E of Bahrain (25.93, 51.14)",
+  "last_seen": "2026-11-04T05:30:16Z",
+  "lat": 26.077,
+  "lon": 51.221,
+  "where": "36 nm E of Bahrain (26.08, 51.22)",
   "aircraft": {
    "a98ac7": {
     "hex": "a98ac7",
@@ -15967,12 +15967,12 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-11-04T04:30:14Z",
-    "lat": 25.7134,
-    "lon": 51.1088,
+    "last_seen": "2026-11-04T05:30:16Z",
+    "lat": 25.7162,
+    "lon": 51.1001,
     "alt": 12975,
     "alt_geom": 13650,
-    "gs": 78.0,
+    "gs": 78.6,
     "nic": 0,
     "nacp": 0
    },
@@ -16023,17 +16023,36 @@
      "GPS accuracy low (NACp 0)",
      "GPS integrity low (NIC 0)"
     ],
-    "last_seen": "2026-11-04T04:30:14Z",
-    "lat": 25.6534,
-    "lon": 51.3396,
+    "last_seen": "2026-11-04T05:30:16Z",
+    "lat": 25.7846,
+    "lon": 51.835,
     "alt": 14000,
-    "alt_geom": 14650,
-    "gs": 112.3,
+    "alt_geom": 14675,
+    "gs": 87.1,
+    "nic": 0,
+    "nacp": 0
+   },
+   "896769": {
+    "hex": "896769",
+    "flight": "ABY337",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-11-04T05:30:16Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-04T05:30:16Z",
+    "lat": 26.5267,
+    "lon": 51.0606,
+    "alt": 36000,
+    "alt_geom": 37675,
+    "gs": 388.1,
     "nic": 0,
     "nacp": 0
    }
   },
   "emailed": "2026-11-04T04:30:23Z",
-  "aircraft_count": 4
+  "aircraft_count": 5
  }
 ]
