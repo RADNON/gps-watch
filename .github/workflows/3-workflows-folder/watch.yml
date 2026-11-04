@@ -1,0 +1,83 @@
+name: GPS watch (every 5 minutes)
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: gps-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install encryption tool
+        run: python -m pip install --quiet cryptography
+
+      - name: Remember recent aircraft
+        uses: actions/cache/restore@v4
+        with:
+          path: state
+          key: memory-${{ github.run_id }}
+          restore-keys: memory-
+
+      - name: Check for jamming and spoofing
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+          DASHBOARD_PASSWORD_OLD: ${{ secrets.DASHBOARD_PASSWORD_OLD }}
+        run: python monitor.py detect
+
+      - name: Prepare website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Publish website and maps
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Send alarm emails
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          ALARM_TO: ${{ secrets.ALARM_TO }}
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+          DASHBOARD_PASSWORD_OLD: ${{ secrets.DASHBOARD_PASSWORD_OLD }}
+        run: python monitor.py send
+
+      - name: Save incident log
+        if: always()
+        run: |
+          git config user.name "gps-watch-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data reports
+          if ! git diff --cached --quiet; then
+            git commit -m "Incident log update"
+            git pull --rebase --quiet && git push --quiet
+          fi
+
+      - name: Keep memory for next check
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: state
+          key: memory-${{ github.run_id }}-${{ github.run_attempt }}
