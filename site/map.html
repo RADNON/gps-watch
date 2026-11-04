@@ -47,8 +47,7 @@ map.setView([26.07, 50.55], 7);
 const id = new URLSearchParams(location.search).get("id");
 const panel = document.getElementById("panel");
 
-fetch("data/incidents.json?ts=" + Date.now()).then(r => r.json()).then(list => {
-  const inc = list.find(i => i.id === id);
+fetch("data/maps/" + encodeURIComponent(id || "") + ".json?ts=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null).then(inc => {
   if (!inc) { panel.innerHTML = "<b>Incident not found.</b><br><span class='muted'>It may still be publishing - try again in a minute.</span>"; return; }
   const colour = inc.type === "jamming" ? "#e74c3c" : "#b36ad8";
   document.title = (inc.type === "jamming" ? "GPS jamming " : "GPS spoofing ") + inc.id;
