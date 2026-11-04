@@ -15950,7 +15950,7 @@
  {
   "id": "JAM-20261104-0730",
   "type": "jamming",
-  "status": "open",
+  "status": "closed",
   "first_seen": "2026-11-04T04:30:14Z",
   "last_seen": "2026-11-04T05:30:16Z",
   "lat": 26.077,
@@ -16053,6 +16053,113 @@
    }
   },
   "emailed": "2026-11-04T04:30:23Z",
+  "aircraft_count": 5
+ },
+ {
+  "id": "JAM-20261104-0932",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-11-04T06:32:02Z",
+  "last_seen": "2026-11-04T06:32:02Z",
+  "lat": 25.716,
+  "lon": 53.681,
+  "where": "170 nm E of Bahrain (25.72, 53.68)",
+  "aircraft": {
+   "8964d2": {
+    "hex": "8964d2",
+    "flight": "FDB5WH",
+    "reg": "A6-FMC",
+    "actype": "B38M",
+    "first_seen": "2026-11-04T06:32:02Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-04T06:32:02Z",
+    "lat": 26.0771,
+    "lon": 52.5786,
+    "alt": 34000,
+    "alt_geom": 35575,
+    "gs": 407.4,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8963b7": {
+    "hex": "8963b7",
+    "flight": "FDB5KG",
+    "reg": "A6-FEU",
+    "actype": "B738",
+    "first_seen": "2026-11-04T06:32:02Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-04T06:32:02Z",
+    "lat": 25.7481,
+    "lon": 53.5202,
+    "alt": 31950,
+    "alt_geom": 33400,
+    "gs": 408.3,
+    "nic": 6,
+    "nacp": 8
+   },
+   "06a12f": {
+    "hex": "06a12f",
+    "flight": "QTR944",
+    "reg": "A7-ANS",
+    "actype": "A35K",
+    "first_seen": "2026-11-04T06:32:02Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)",
+     "aircraft reported GPS lost"
+    ],
+    "last_seen": "2026-11-04T06:32:02Z",
+    "lat": 25.3033,
+    "lon": 54.0104,
+    "alt": 32500,
+    "alt_geom": 32400,
+    "gs": null,
+    "nic": 0,
+    "nacp": 0
+   },
+   "706213": {
+    "hex": "706213",
+    "flight": "JZR1540",
+    "reg": "9K-CBC",
+    "actype": "A20N",
+    "first_seen": "2026-11-04T06:32:02Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-04T06:32:02Z",
+    "lat": 25.5834,
+    "lon": 54.1019,
+    "alt": 34000,
+    "alt_geom": 35625,
+    "gs": 393.1,
+    "nic": 6,
+    "nacp": 8
+   },
+   "896559": {
+    "hex": "896559",
+    "flight": "ABY696",
+    "reg": "A6-ATC",
+    "actype": "A21N",
+    "first_seen": "2026-11-04T06:32:02Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-04T06:32:02Z",
+    "lat": 25.868,
+    "lon": 54.1956,
+    "alt": 18350,
+    "alt_geom": 19375,
+    "gs": 412.4,
+    "nic": 6,
+    "nacp": 8
+   }
+  },
+  "emailed": "2026-11-04T06:32:57Z",
   "aircraft_count": 5
  }
 ]
