@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPS Interference Watch</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root { --bg:#0e1319; --card:#161d26; --line:#263241; --text:#e8edf2; --muted:#93a1b1;
+          --jam:#e5533f; --spoof:#b36ad8; --int:#14b8a6; --ok:#39b47a; --accent:#4aa3df; --open:#f0b429; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI",Arial,sans-serif; font-size:14px; }
+  body.locked header, body.locked main { display:none; }
+  header { padding:18px 24px 6px; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 18px; }
+  h1 { font-size:20px; margin:0; letter-spacing:.01em; }
+  header .sp { flex:1; }
+  button.lock { background:transparent; color:var(--muted); border:1px solid var(--line); border-radius:6px; padding:4px 10px;
+    font:inherit; font-size:12px; cursor:pointer; }
+  button.lock:hover { color:var(--text); border-color:var(--muted); }
+  .muted { color:var(--muted); }
+  main { padding:12px 24px 30px; display:grid; gap:16px; grid-template-columns: 1fr 380px; }
+  @media (max-width: 960px) { main { grid-template-columns: 1fr; padding:12px 16px 24px; } header { padding:16px; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; min-width:0; }
+  .card h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:0 0 10px; font-weight:600; }
+  #map { height: 560px; border-radius:10px; border:1px solid var(--line); }
+  .stats { display:grid; grid-template-columns: repeat(2,1fr); gap:10px; }
+  .stat { background:#0f151c; border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
+  .stat.full { grid-column: 1 / -1; }
+  .stat .v { font-size:24px; font-weight:700; } .stat .l { font-size:12px; color:var(--muted); }
+  .stat.int-red { border-color:#7a2a20; background:#2a1412; } .stat.int-red .v { color:#ff6b57; }
+  .stat.int-green { border-color:#1f5c3d; background:#10241a; } .stat.int-green .v { color:#4ad18a; }
+  .pill { display:inline-block; font-size:11px; font-weight:700; padding:2px 7px; border-radius:4px; letter-spacing:.04em; }
+  .pill.jamming { background:var(--jam); } .pill.spoofing { background:var(--spoof); }
+  .pill.interference { background:var(--int); color:#04211d; }
+  .pill.open { background:var(--open); color:#1a1a1a; } .pill.closed { background:#3a4757; }
+  table { width:100%; border-collapse:collapse; }
+  th, td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:600; }
+  tr.int td { background:rgba(20,184,166,.05); }
+  a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+  .wide { grid-column: 1 / -1; }
+  main > * { min-width:0; }
+  .legend { display:flex; flex-wrap:wrap; gap:4px 0; }
+  .legend span { display:inline-flex; align-items:center; gap:6px; margin-right:14px; font-size:12px; color:var(--muted); }
+  .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .tablewrap { overflow-x:auto; }
+  .filters { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
+  .filters input, .filters select { background:#0f151c; color:var(--text); border:1px solid var(--line); border-radius:6px;
+    padding:7px 10px; font:inherit; color-scheme:dark; }
+  .filters input[type=search] { flex:1 1 260px; min-width:0; }
+  .filters .count { font-size:12px; color:var(--muted); margin-left:auto; }
+  .tr-grid { display:grid; grid-template-columns: 340px 1fr; gap:20px; }
+  @media (max-width: 960px) { .tr-grid { grid-template-columns: 1fr; } }
+  .tr-form label.f { display:block; font-size:12px; color:var(--muted); margin:10px 0 4px; }
+  .tr-form input[type=date], .tr-form input[type=time], .tr-form input[type=text], .tr-form input[type=password], .tr-form textarea {
+    width:100%; background:#0f151c; color:var(--text); border:1px solid var(--line); border-radius:6px;
+    padding:8px 10px; font:inherit; color-scheme:dark; }
+  .tr-form input::placeholder, .tr-form textarea::placeholder { color:#6f7d8c; }
+  .tr-form textarea { resize:vertical; min-height:60px; }
+  .tr-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .tr-grid > *, .tr-row > * { min-width:0; }
+  .bands { display:flex; gap:8px; flex-wrap:wrap; }
+  .bands label { display:inline-flex; align-items:center; gap:6px; background:#0f151c; border:1px solid var(--line);
+    border-radius:6px; padding:7px 12px; cursor:pointer; font-weight:600; }
+  .bands input { accent-color: var(--accent); }
+  .bands label:has(input:checked) { border-color:var(--accent); background:#12283a; }
+  .bands label.clear input { accent-color: var(--ok); }
+  .bands label.clear:has(input:checked) { border-color:var(--ok); background:#10241a; }
+  button.primary { margin-top:14px; width:100%; background:var(--accent); color:#06121d; border:0; border-radius:6px;
+    padding:10px; font:inherit; font-weight:700; cursor:pointer; }
+  button.primary:disabled { opacity:.6; cursor:wait; }
+  .msg { font-size:13px; margin-top:8px; min-height:18px; }
+  .msg.ok { color:var(--ok); } .msg.err { color:#ff8a7a; }
+  button.del { background:transparent; color:var(--muted); border:1px solid var(--line); border-radius:5px; padding:3px 9px;
+    font:inherit; font-size:12px; cursor:pointer; white-space:nowrap; }
+  button.del:hover { color:#ff8a7a; border-color:#ff8a7a; }
+  button.del.armed { background:#5a1d16; color:#fff; border-color:#ff8a7a; }
+  .band { display:inline-block; font-size:11px; font-weight:700; padding:2px 6px; border-radius:4px; background:#12283a;
+    border:1px solid #2a5a80; margin:0 3px 3px 0; }
+  .band.clear { background:#10241a; border-color:#2f7a52; color:#4ad18a; }
+  td .band { margin-left:4px; }
+</style>
+</head>
+<body class="locked">
+<header>
+  <h1>GPS Jamming &amp; Spoofing Watch — Bahrain</h1>
+  <span class="muted" id="checked">Loading…</span>
+  <span class="sp"></span>
+  <button class="lock" id="lockbtn" type="button" hidden>Lock</button>
+</header>
+<main>
+  <div>
+    <div id="map"></div>
+    <div class="legend" style="margin-top:8px">
+      <span><i class="dot" style="background:var(--jam)"></i>Degraded GPS now</span>
+      <span><i class="dot" style="background:var(--spoof)"></i>Spoofing signs now</span>
+      <span><i class="dot" style="border:2px solid var(--open)"></i>Open incident</span>
+    </div>
+  </div>
+  <div style="display:grid; gap:16px; align-content:start">
+    <div class="card">
+      <h2>Right now</h2>
+      <div class="stats">
+        <div class="stat"><div class="v" id="s-seen">–</div><div class="l">Aircraft checked</div></div>
+        <div class="stat"><div class="v" id="s-open">–</div><div class="l">Open incidents</div></div>
+        <div class="stat"><div class="v" id="s-deg" style="color:var(--jam)">–</div><div class="l">Degraded GPS</div></div>
+        <div class="stat"><div class="v" id="s-spo" style="color:var(--spoof)">–</div><div class="l">Spoofing signs</div></div>
+        <div class="stat full" id="s-int"><div class="v" style="font-size:18px">–</div><div class="l">Interference (team reports)</div></div>
+      </div>
+      <p class="muted" style="font-size:12px;margin:10px 0 0">Checked every 5 minutes within 250 nm of Bahrain. Single aircraft signs are shown but only corroborated signs become incidents.</p>
+    </div>
+    <div class="card">
+      <h2>Last 30 days</h2>
+      <div class="stats">
+        <div class="stat"><div class="v" id="m-jam" style="color:var(--jam)">–</div><div class="l">Jamming incidents</div></div>
+        <div class="stat"><div class="v" id="m-spo" style="color:var(--spoof)">–</div><div class="l">Spoofing incidents</div></div>
+        <div class="stat full"><div class="v" id="m-int" style="color:var(--int)">–</div><div class="l">Interference reports (Clear not counted)</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Monthly reports</h2>
+      <div id="reports" class="muted">None yet — the first is made on the 1st of next month.</div>
+    </div>
+  </div>
+  <div class="card wide" id="team">
+    <h2>Team reports — GPS interference</h2>
+    <div id="tr-setup" class="muted" hidden>Team reports are not connected yet. Follow the "Team reports" steps in README.md.</div>
+    <div class="tr-grid" id="tr-main">
+      <form class="tr-form" id="tr-form" autocomplete="off">
+        <div class="tr-row">
+          <div><label class="f" for="tr-date">Date</label><input type="date" id="tr-date" required></div>
+          <div><label class="f" for="tr-time">Time (Bahrain)</label><input type="time" id="tr-time" required></div>
+        </div>
+        <label class="f">Affected band(s)</label>
+        <div class="bands">
+          <label><input type="checkbox" name="band" value="L1">L1</label>
+          <label><input type="checkbox" name="band" value="L2">L2</label>
+          <label><input type="checkbox" name="band" value="L5">L5</label>
+          <label class="clear"><input type="checkbox" name="band" value="Clear">Clear</label>
+        </div>
+        <label class="f" for="tr-pin">Team PIN</label>
+        <input type="password" id="tr-pin" placeholder="Enter the team PIN to see reports" required>
+        <label class="f" for="tr-notes">Notes (optional)</label>
+        <textarea id="tr-notes" maxlength="500" placeholder="Location, duration, equipment, what was observed…"></textarea>
+        <button class="primary" type="submit" id="tr-submit">Add report</button>
+        <div class="msg" id="tr-msg"></div>
+      </form>
+      <div>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Date</th><th>Time</th><th>Bands</th><th>Notes</th><th></th></tr></thead>
+          <tbody id="tr-rows"></tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+  <div class="card wide">
+    <h2>Confirmed incidents</h2>
+    <div class="filters">
+      <input type="search" id="f-q" placeholder="Search incident, type, location, aircraft, notes…" aria-label="Search incidents">
+      <select id="f-period" aria-label="Period">
+        <option value="all">All time</option>
+        <option value="24h">Last 24 hours</option>
+        <option value="7d">Last 7 days</option>
+        <option value="30d">Last 30 days</option>
+        <option value="month">This month</option>
+        <option value="lastmonth">Last month</option>
+        <option value="custom">Custom dates…</option>
+      </select>
+      <input type="date" id="f-from" aria-label="From date" hidden>
+      <input type="date" id="f-to" aria-label="To date" hidden>
+      <span class="count" id="f-count"></span>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Incident</th><th>Type</th><th>Status</th><th>Started</th><th>Last seen</th><th>Location</th><th>Aircraft</th></tr></thead>
+      <tbody id="rows"><tr><td colspan="7" class="muted">Loading…</td></tr></tbody>
+    </table></div>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="lock.js"></script>
+<script src="config.js"></script>
+<script>
+(async () => {
+  const $ = id => document.getElementById(id);
+  const BH = { timeZone:"Asia/Bahrain", day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit", hour12:false };
+  const fmt = s => new Date(s).toLocaleString("en-GB", BH);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const DAY = 864e5;
+  const bhParts = d => Object.fromEntries(new Intl.DateTimeFormat("en-GB", { timeZone:"Asia/Bahrain", year:"numeric", month:"2-digit",
+      day:"2-digit", hour:"2-digit", minute:"2-digit", hourCycle:"h23" }).formatToParts(d).map(x => [x.type, x.value]));
+  const bhTs = (date, time) => Date.parse(`${date}T${time || "00:00"}:00+03:00`);
+
+  // ---------------------------------------------------------------- load data (unlock if locked)
+  const getJSON = u => fetch(u + "?ts=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+  let data = null, gatePw = "";
+  const env = await getJSON("data/dashboard.enc.json");
+  if (env) {
+    const { text, pw } = await GPSLock.unlock(env, "GPS Jamming & Spoofing Watch");
+    data = JSON.parse(text); gatePw = pw;
+    $("lockbtn").hidden = false;
+    $("lockbtn").onclick = () => { GPSLock.forget(); location.reload(); };
+  } else {
+    data = await getJSON("data/dashboard.json");
+    if (!data) {   // older layout
+      const [st, incs, reps] = await Promise.all([getJSON("data/status.json"), getJSON("data/incidents.json"), getJSON("data/reports.json")]);
+      data = { status: st, incidents: incs || [], reports: reps || [] };
+    }
+  }
+  document.body.classList.remove("locked");
+  const st = data.status, incs = data.incidents || [], reps = data.reports || [];
+
+  // ---------------------------------------------------------------- map
+  const map = L.map("map").setView([26.07, 50.55], 6);
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    { maxZoom:18, attribution:"Imagery © Esri, Maxar" }).addTo(map);
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+    { maxZoom:18, opacity:.8 }).addTo(map);
+  L.circle([26.07, 50.55], { radius: 250 * 1852, color:"#4aa3df", weight:1, fill:false, dashArray:"6 6" }).addTo(map);
+  if (st) {
+    $("checked").textContent = "Last checked " + fmt(st.checked) + " Bahrain time · source " + st.source;
+    $("s-seen").textContent = st.aircraft_seen;
+    $("s-deg").textContent = st.degraded_now.length;
+    $("s-spo").textContent = st.spoof_signs_now.length;
+    const plot = (list, col, key) => list.forEach(o => L.circleMarker([o.lat, o.lon],
+      { radius:6, color:"#fff", weight:1.5, fillColor:col, fillOpacity:.95 }).addTo(map)
+      .bindPopup(`<b>${esc(o.flight || o.reg || o.hex.toUpperCase())}</b><br>${esc(fmt(o.t))} Bahrain time<br>
+        Alt ${o.alt != null ? Number(o.alt).toLocaleString() + " ft" : "-"} · NIC ${o.nic ?? "-"} · NACp ${o.nacp ?? "-"}<br>${o[key].map(esc).join("<br>")}`));
+    plot(st.degraded_now, "#e5533f", "jam");
+    plot(st.spoof_signs_now, "#b36ad8", "spoof");
+  }
+  incs.filter(i => i.status === "open").forEach(i => L.circleMarker([i.lat, i.lon],
+    { radius:16, color:"#f0b429", weight:3, fill:false }).addTo(map)
+    .bindPopup(`<b>${esc(i.id)}</b><br>${i.type} · ${i.aircraft_count} aircraft<br><a href="map.html?id=${encodeURIComponent(i.id)}">Open incident map</a>`));
+
+  const since30 = Date.now() - 30 * DAY;
+  const recent = incs.filter(i => new Date(i.first_seen) >= since30);
+  $("m-jam").textContent = recent.filter(i => i.type === "jamming").length;
+  $("m-spo").textContent = recent.filter(i => i.type === "spoofing").length;
+
+  if (reps.length) $("reports").innerHTML = reps.map(r => {
+    const m = r.slice(0, 7);
+    const label = new Date(m + "-01T00:00:00Z").toLocaleString("en-GB", { month:"long", year:"numeric", timeZone:"UTC" });
+    const href = r.endsWith(".enc") ? `report.html?m=${encodeURIComponent(m)}` : `reports/${encodeURIComponent(r)}`;
+    return `<div><a href="${href}">${esc(label)}</a></div>`;
+  }).join("");
+
+  // ---------------------------------------------------------------- team reports -> INT incidents
+  let teamReports = null;          // null = not loaded (no PIN yet)
+  const bandList = s => String(s || "").split(",").map(b => b.trim()).filter(Boolean);
+  const isClear = r => bandList(r.bands).includes("Clear");
+  const chips = bands => bands.map(b => `<span class="band${b === "Clear" ? " clear" : ""}">${esc(b)}</span>`).join("");
+
+  function intIncidents() {
+    if (!teamReports) return [];
+    const list = teamReports.filter(r => /^\d{4}-\d{2}-\d{2}$/.test(r.date) && /^\d{2}:\d{2}$/.test(r.time))
+      .map(r => ({ r, ts: bhTs(r.date, r.time) })).sort((a, b) => a.ts - b.ts);
+    const seen = {};
+    return list.map((x, k) => {
+      const base = "INT-" + x.r.date.replace(/-/g, "") + "-" + x.r.time.replace(":", "");
+      seen[base] = (seen[base] || 0) + 1;
+      const newest = k === list.length - 1;
+      const open = newest && Date.now() - x.ts < DAY;      // open until a newer report, or 24 h
+      const iso = new Date(x.ts).toISOString();
+      return { id: seen[base] > 1 ? `${base}-${seen[base]}` : base, type: "interference", status: open ? "open" : "closed",
+               first_seen: iso, last_seen: iso, where: "LOCAL", notes: x.r.notes || "", bands: bandList(x.r.bands),
+               clear: isClear(x.r), ts: x.ts };
+    });
+  }
+
+  function renderSummary() {
+    const ints = intIncidents();
+    const openInt = ints.find(i => i.status === "open");
+    $("s-open").textContent = incs.filter(i => i.status === "open").length + (openInt && !openInt.clear ? 1 : 0);
+    const tile = $("s-int"); tile.className = "stat full";
+    let v, l, muted = true;
+    if (!teamReports) { v = "–"; l = "Interference (team reports) — enter the team PIN below"; }
+    else if (!openInt) { v = "No open report"; l = "Interference (team reports)"; }
+    else if (openInt.clear) { muted = false; tile.classList.add("int-green"); v = "CLEAR"; l = `Interference — reported clear ${fmt(openInt.first_seen)} Bahrain time`; }
+    else { muted = false; tile.classList.add("int-red"); v = "OPEN · " + openInt.bands.join(" · "); l = `Interference — reported ${fmt(openInt.first_seen)} Bahrain time`; }
+    tile.querySelector(".v").style.color = muted ? "var(--muted)" : "";
+    tile.querySelector(".v").textContent = v; tile.querySelector(".l").textContent = l;
+    $("m-int").textContent = teamReports ? ints.filter(i => !i.clear && i.ts >= since30).length : "–";
+  }
+
+  // ---------------------------------------------------------------- confirmed incidents table + filters
+  const searchText = i => (i.type === "interference"
+      ? [i.id, "interference", i.status, i.where, i.notes, i.bands.join(" ")]
+      : [i.id, i.type, i.status, i.where, i.aircraft_count,
+         ...Object.values(i.aircraft || {}).flatMap(a => [a.flight, a.reg, a.actype, a.hex])]).join(" ").toLowerCase();
+
+  function periodRange() {
+    const now = Date.now(), p = $("f-period").value, b = bhParts(new Date());
+    if (p === "24h") return [now - DAY, Infinity];
+    if (p === "7d") return [now - 7 * DAY, Infinity];
+    if (p === "30d") return [now - 30 * DAY, Infinity];
+    if (p === "month") return [bhTs(`${b.year}-${b.month}-01`), Infinity];
+    if (p === "lastmonth") {
+      const y = +b.month === 1 ? +b.year - 1 : +b.year, m = +b.month === 1 ? 12 : +b.month - 1;
+      return [bhTs(`${y}-${String(m).padStart(2, "0")}-01`), bhTs(`${b.year}-${b.month}-01`) - 1];
+    }
+    if (p === "custom") {
+      const f = $("f-from").value, t = $("f-to").value;
+      return [f ? bhTs(f) : -Infinity, t ? bhTs(t, "23:59") + 59999 : Infinity];
+    }
+    return [-Infinity, Infinity];
+  }
+
+  function renderTable() {
+    const all = [...incs, ...intIncidents()].sort((a, b) => b.first_seen.localeCompare(a.first_seen));
+    const words = $("f-q").value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const [from, to] = periodRange();
+    const shown = all.filter(i => { const t = Date.parse(i.first_seen); return t >= from && t <= to; })
+                     .filter(i => !words.length || (s => words.every(w => s.includes(w)))(searchText(i)));
+    const filtered = words.length || $("f-period").value !== "all";
+    $("f-count").textContent = filtered ? `Showing ${shown.length} of ${all.length}` : `${all.length} incidents`;
+    const MAX = 300;
+    $("rows").innerHTML = shown.length ? shown.slice(0, MAX).map(i => i.type === "interference" ? `<tr class="int">
+      <td>${esc(i.id)}</td>
+      <td style="white-space:nowrap"><span class="pill interference">INTERFERENCE</span>${chips(i.bands)}</td>
+      <td><span class="pill ${i.status}">${i.status.toUpperCase()}</span></td>
+      <td>${esc(fmt(i.first_seen))}</td><td>${esc(fmt(i.last_seen))}</td>
+      <td>LOCAL</td><td>${i.notes ? esc(i.notes) : '<span class="muted">—</span>'}</td></tr>` : `<tr>
+      <td><a href="map.html?id=${encodeURIComponent(i.id)}">${esc(i.id)}</a></td>
+      <td><span class="pill ${i.type}">${i.type === "jamming" ? "JAMMING" : "SPOOFING"}</span></td>
+      <td><span class="pill ${i.status}">${i.status.toUpperCase()}</span></td>
+      <td>${esc(fmt(i.first_seen))}</td><td>${esc(fmt(i.last_seen))}</td>
+      <td>${esc(i.where)}</td><td>${i.aircraft_count}</td></tr>`).join("")
+      + (shown.length > MAX ? `<tr><td colspan="7" class="muted">Showing the newest ${MAX} — narrow the period or search to see others.</td></tr>` : "")
+      : `<tr><td colspan="7" class="muted">${all.length ? "No incidents match the filters." : "No confirmed incidents yet."}</td></tr>`;
+  }
+
+  let tmr;
+  $("f-q").addEventListener("input", () => { clearTimeout(tmr); tmr = setTimeout(renderTable, 150); });
+  $("f-period").addEventListener("change", () => {
+    const c = $("f-period").value === "custom"; $("f-from").hidden = !c; $("f-to").hidden = !c; renderTable(); });
+  $("f-from").addEventListener("change", renderTable);
+  $("f-to").addEventListener("change", renderTable);
+
+  const refresh = () => { renderSummary(); renderTable(); };
+  refresh();
+
+  // ---------------------------------------------------------------- team reports panel
+  const URL_ = (window.TEAM_REPORTS_URL || "").trim();
+  if (!URL_) { $("tr-setup").hidden = false; $("tr-main").hidden = true; return; }
+  const store = { get(k) { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } },
+                  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+                  del(k) { try { localStorage.removeItem(k); } catch (e) {} } };
+  const reset = () => { const n = bhParts(new Date()); $("tr-date").value = `${n.year}-${n.month}-${n.day}`; $("tr-time").value = `${n.hour}:${n.minute}`;
+    document.querySelectorAll("input[name=band]").forEach(b => b.checked = false); $("tr-notes").value = ""; };
+  reset();
+  // "Clear" can't be combined with a band
+  document.querySelectorAll("input[name=band]").forEach(cb => cb.addEventListener("change", () => {
+    if (!cb.checked) return;
+    document.querySelectorAll("input[name=band]").forEach(o => {
+      if (o !== cb && (cb.value === "Clear" || o.value === "Clear")) o.checked = false; });
+  }));
+  $("tr-pin").value = store.get("tr-pin") || gatePw;
+  const msg = (t, cls) => { $("tr-msg").textContent = t; $("tr-msg").className = "msg " + (cls || ""); };
+  const fmtD = d => /^\d{4}-\d{2}-\d{2}$/.test(d) ? new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day:"2-digit", month:"short", year:"numeric", timeZone:"UTC" }) : d;
+
+  async function load(userTyped) {
+    const pin = $("tr-pin").value.trim();
+    if (!pin) return;
+    try {
+      const r = await fetch(URL_ + "?pin=" + encodeURIComponent(pin) + "&ts=" + Date.now()).then(r => r.json());
+      if (!r.ok) {
+        if (r.error === "pin") { $("tr-pin").value = ""; store.del("tr-pin"); if (userTyped) msg("Wrong team PIN.", "err"); }
+        else msg("Could not load reports.", "err");
+        teamReports = null; $("tr-rows").innerHTML = ""; refresh(); return;
+      }
+      store.set("tr-pin", pin);
+      teamReports = r.reports;
+      const sorted = [...r.reports].sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
+      $("tr-rows").innerHTML = sorted.length ? sorted.map(x => `<tr><td style="white-space:nowrap">${esc(fmtD(x.date))}</td><td>${esc(x.time)}</td>
+        <td>${chips(bandList(x.bands))}</td>
+        <td>${esc(x.notes)}</td><td style="text-align:right"><button type="button" class="del" data-id="${esc(x.id)}">Delete</button></td></tr>`).join("")
+        : `<tr><td colspan="5" class="muted">No team reports yet.</td></tr>`;
+      refresh();
+    } catch (e) { msg("Could not reach the reports sheet.", "err"); }
+  }
+  $("tr-pin").addEventListener("change", () => { msg(""); load(true); });
+
+  $("tr-form").addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const bands = [...document.querySelectorAll("input[name=band]:checked")].map(b => b.value);
+    if (!bands.length) { msg("Please choose at least one band, or Clear.", "err"); return; }
+    const body = { pin: $("tr-pin").value.trim(), date: $("tr-date").value, time: $("tr-time").value,
+                   bands, notes: $("tr-notes").value.trim() };
+    $("tr-submit").disabled = true; msg("Saving…");
+    try {
+      const r = await fetch(URL_, { method: "POST", body: JSON.stringify(body) }).then(r => r.json());
+      if (r.ok) {
+        store.set("tr-pin", body.pin);
+        msg(r.emailed === false ? "Report saved, but the email could not be sent." : "Report saved and emailed. Thank you.", r.emailed === false ? "err" : "ok"); reset(); load();
+      } else msg(r.error === "pin" ? "Wrong team PIN." : r.error, "err");
+    } catch (e) { msg("Could not save — check your connection and try again.", "err"); }
+    $("tr-submit").disabled = false;
+  });
+  // Delete: first click asks to confirm, second click deletes
+  $("tr-rows").addEventListener("click", async ev => {
+    const btn = ev.target.closest("button.del");
+    if (!btn) return;
+    if (btn.dataset.armed !== "1") {
+      btn.dataset.armed = "1"; btn.textContent = "Confirm delete"; btn.classList.add("armed");
+      setTimeout(() => { if (btn.isConnected && btn.dataset.armed === "1") { btn.dataset.armed = ""; btn.textContent = "Delete"; btn.classList.remove("armed"); } }, 4000);
+      return;
+    }
+    btn.disabled = true; btn.textContent = "Deleting…";
+    try {
+      const r = await fetch(URL_, { method: "POST", body: JSON.stringify({ action: "delete", pin: $("tr-pin").value.trim(), id: btn.dataset.id }) }).then(r => r.json());
+      if (r.ok) { msg("Report deleted.", "ok"); load(); }
+      else { msg(r.error === "pin" ? "Wrong team PIN." : r.error, "err"); btn.disabled = false; btn.textContent = "Delete"; btn.dataset.armed = ""; btn.classList.remove("armed"); }
+    } catch (e) { msg("Could not delete — check your connection and try again.", "err"); btn.disabled = false; btn.textContent = "Delete"; }
+  });
+  load();
+})();
+</script>
+</body>
+</html>
