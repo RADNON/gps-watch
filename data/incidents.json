@@ -15946,5 +15946,94 @@
   },
   "emailed": "2026-11-04T00:02:25Z",
   "aircraft_count": 3
+ },
+ {
+  "id": "JAM-20261104-0730",
+  "type": "jamming",
+  "status": "open",
+  "first_seen": "2026-11-04T04:30:14Z",
+  "last_seen": "2026-11-04T04:30:14Z",
+  "lat": 25.931,
+  "lon": 51.14,
+  "where": "33 nm E of Bahrain (25.93, 51.14)",
+  "aircraft": {
+   "a98ac7": {
+    "hex": "a98ac7",
+    "flight": "UNIDENT",
+    "reg": "N7139B",
+    "actype": "PAY3",
+    "first_seen": "2026-11-04T03:32:19Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-04T04:30:14Z",
+    "lat": 25.7134,
+    "lon": 51.1088,
+    "alt": 12975,
+    "alt_geom": 13650,
+    "gs": 78.0,
+    "nic": 0,
+    "nacp": 0
+   },
+   "8940c3": {
+    "hex": "8940c3",
+    "flight": "GFA751",
+    "reg": "A9C-NF",
+    "actype": "A21N",
+    "first_seen": "2026-11-04T04:30:14Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-04T04:30:14Z",
+    "lat": 26.2601,
+    "lon": 50.8966,
+    "alt": 3325,
+    "alt_geom": 3525,
+    "gs": 215.7,
+    "nic": 0,
+    "nacp": 0
+   },
+   "06a30c": {
+    "hex": "06a30c",
+    "flight": "QTR8147",
+    "reg": "A7-BFY",
+    "actype": "B77L",
+    "first_seen": "2026-11-04T04:30:14Z",
+    "signs": [
+     "GPS integrity low (NIC 6)"
+    ],
+    "last_seen": "2026-11-04T04:30:14Z",
+    "lat": 26.0955,
+    "lon": 51.2151,
+    "alt": 21650,
+    "alt_geom": 22700,
+    "gs": 391.4,
+    "nic": 6,
+    "nacp": 8
+   },
+   "323232": {
+    "hex": "323232",
+    "flight": "UNIDENT",
+    "reg": "",
+    "actype": "",
+    "first_seen": "2026-11-04T04:30:14Z",
+    "signs": [
+     "GPS accuracy low (NACp 0)",
+     "GPS integrity low (NIC 0)"
+    ],
+    "last_seen": "2026-11-04T04:30:14Z",
+    "lat": 25.6534,
+    "lon": 51.3396,
+    "alt": 14000,
+    "alt_geom": 14650,
+    "gs": 112.3,
+    "nic": 0,
+    "nacp": 0
+   }
+  },
+  "emailed": "2026-11-04T04:30:23Z",
+  "aircraft_count": 4
  }
 ]
