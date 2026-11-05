@@ -25,6 +25,8 @@ import smtplib
 import ssl
 import sys
 import time
+import re
+import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from email.mime.multipart import MIMEMultipart
@@ -61,6 +63,8 @@ ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 INCIDENTS_FILE = DATA / "incidents.json"        # used only when no password is set
 INCIDENTS_ENC = DATA / "incidents.enc.json"     # encrypted log (password set)
+TEAM_ENC = DATA / "team-reports.enc.json"      # last copy of the team reports (encrypted)
+TEAM_PLAIN = ROOT / "state" / "team-reports.json"  # same, when no password is set
 MEMORY_FILE = ROOT / "state" / "memory.json"
 SITE_SRC = ROOT / "site"
 SITE_OUT = ROOT / "_site"
@@ -175,6 +179,18 @@ def unlock_text(blob):
                      "If you changed it, add the previous one as the secret DASHBOARD_PASSWORD_OLD.")
 
 
+def write_encrypted(path, text, pw):
+    """Write only when the content changed (each encryption looks different, so compare the plain text)."""
+    if path.exists():
+        try:
+            if decrypt_text(path.read_text(encoding="utf-8"), pw) == text:
+                return
+        except Exception:  # noqa: BLE001
+            pass
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(encrypt_text(text, pw), encoding="utf-8")
+
+
 def load_incidents():
     if INCIDENTS_ENC.exists():
         return json.loads(unlock_text(INCIDENTS_ENC.read_text(encoding="utf-8")))
@@ -184,8 +200,7 @@ def load_incidents():
 def save_incidents(incidents):
     pw = password()
     if pw:
-        DATA.mkdir(parents=True, exist_ok=True)
-        INCIDENTS_ENC.write_text(encrypt_text(json.dumps(incidents, ensure_ascii=False), pw), encoding="utf-8")
+        write_encrypted(INCIDENTS_ENC, json.dumps(incidents, ensure_ascii=False), pw)
         if INCIDENTS_FILE.exists():
             INCIDENTS_FILE.unlink()          # remove the old unencrypted copy
     else:
@@ -197,7 +212,7 @@ def save_report_file(name, html):
     REPORTS.mkdir(exist_ok=True)
     pw = password()
     if pw:
-        (REPORTS / f"{name}.enc").write_text(encrypt_text(html, pw), encoding="utf-8")
+        write_encrypted(REPORTS / f"{name}.enc", html, pw)
         old = REPORTS / f"{name}.html"
         if old.exists():
             old.unlink()
@@ -210,6 +225,51 @@ def migrate_reports():
     if password() and REPORTS.exists():
         for p in REPORTS.glob("*.html"):
             save_report_file(p.stem, p.read_text(encoding="utf-8"))
+
+
+# ------------------------------------------------------------- team reports --
+def team_reports_url():
+    u = os.environ.get("TEAM_REPORTS_URL", "").strip()
+    if u:
+        return u
+    try:
+        m = re.search(r'TEAM_REPORTS_URL\s*=\s*"([^"]+)"', (SITE_SRC / "config.js").read_text(encoding="utf-8"))
+        return m.group(1).strip() if m else ""
+    except FileNotFoundError:
+        return ""
+
+
+def fetch_team_reports():
+    """Read the team reports from the Google Sheet so they are always on the dashboard.
+    Keeps the last good copy if the sheet can't be reached this time."""
+    url = team_reports_url()
+    pin = os.environ.get("TEAM_PIN", "").strip() or password()
+    pw = password()
+    reports = None
+    if url and pin:
+        try:
+            req = urllib.request.Request(url + "?pin=" + urllib.parse.quote(pin),
+                                         headers={"User-Agent": "gps-interference-watch-bahrain (GitHub Actions)"})
+            with urllib.request.urlopen(req, timeout=40) as resp:
+                body = json.loads(resp.read().decode("utf-8"))
+            if body.get("ok"):
+                reports = body.get("reports") or []
+            else:
+                print("Team reports: the sheet refused the PIN - set the GitHub secret TEAM_PIN to the team PIN.")
+        except Exception as e:  # noqa: BLE001
+            print(f"Team reports: could not reach the sheet this time ({e}); using the last copy.")
+    if reports is not None:
+        if pw:
+            write_encrypted(TEAM_ENC, json.dumps(reports, ensure_ascii=False), pw)
+        else:
+            save_json(TEAM_PLAIN, reports)
+        return reports
+    try:
+        if pw and TEAM_ENC.exists():
+            return json.loads(unlock_text(TEAM_ENC.read_text(encoding="utf-8")))
+    except SystemExit:
+        pass
+    return load_json(TEAM_PLAIN, None)
 
 
 # -------------------------------------------------------------------- fetch --
@@ -429,7 +489,7 @@ def build_site(incidents, status):
         (SITE_OUT / "reports").mkdir(exist_ok=True)
         for n in names:
             shutil.copy(REPORTS / n, SITE_OUT / "reports" / n)
-    bundle = {"status": status, "incidents": incidents, "reports": names}
+    bundle = {"status": status, "incidents": incidents, "reports": names, "team_reports": fetch_team_reports()}
     pw = password()
     if pw:
         (data_out / "dashboard.enc.json").write_text(

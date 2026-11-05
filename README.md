@@ -95,6 +95,7 @@ The dashboard, the incident log and the monthly reports are encrypted with the p
 
 - **Alarm-email map links still open without the password.** Each incident's own map stays reachable by its link, as before.
 - **Use the same password as the team PIN** if you like. The Team reports panel then fills in the PIN automatically after unlocking.
+- **Team reports on the dashboard:** every 5-minute check copies the team reports from the Google Sheet into the locked dashboard data, so everyone who unlocks the dashboard sees them, even without the team PIN. This needs the GitHub secret `TEAM_PIN`, set to the team PIN. The PIN is only needed to add or delete reports.
 - **Change the password:** first add the current one as a new secret `DASHBOARD_PASSWORD_OLD`, then update `DASHBOARD_PASSWORD`. After the next 5-minute check has run, you can delete `DASHBOARD_PASSWORD_OLD`.
 - **If you lose the password:** set a new one. The old encrypted incident history can't be opened again, so keep the password somewhere safe.
 
