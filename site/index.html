@@ -139,7 +139,7 @@
           <label class="clear"><input type="checkbox" name="band" value="Clear">Clear</label>
         </div>
         <label class="f" for="tr-pin">Team PIN</label>
-        <input type="password" id="tr-pin" placeholder="Enter the team PIN to see reports" required>
+        <input type="password" id="tr-pin" placeholder="Enter the team PIN to add or delete reports" required>
         <label class="f" for="tr-notes">Notes (optional)</label>
         <textarea id="tr-notes" maxlength="500" placeholder="Location, duration, equipment, what was observed…"></textarea>
         <button class="primary" type="submit" id="tr-submit">Add report</button>
@@ -245,7 +245,9 @@
   }).join("");
 
   // ---------------------------------------------------------------- team reports -> INT incidents
-  let teamReports = null;          // null = not loaded (no PIN yet)
+  // Team reports come with the locked dashboard data (refreshed every check),
+  // and are refreshed live from the sheet when the team PIN is known.
+  let teamReports = Array.isArray(data.team_reports) ? data.team_reports : null;
   const bandList = s => String(s || "").split(",").map(b => b.trim()).filter(Boolean);
   const isClear = r => bandList(r.bands).includes("Clear");
   const chips = bands => bands.map(b => `<span class="band${b === "Clear" ? " clear" : ""}">${esc(b)}</span>`).join("");
@@ -273,7 +275,7 @@
     $("s-open").textContent = incs.filter(i => i.status === "open").length + (openInt && !openInt.clear ? 1 : 0);
     const tile = $("s-int"); tile.className = "stat full";
     let v, l, muted = true;
-    if (!teamReports) { v = "–"; l = "Interference (team reports) — enter the team PIN below"; }
+    if (!teamReports) { v = "–"; l = "Interference (team reports) — not available yet"; }
     else if (!openInt) { v = "No open report"; l = "Interference (team reports)"; }
     else if (openInt.clear) { muted = false; tile.classList.add("int-green"); v = "CLEAR"; l = `Interference — reported clear ${fmt(openInt.first_seen)} Bahrain time`; }
     else { muted = false; tile.classList.add("int-red"); v = "OPEN · " + openInt.bands.join(" · "); l = `Interference — reported ${fmt(openInt.first_seen)} Bahrain time`; }
@@ -358,25 +360,30 @@
   const msg = (t, cls) => { $("tr-msg").textContent = t; $("tr-msg").className = "msg " + (cls || ""); };
   const fmtD = d => /^\d{4}-\d{2}-\d{2}$/.test(d) ? new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day:"2-digit", month:"short", year:"numeric", timeZone:"UTC" }) : d;
 
+  function renderTeamTable() {
+    if (!teamReports) { $("tr-rows").innerHTML = ""; return; }
+    const sorted = [...teamReports].sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
+    $("tr-rows").innerHTML = sorted.length ? sorted.map(x => `<tr><td style="white-space:nowrap">${esc(fmtD(x.date))}</td><td>${esc(x.time)}</td>
+      <td>${chips(bandList(x.bands))}</td>
+      <td>${esc(x.notes)}</td><td style="text-align:right">${x.id ? `<button type="button" class="del" data-id="${esc(x.id)}">Delete</button>` : ""}</td></tr>`).join("")
+      : `<tr><td colspan="5" class="muted">No team reports yet.</td></tr>`;
+  }
+  renderTeamTable();
+
   async function load(userTyped) {
     const pin = $("tr-pin").value.trim();
     if (!pin) return;
     try {
       const r = await fetch(URL_ + "?pin=" + encodeURIComponent(pin) + "&ts=" + Date.now()).then(r => r.json());
       if (!r.ok) {
-        if (r.error === "pin") { $("tr-pin").value = ""; store.del("tr-pin"); if (userTyped) msg("Wrong team PIN.", "err"); }
-        else msg("Could not load reports.", "err");
-        teamReports = null; $("tr-rows").innerHTML = ""; refresh(); return;
+        if (r.error === "pin") { $("tr-pin").value = ""; if (userTyped) { store.del("tr-pin"); msg("Wrong team PIN.", "err"); } }
+        else if (userTyped) msg("Could not load the latest reports.", "err");
+        return;                         // keep showing the reports we already have
       }
       store.set("tr-pin", pin);
       teamReports = r.reports;
-      const sorted = [...r.reports].sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
-      $("tr-rows").innerHTML = sorted.length ? sorted.map(x => `<tr><td style="white-space:nowrap">${esc(fmtD(x.date))}</td><td>${esc(x.time)}</td>
-        <td>${chips(bandList(x.bands))}</td>
-        <td>${esc(x.notes)}</td><td style="text-align:right"><button type="button" class="del" data-id="${esc(x.id)}">Delete</button></td></tr>`).join("")
-        : `<tr><td colspan="5" class="muted">No team reports yet.</td></tr>`;
-      refresh();
-    } catch (e) { msg("Could not reach the reports sheet.", "err"); }
+      renderTeamTable(); refresh();
+    } catch (e) { if (userTyped) msg("Could not reach the reports sheet.", "err"); }
   }
   $("tr-pin").addEventListener("change", () => { msg(""); load(true); });
 
@@ -384,6 +391,7 @@
     ev.preventDefault();
     const bands = [...document.querySelectorAll("input[name=band]:checked")].map(b => b.value);
     if (!bands.length) { msg("Please choose at least one band, or Clear.", "err"); return; }
+    if (!$("tr-pin").value.trim()) { msg("Please enter the team PIN.", "err"); $("tr-pin").focus(); return; }
     const body = { pin: $("tr-pin").value.trim(), date: $("tr-date").value, time: $("tr-time").value,
                    bands, notes: $("tr-notes").value.trim() };
     $("tr-submit").disabled = true; msg("Saving…");
@@ -400,6 +408,7 @@
   $("tr-rows").addEventListener("click", async ev => {
     const btn = ev.target.closest("button.del");
     if (!btn) return;
+    if (!$("tr-pin").value.trim()) { msg("Please enter the team PIN to delete reports.", "err"); $("tr-pin").focus(); return; }
     if (btn.dataset.armed !== "1") {
       btn.dataset.armed = "1"; btn.textContent = "Confirm delete"; btn.classList.add("armed");
       setTimeout(() => { if (btn.isConnected && btn.dataset.armed === "1") { btn.dataset.armed = ""; btn.textContent = "Delete"; btn.classList.remove("armed"); } }, 4000);
