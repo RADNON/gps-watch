@@ -42,6 +42,7 @@ jobs:
       - name: Check for jamming and spoofing
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+          TEAM_PIN: ${{ secrets.TEAM_PIN }}
           DASHBOARD_PASSWORD_OLD: ${{ secrets.DASHBOARD_PASSWORD_OLD }}
         run: python monitor.py detect
 
