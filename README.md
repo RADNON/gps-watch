@@ -112,6 +112,19 @@ The dashboard, the incident log and the monthly reports are encrypted with the p
 
 ---
 
+## Reliable 5-minute timer
+
+GitHub's own schedule often skips runs, sometimes leaving only a couple a day. A timer in the Google Apps Script starts the watch every 5 minutes instead. The code is in `apps-script/Timer-add-to-end.gs`.
+
+To set it up:
+1. Paste that code at the end of `Code.gs`.
+2. Add the script property `GITHUB_TOKEN`, a fine-grained GitHub token limited to this repository, with **Actions: Read and write**.
+3. Run `startTimer` once.
+
+The token expires. When it does, Google emails `bahrain.gps.watch@gmail.com` that the timer is failing. Create a new token and replace `GITHUB_TOKEN`.
+
+---
+
 ## Good to know
 
 - **Emails not arriving at a work address?** Ask IT to allow-list the Gmail sender address. Company mail filters often block automated emails from Gmail.

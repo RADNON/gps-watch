@@ -593,6 +593,9 @@ def recipients():
 
 def site_url():
     u = os.environ.get("SITE_URL", "").strip()
+    if not u and "/" in os.environ.get("GITHUB_REPOSITORY", ""):
+        owner, name = os.environ["GITHUB_REPOSITORY"].split("/", 1)
+        u = f"https://{owner.lower()}.github.io/{name}/"
     return u if u.endswith("/") else u + "/"
 
 
