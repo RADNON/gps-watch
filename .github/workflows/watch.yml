@@ -43,6 +43,7 @@ jobs:
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
           TEAM_PIN: ${{ secrets.TEAM_PIN }}
+          ADSBLOL_API_KEY: ${{ secrets.ADSBLOL_API_KEY }}
           DASHBOARD_PASSWORD_OLD: ${{ secrets.DASHBOARD_PASSWORD_OLD }}
         run: python monitor.py detect
 
