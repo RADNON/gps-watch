@@ -10,7 +10,7 @@
           --jam:#e5533f; --spoof:#b36ad8; --int:#14b8a6; --ok:#39b47a; --accent:#4aa3df; --open:#f0b429; }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI",Arial,sans-serif; font-size:14px; }
-  body.locked header, body.locked main { display:none; }
+  body.locked header, body.locked main, body.locked .feedwarn { display:none !important; }
   header { padding:18px 24px 6px; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 18px; }
   h1 { font-size:20px; margin:0; letter-spacing:.01em; }
   header .sp { flex:1; }
@@ -18,6 +18,9 @@
     font:inherit; font-size:12px; cursor:pointer; }
   button.lock:hover { color:var(--text); border-color:var(--muted); }
   .muted { color:var(--muted); }
+  .feedwarn { margin:6px 24px 0; padding:10px 14px; border-radius:8px; background:#3a2a0c; border:1px solid #b9770e; color:#ffd28a; font-size:13px; }
+  .feedwarn b { color:#fff; }
+  @media (max-width: 960px) { .feedwarn { margin:6px 16px 0; } }
   main { padding:12px 24px 30px; display:grid; gap:16px; grid-template-columns: 1fr 380px; }
   @media (max-width: 960px) { main { grid-template-columns: 1fr; padding:12px 16px 24px; } header { padding:16px; } }
   .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; min-width:0; }
@@ -88,6 +91,7 @@
   <span class="sp"></span>
   <button class="lock" id="lockbtn" type="button" hidden>Lock</button>
 </header>
+<div class="feedwarn" id="feedwarn" hidden></div>
 <main>
   <div>
     <div id="map"></div>
@@ -217,7 +221,14 @@
     { maxZoom:18, opacity:.8 }).addTo(map);
   L.circle([26.07, 50.55], { radius: 250 * 1852, color:"#4aa3df", weight:1, fill:false, dashArray:"6 6" }).addTo(map);
   if (st) {
-    $("checked").textContent = "Last checked " + fmt(st.checked) + " Bahrain time · source " + st.source;
+    const srcLink = { "adsb.fi": "https://adsb.fi", "adsb.lol": "https://adsb.lol", "api.adsb.lol": "https://adsb.lol" }[st.source];
+    $("checked").innerHTML = "Last checked " + esc(fmt(st.checked)) + " Bahrain time · source " +
+      (srcLink ? `<a href="${srcLink}" target="_blank" rel="noopener">${esc(st.source)}</a>` : esc(st.source));
+    if (st.feed_ok === false) {
+      $("feedwarn").hidden = false;
+      $("feedwarn").innerHTML = `<b>No aircraft data since ${esc(fmt(st.feed_down_since || st.checked))} Bahrain time</b> — jamming and spoofing are not being checked until the ADS-B service answers again. ` +
+        `Last good data: ${st.feed_last_ok ? esc(fmt(st.feed_last_ok)) : "unknown"}. <span style="opacity:.8">(${esc(st.feed_error || "")})</span>`;
+    }
     $("s-seen").textContent = st.aircraft_seen;
     $("s-deg").textContent = st.degraded_now.length;
     $("s-spo").textContent = st.spoof_signs_now.length;
