@@ -2,7 +2,7 @@
 
 A free ($0/month) version of the dashboard that runs entirely on GitHub.
 
-- **Every 5 minutes** GitHub checks all aircraft within 250 nm of Bahrain using free public ADS-B data.
+- **Every 5 minutes** GitHub checks all aircraft within 250 nm of Bahrain using free public ADS-B data (adsb.fi and adsb.lol).
 - **Jamming** is confirmed when 3 or more aircraft close together report degraded GPS.
 - **Spoofing** is confirmed when 2 or more aircraft show spoofing signs, or the same aircraft shows them on two separate checks. Spoofing signs include GPS altitude disagreeing with pressure altitude, impossible position jumps, or several aircraft "sitting" at the same spot.
 - **One alarm email per new incident**, in HTML. The email has a single link that opens a satellite map showing only the affected aircraft, with the date and time for each one. Anyone with the link can open it.
@@ -98,6 +98,17 @@ The dashboard, the incident log and the monthly reports are encrypted with the p
 - **Team reports on the dashboard:** every 5-minute check copies the team reports from the Google Sheet into the locked dashboard data, so everyone who unlocks the dashboard sees them, even without the team PIN. This needs the GitHub secret `TEAM_PIN`, set to the team PIN. The PIN is only needed to add or delete reports.
 - **Change the password:** first add the current one as a new secret `DASHBOARD_PASSWORD_OLD`, then update `DASHBOARD_PASSWORD`. After the next 5-minute check has run, you can delete `DASHBOARD_PASSWORD_OLD`.
 - **If you lose the password:** set a new one. The old encrypted incident history can't be opened again, so keep the password somewhere safe.
+
+---
+
+## Aircraft data sources
+
+- **adsb.fi** is free with no key; attribution: data from [adsb.fi](https://adsb.fi).
+- **adsb.lol** allows only 500 requests a day per internet address without a key, and GitHub's machines share addresses with many other users. A free key gives this watch its own daily allowance. Request one at https://www.adsb.lol/request, then add it as the GitHub secret `ADSBLOL_API_KEY`. With a key, adsb.lol is tried first.
+- **If no aircraft data arrives:**
+  - The dashboard shows an orange warning banner.
+  - After 1 hour, one notice email goes to the alarm list, and another when data returns.
+  - Team reports keep working throughout.
 
 ---
 

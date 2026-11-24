@@ -27,6 +27,7 @@ import sys
 import time
 import re
 import urllib.parse
+import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from email.mime.multipart import MIMEMultipart
@@ -70,10 +71,15 @@ SITE_SRC = ROOT / "site"
 SITE_OUT = ROOT / "_site"
 REPORTS = ROOT / "reports"
 
-SOURCES = [
-    "https://api.adsb.lol/v2/point/{lat}/{lon}/{r}",
-    "https://api.airplanes.live/v2/point/{lat}/{lon}/{r}",
-]
+# Free ADS-B sources (same "readsb" aircraft format, including the GPS quality fields NIC / NACp).
+#  - adsb.fi: free, no key, 1 request per second, max 250 nm.
+#  - adsb.lol: 500 requests/day per internet address without a key. GitHub's machines share
+#    addresses, so that allowance is often used up by others. A free key (GitHub secret
+#    ADSBLOL_API_KEY, from https://www.adsb.lol/request) gives this watch its own allowance.
+#  (airplanes.live stopped serving non-feeders in 2026, so it is no longer used.)
+ADSB_FI = {"name": "adsb.fi", "url": "https://opendata.adsb.fi/api/v3/lat/{lat}/lon/{lon}/dist/{r}"}
+ADSB_LOL = {"name": "adsb.lol", "url": "https://api.adsb.lol/v2/point/{lat}/{lon}/{r}"}
+FEED_ALERT_AFTER_MIN = 60      # email once if no aircraft data for this long, and again when it returns
 
 
 # ------------------------------------------------------------------ helpers --
@@ -274,25 +280,42 @@ def fetch_team_reports():
 
 # -------------------------------------------------------------------- fetch --
 def fetch_aircraft():
-    """Return (list_of_aircraft, source_name). Tries each free source in turn."""
+    """Return (list_of_aircraft, source_name). Tries each free source in turn.
+    Raises RuntimeError with the reasons if no source gives usable data."""
     test_file = os.environ.get("TEST_SNAPSHOT")
     if test_file:
         return load_json(test_file, {}).get("ac", []), "test data"
-    last_err = None
-    for tmpl in SOURCES:
-        url = tmpl.format(lat=CENTER_LAT, lon=CENTER_LON, r=RADIUS_NM)
+    key = os.environ.get("ADSBLOL_API_KEY", "").strip()
+    sources = [ADSB_LOL, ADSB_FI] if key else [ADSB_FI, ADSB_LOL]
+    problems, empty = [], None
+    for src in sources:
+        url = src["url"].format(lat=CENTER_LAT, lon=CENTER_LON, r=RADIUS_NM)
+        headers = {"User-Agent": "gps-interference-watch-bahrain (GitHub Actions)", "Accept": "application/json"}
+        if src is ADSB_LOL and key:
+            headers["x-api-key"] = key
         for attempt in range(2):
             try:
-                req = urllib.request.Request(url, headers={
-                    "User-Agent": "gps-interference-watch-bahrain (GitHub Actions)"})
+                req = urllib.request.Request(url, headers=headers)
                 with urllib.request.urlopen(req, timeout=30) as resp:
                     body = json.loads(resp.read().decode("utf-8"))
                 ac = body.get("ac") or body.get("aircraft") or []
-                return ac, url.split("/")[2]
-            except Exception as e:  # noqa: BLE001
-                last_err = e
+                if not isinstance(ac, list):
+                    raise ValueError("unexpected reply")
+                if ac:
+                    return ac, src["name"]
+                # 250 nm around Bahrain is never empty of aircraft - treat as a failed reply
+                empty = empty or src["name"]
+                problems.append(f"{src['name']}: no aircraft in reply")
+                break
+            except urllib.error.HTTPError as e:
+                problems.append(f"{src['name']}: refused (HTTP {e.code})")
+                if e.code in (401, 403, 429):
+                    break                      # retrying won't help (quota / access)
                 time.sleep(3)
-    raise RuntimeError(f"No ADS-B source reachable: {last_err}")
+            except Exception as e:  # noqa: BLE001
+                problems.append(f"{src['name']}: {type(e).__name__}")
+                time.sleep(3)
+    raise RuntimeError("; ".join(dict.fromkeys(problems)) or "no source reachable")
 
 
 # ------------------------------------------------------------------ analyse --
@@ -578,7 +601,19 @@ def cmd_detect():
     t = now_utc()
     memory = load_json(MEMORY_FILE, {"obs": [], "last_pos": {}})
     incidents = load_incidents()
-    ac, source = fetch_aircraft()
+    feed = memory.setdefault("feed", {})
+    try:
+        ac, source = fetch_aircraft()
+        feed_error = ""
+        if feed.get("down_since"):
+            feed["restored"] = iso(t)          # tell cmd_send to email "data is back"
+        feed["down_since"] = ""
+        feed["last_ok"] = iso(t)
+    except RuntimeError as e:
+        # Keep going: the dashboard, team reports and incident closing still work.
+        ac, source, feed_error = [], "unavailable", str(e)
+        feed["down_since"] = feed.get("down_since") or iso(t)
+        print(f"WARNING: no aircraft data this time - {feed_error}")
     obs = observe(ac, t, memory)
     cutoff = t - timedelta(minutes=MEMORY_KEEP_MIN)
     memory["obs"] = [o for o in memory["obs"] if parse_iso(o["t"]) >= cutoff] + \
@@ -592,6 +627,8 @@ def cmd_detect():
         "spoof_signs_now": [o for o in obs if o["spoof"]],
         "open_incidents": [i["id"] for i in incidents if i["status"] == "open"],
         "center": [CENTER_LAT, CENTER_LON], "radius_nm": RADIUS_NM,
+        "feed_ok": not feed_error, "feed_error": feed_error,
+        "feed_down_since": feed.get("down_since", ""), "feed_last_ok": feed.get("last_ok", ""),
     }
     save_json(MEMORY_FILE, memory)
     save_incidents(incidents)
@@ -600,7 +637,56 @@ def cmd_detect():
           f"{len(status['spoof_signs_now'])} with spoofing signs, new incidents: {new_ids or 'none'}")
 
 
+def feed_alert_html(title, colour, lines):
+    body = "".join(f"<p style='margin:0 0 8px'>{escape(x)}</p>" for x in lines)
+    return f"""<!doctype html><html><body style="margin:0;background:#f3f5f7;font-family:Segoe UI,Arial,sans-serif;color:#1d2530">
+<table width="100%" cellpadding="0" cellspacing="0" style="padding:20px 0"><tr><td align="center">
+<table width="620" cellpadding="0" cellspacing="0" style="background:#fff;border:1px solid #dde1e6;border-radius:8px">
+<tr><td style="background:{colour};color:#fff;padding:16px 22px"><div style="font-size:12px;letter-spacing:.08em;opacity:.85">SYSTEM NOTICE</div>
+<div style="font-size:20px;font-weight:700;margin-top:4px">{escape(title)}</div></td></tr>
+<tr><td style="padding:18px 22px;font-size:14px;line-height:1.55">{body}</td></tr></table></td></tr></table></body></html>"""
+
+
+def send_feed_notices():
+    """Email once when aircraft data has been missing for an hour, and once when it is back."""
+    memory = load_json(MEMORY_FILE, {"obs": [], "last_pos": {}})
+    feed = memory.get("feed", {})
+    to = recipients()
+    if not to:
+        return
+    t = now_utc()
+    changed = False
+    down = feed.get("down_since")
+    if down and not feed.get("down_notified") and t - parse_iso(down) >= timedelta(minutes=FEED_ALERT_AFTER_MIN):
+        last = feed.get("last_ok")
+        try:
+            send_email("NOTICE: GPS watch is not receiving aircraft data",
+                       feed_alert_html("No aircraft data — jamming and spoofing are not being checked", "#b9770e", [
+                           f"Since {bh(down)} the free ADS-B services have not returned aircraft data, so no jamming or spoofing alarms can be raised.",
+                           f"Last good data: {bh(last) if last else 'unknown'}.",
+                           "Team reports still work. You will get another email when aircraft data is back."]), to)
+            feed["down_notified"] = True
+            changed = True
+        except Exception as e:  # noqa: BLE001
+            print(f"Could not send the data notice: {e}")
+    if feed.get("restored"):
+        if feed.get("down_notified"):
+            try:
+                send_email("RESOLVED: GPS watch is receiving aircraft data again",
+                           feed_alert_html("Aircraft data is back — monitoring has resumed", "#1e8449", [
+                               f"Aircraft data returned at {bh(feed['restored'])}. Jamming and spoofing checks are running again."]), to)
+            except Exception as e:  # noqa: BLE001
+                print(f"Could not send the data notice: {e}")
+        feed.pop("restored", None)
+        feed["down_notified"] = False
+        changed = True
+    if changed:
+        memory["feed"] = feed
+        save_json(MEMORY_FILE, memory)
+
+
 def cmd_send():
+    send_feed_notices()
     incidents = load_incidents()
     t = now_utc()
     to = recipients()
