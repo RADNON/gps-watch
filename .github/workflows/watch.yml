@@ -1,5 +1,7 @@
 name: GPS watch (every 5 minutes)
 
+# Started every 5 minutes by the timer in the Google Apps Script (reliable),
+# with GitHub's own schedule kept as a backup (GitHub often skips these).
 on:
   schedule:
     - cron: "*/5 * * * *"
@@ -15,12 +17,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  watch:
+  # 1. Check the aircraft, update the incident log, prepare the website
+  check:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
 
@@ -42,9 +42,9 @@ jobs:
       - name: Check for jamming and spoofing
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+          DASHBOARD_PASSWORD_OLD: ${{ secrets.DASHBOARD_PASSWORD_OLD }}
           TEAM_PIN: ${{ secrets.TEAM_PIN }}
           ADSBLOL_API_KEY: ${{ secrets.ADSBLOL_API_KEY }}
-          DASHBOARD_PASSWORD_OLD: ${{ secrets.DASHBOARD_PASSWORD_OLD }}
         run: python monitor.py detect
 
       - name: Prepare website
@@ -52,16 +52,66 @@ jobs:
         with:
           path: _site
 
+      - name: Save incident log
+        run: |
+          git config user.name "gps-watch-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data reports
+          if ! git diff --cached --quiet; then
+            git commit -m "Incident log update"
+            git pull --rebase --quiet && git push --quiet
+          fi
+
+      - name: Keep memory for next check
+        uses: actions/cache/save@v4
+        with:
+          path: state
+          key: memory-${{ github.run_id }}-${{ github.run_attempt }}
+
+  # 2. Publish the website in its own job (avoids GitHub's "No artifacts named github-pages" fault)
+  publish:
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Publish website and maps
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # 3. Send alarm emails - also when publishing failed
+  alarms:
+    needs: [check, publish]
+    if: ${{ always() && needs.check.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install encryption tool
+        run: python -m pip install --quiet cryptography
+
+      - name: Remember recent aircraft
+        uses: actions/cache/restore@v4
+        with:
+          path: state
+          key: memory-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: memory-
 
       - name: Send alarm emails
         env:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           ALARM_TO: ${{ secrets.ALARM_TO }}
-          SITE_URL: ${{ steps.deployment.outputs.page_url }}
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
           DASHBOARD_PASSWORD_OLD: ${{ secrets.DASHBOARD_PASSWORD_OLD }}
         run: python monitor.py send
@@ -73,7 +123,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A data reports
           if ! git diff --cached --quiet; then
-            git commit -m "Incident log update"
+            git commit -m "Alarm emails sent"
             git pull --rebase --quiet && git push --quiet
           fi
 
@@ -82,4 +132,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: state
-          key: memory-${{ github.run_id }}-${{ github.run_attempt }}
+          key: memory-${{ github.run_id }}-${{ github.run_attempt }}-sent
