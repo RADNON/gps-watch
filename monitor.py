@@ -79,7 +79,13 @@ REPORTS = ROOT / "reports"
 #  (airplanes.live stopped serving non-feeders in 2026, so it is no longer used.)
 ADSB_FI = {"name": "adsb.fi", "url": "https://opendata.adsb.fi/api/v3/lat/{lat}/lon/{lon}/dist/{r}"}
 ADSB_LOL = {"name": "adsb.lol", "url": "https://api.adsb.lol/v2/point/{lat}/{lon}/{r}"}
-FEED_ALERT_AFTER_MIN = 60      # email once if no aircraft data for this long, and again when it returns
+FEED_ALERT_AFTER_MIN = 60
+# Credit required by the data licences (adsb.lol: ODbL 1.0; adsb.fi: attribution)
+DATA_CREDIT_TEXT = ("Aircraft data: contains information from adsb.lol, made available under the "
+                    "ODbL 1.0 (https://opendatacommons.org/licenses/odbl/1-0/), and from adsb.fi.")
+DATA_CREDIT_HTML = ('Aircraft data: contains information from <a href="https://adsb.lol" style="color:#6b7480">adsb.lol</a>, '
+                    'made available under the <a href="https://opendatacommons.org/licenses/odbl/1-0/" style="color:#6b7480">ODbL 1.0</a>, '
+                    'and from <a href="https://adsb.fi" style="color:#6b7480">adsb.fi</a>.')      # email once if no aircraft data for this long, and again when it returns
 
 
 # ------------------------------------------------------------------ helpers --
@@ -504,7 +510,7 @@ def build_site(incidents, status):
     (data_out / "maps").mkdir(parents=True, exist_ok=True)
     # Each incident's own map data stays open, so alarm-email map links work for anyone
     for inc in incidents:
-        save_json(data_out / "maps" / f"{inc['id']}.json", inc)
+        save_json(data_out / "maps" / f"{inc['id']}.json", {**inc, "licence": DATA_CREDIT_TEXT})
     migrate_reports()
     names = sorted([p.name for p in REPORTS.glob("*.enc")] + [p.name for p in REPORTS.glob("*.html")],
                    reverse=True) if REPORTS.exists() else []
@@ -560,7 +566,7 @@ def alarm_html(inc, map_url):
  <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
  <tr><th style="{STYLE_TH}">Aircraft</th><th style="{STYLE_TH}">Time (Bahrain)</th><th style="{STYLE_TH}">Altitude</th><th style="{STYLE_TH}">Position</th><th style="{STYLE_TH}">Signs</th></tr>
  {aircraft_rows(inc)}</table>
- <p style="font-size:12px;color:#6b7480;margin-top:18px">Detected automatically from public ADS-B data (aircraft-reported GPS quality, NIC/NACp, and position/altitude consistency).
+ <p style="font-size:12px;color:#6b7480;margin-top:18px">Detected automatically from public ADS-B data (aircraft-reported GPS quality, NIC/NACp, and position/altitude consistency). {DATA_CREDIT_HTML}
  One alarm is sent per new incident; further aircraft in the same incident appear on the map.</p>
 </td></tr></table></td></tr></table></body></html>"""
 
@@ -749,7 +755,7 @@ def monthly_html(month_label, incs):
 <tr><th style="{STYLE_TH}">Incident</th><th style="{STYLE_TH}">Type</th><th style="{STYLE_TH}">Started</th><th style="{STYLE_TH}">Last seen</th><th style="{STYLE_TH}">Location</th><th style="{STYLE_TH}">Aircraft</th></tr>
 {rows}</table>
 <p style="font-size:12px;color:#6b7480;margin-top:18px">Times are Bahrain time. "Confirmed" means corroborated signs: several aircraft affected,
-or spoofing signs shared by several aircraft or repeated on one aircraft. Source: public ADS-B data.</p>
+or spoofing signs shared by several aircraft or repeated on one aircraft. {DATA_CREDIT_HTML}</p>
 </td></tr></table></td></tr></table></body></html>"""
 
 
