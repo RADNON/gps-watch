@@ -216,7 +216,7 @@
   // ---------------------------------------------------------------- map
   const map = L.map("map").setView([26.07, 50.55], 6);
   L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-    { maxZoom:18, attribution:"Imagery © Esri, Maxar" }).addTo(map);
+    { maxZoom:18, attribution:"Imagery © Esri, Maxar · Aircraft data: <a href=\"https://adsb.lol\" target=\"_blank\">adsb.lol</a> (<a href=\"https://opendatacommons.org/licenses/odbl/1-0/\" target=\"_blank\">ODbL 1.0</a>), <a href=\"https://adsb.fi\" target=\"_blank\">adsb.fi</a>" }).addTo(map);
   L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
     { maxZoom:18, opacity:.8 }).addTo(map);
   L.circle([26.07, 50.55], { radius: 250 * 1852, color:"#4aa3df", weight:1, fill:false, dashArray:"6 6" }).addTo(map);

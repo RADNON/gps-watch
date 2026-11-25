@@ -37,7 +37,7 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 const map = L.map("map", { zoomControl: false });
 L.control.zoom({ position: "bottomright" }).addTo(map);
 L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
-  maxZoom: 18, attribution: "Imagery © Esri, Maxar, Earthstar Geographics"
+  maxZoom: 18, attribution: "Imagery © Esri, Maxar, Earthstar Geographics · Aircraft data: <a href=\"https://adsb.lol\" target=\"_blank\">adsb.lol</a> (<a href=\"https://opendatacommons.org/licenses/odbl/1-0/\" target=\"_blank\">ODbL 1.0</a>), <a href=\"https://adsb.fi\" target=\"_blank\">adsb.fi</a>"
 }).addTo(map);
 L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}", {
   maxZoom: 18, opacity: .8
